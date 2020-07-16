@@ -1260,7 +1260,24 @@ $\bigcup_{i \in I} (A_i \cap B_i) \neq
 \end{statement}
 
 \begin{proof}
-% Fill in!
+Consider $I = \{ 2, 3 \}$, and $A_i = \{ i, 2i \}$ and $B_i = \{ i, i + 1 \}$ for each $i \in I$
+as in Exercise 2.3.8.
+Recall that $A_2 = \{ 2, 4 \}, A_3 = \{ 3, 6 \}, B_2 = \{ 2, 3 \}, B_3 = \{ 3, 4 \}$.
+We can then compute $\bigcup_{i \in I} (A_i \cap B_i)$ and
+$\left( \bigcup_{i \in I} A_i \right) \cap \left( \bigcup_{i \in I} B_i \right)$,
+and see that the two sets are not equal.
+\begin{equation*}
+	\bigcup_{i \in I} (A_i \cap B_i)
+	= (A_2 \cap B_2) \cup (A_3 \cap B_3)
+	= \{ 2 \} \cup \{ 3 \}
+	= \{ 2, 3 \}
+\end{equation*}
+\begin{equation*}
+	\left( \bigcup_{i \in I} A_i \right) \cap \left( \bigcup_{i \in I} B_i \right)
+	= (A_2 \cup A_3) \cap (B_2 \cup B_3)
+	= \{ 2, 3, 4, 6 \} \cap \{ 2, 3, 4 \}
+	= \{ 2, 3, 4 \}
+\end{equation*}
 \end{proof}
 
 
