@@ -1,0 +1,1420 @@
+\documentclass[12pt]{amsart}
+
+%Below are some necessary packages for your course.
+\usepackage{amsfonts,latexsym,amsthm,amssymb,amsmath,amscd,euscript,mathrsfs}
+\usepackage{framed}
+\usepackage{fullpage}
+\usepackage{hyperref}
+    \hypersetup{colorlinks=true,citecolor=blue,urlcolor =black,linkbordercolor={1 0 0}}
+\usepackage{mathtools}
+\usepackage[table]{xcolor}
+
+\newenvironment{statement}[1]{\smallskip\noindent\color[rgb]{.6627, .3529, .6314} {\bf #1.}}{}
+\allowdisplaybreaks[1]
+
+%Below are the theorem, definition, example, lemma, etc. body types.
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{postulate}[theorem]{Postulate}
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{notation}{Notation}
+\newtheorem*{note}{Note}
+
+% You can define new commands to make your life easier.
+\newcommand{\BR}{\mathbb R}
+\newcommand{\BC}{\mathbb C}
+\newcommand{\BF}{\mathbb F}
+\newcommand{\BQ}{\mathbb Q}
+\newcommand{\BZ}{\mathbb Z}
+\newcommand{\BN}{\mathbb N}
+
+% We can even define a new command for \newcommand!
+\newcommand{\nc}{\newcommand}
+
+% If you want a new function, use operatorname to define that function (don't use \text)
+\nc{\on}{\operatorname}
+\nc{\Spec}{\on{Spec}}
+
+\title{\emph{How to Prove It}: Chapter 2} % IMPORTANT: Change the problemset number as needed.
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\vspace*{-0.25in}
+\centerline{Kyle Stratton}
+
+\begin{framed}
+These are the exercises for Chapter 2 from the third edition of \emph{How to Prove It} by Daniel J. Velleman.
+They are numbered (Chapter).(Section).(Exercise).
+\end{framed}
+
+\begin{statement}{2.1.1}
+Analyze the logical forms of the following statements.
+\begin{enumerate}
+	\item Anyone who has forgiven at least one person is a saint.
+	
+	\item Nobody in the calculus class is smarter than everybody in the discrete math class.
+	
+	\item Everyone likes Mary, except Mary herself.
+	
+	\item Jane saw a police officer, and Roger saw one too.
+	
+	\item Jane saw a police officer, and Roger saw him too.
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item We can rephrase the statement as ``For all people $x$, if there exists a person $y$ who $x$ has forgiven, then $x$ is a saint.''
+	Letting $S(x)$ stand for ``$x$ is a saint,'' and $F(x, y)$ for ``$x$ has forgiven $y$,'' we see that the statement has the following logical form:
+	$\forall x (\exists y F(x, y) \rightarrow S(x))$.
+	
+	\item We can rephrase the statement as ``There does not exist a person $x$ who is in the calculus class and for all people $y$, if $y$ is in the discrete math class, then $x$ is smarter than $y$.''
+	Letting $C(x)$ stand for ``$x$ is in the calculus class,'' $D(x)$ for ``$x$ is in the discrete math class,'' and $S(x, y)$ for ``$x$ is smarter than $y$,'' we see that the statement has the following logical form:
+	$\neg \exists x [C(x) \wedge \forall y (D(y) \rightarrow S(x, y))]$.
+	
+	\item \emph{Note that I disagree with the interpretation of the statement that Velleman provides.}
+	We can rephrase the statement as ``For all people $x$, if $x$ is not Mary, then $x$ likes Mary. In addition, Mary does not like herself.''
+	Letting $L(x, y)$ stand for ``$x$ likes $y$,'' and $m$ for Mary, we see that the statement has the following logical form:
+	$\forall x ((x \neq m) \rightarrow L(x, m)) \wedge \neg L(m, m)$.
+	
+	\item We can rephrase the statement as ``There is a person $x$ whom Jane saw who is also a police officer, and there is a person $y$, potentially distinct from $x$, whom Roger saw who is also a police officer.''
+	Letting $S(x, y)$ stand for ``$x$ saw $y$,'' $P(x)$ for ``$x$ is a police officer'', $j$ for Jane, and $r$ for Roger, we see that the statement has the following logical form:
+	$\exists x (S(j, x) \wedge P(x)) \wedge \exists y (S(r, y) \wedge P(y))$.
+	
+	\item We can rephrase the statement as ``There is a person $x$ whom both Jane and Roger saw who is also a police officer.''
+	Letting $S(x, y)$, $P(x)$, $j$, and $r$ be as in Part (4), we see that the statement has the following logical form:
+	$\exists x (S(j, x) \wedge S(r, x) \wedge P(x))$.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.1.2}
+Analyze the logical forms of the following statements.
+\begin{enumerate}
+	\item Anyone who has bought a Rolls Royce with cash must have a rich uncle.
+	
+	\item If anyone in the dorm has measles, then everyone who has a friend in the dorm will have to be quarantined.
+	
+	\item If nobody failed the test, then everybody who got an A will tutor someone who got a D.
+	
+	\item If anyone can do it, Jones can.
+	
+	\item If Jones can do it, anyone can.
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item We can rephrase the statement as ``For all people $x$, if $x$ bought a Rolls Royce with cash, then there exists a person $y$ who is rich and is $x$'s uncle.''
+	Letting $C(x)$ stand for ``$x$ bought a Rolls Royce with cash,'' $R(x)$ for ``$x$ is rich,'' and $U(x, y)$ for ``$x$ is $y$'s uncle,'' we see that the statement has the following logical form:
+	$\forall x [C(x) \rightarrow \exists y (R(y) \wedge U(y, x))]$.
+	
+	\item We can rephrase the statement as ``If there exists a person $x$ who lives in the dorm and has measles, then for all people $y$, if there exists a person $z$ who is a friend of $y$ and lives in the dorm, $y$ has to be quarantined.''
+	Letting $D(x)$ stand for ``$x$ lives in the dorm,'' $M(x)$ stand for ``$x$ has measles,'' $F(x, y)$ for ``$x$ is a friend of $y$'', and $Q(x)$ for ``$x$ has to be quarantined, we see that the statement has the following logical form:
+	$\exists x (D(x) \wedge M(x)) \rightarrow \forall y (\exists z (F(y, z) \wedge D(z)) \rightarrow Q(y))$.
+	
+	\item We can rephrase the statement as ``If there does not exist a person $x$ who failed the test, then for all people $y$, if $y$ got an A and there exists a person $z$ who got a D, then $y$ will tutor $z$.''
+	Letting $F(x)$ stand for ``$x$ failed the test,'' $A(x)$ for ``$x$ got an A,'', $D(x)$ for ``$x$ got a D,'' and $T(x, y)$ for ``$x$ tutors $y$,'' we see that the statement has the following logical form:
+	$\neg \exists x F(x) \rightarrow \forall y ((A(y) \wedge \exists z D(z)) \rightarrow T(y, z))$.
+	
+	\item We can rephrase the statement as ``If there exists a person $x$ who can do it, then Jones can do it.''
+	Letting $C(x)$ stand for ``$x$ can do it,'' and $j$ for Jones, we see that the statement has the following logical form:
+	$\exists x C(x) \rightarrow C(j)$.
+	
+	\item We can rephrase the statement as ``If Jones can do it, then for all people $x$, $x$ can do it.''
+	Letting $C(x)$ and $j$ be as in Part (4), we see that the statement has the following logical form:
+	$C(j) \rightarrow \forall x C(x)$.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.1.3}
+Analyze the logical forms of the following statements.
+The universe of discourse is $\BR$.
+What are the free variables in each statement?
+\begin{enumerate}
+	\item Every number that is larger than $x$ is larger than $y$.
+	
+	\item For every number $a$, the equation $ax^2 + 4x - 2 = 0$ has at least one solution if and only if $a \geq -2$.
+	
+	\item All solutions of the inequality $x^3 - 3x < 3$ are smaller than 10.
+	
+	\item If there is a number $x$ such that $x^2 + 5x = w$ and there is a number $y$ such that $4 - y^2 = w$, then $w$ is strictly between $-10$ and $10$.
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item We can rephrase the statement as ``For all $z \in \BR$, if $z > x$ then $z > y$.''
+	Thus, the statement has the following logical form:
+	$\forall z \in \BR (z > x \rightarrow z > y)$.
+	In this statement the free variables are $x$ and $y$.
+	
+	\item We can rephrase the statement as ``For all $a \in \BR$, there exists a solution $x \in \BR$ to the equation $ax^2 + 4x - 2 = 0$ if and only if $a \geq -2$.
+	Thus, the statement has the following logical form:
+	$\forall a \in \BR (\exists x \in \BR (ax^2 + 4x - 2 = 0) \leftrightarrow a \geq -2)$.
+	In this statement there are no free variables.
+	
+	\item We can rephrase the statement as ``For all $x \in \BR$, if $x$ is a solution to the inequality $x^3 - 3x < 3$, then $x < 10$.
+	Thus, the statement has the following logical form:
+	$\forall x \in \BR (x^3 - 3x < 3 \rightarrow x < 10)$.
+	In this statement there are no free variables.
+	
+	\item We can rephrase the statement as ``If there exists $x \in \BR$ such that $x^2 + 5x = w$ and there exists $y \in \BR$ such that $4 - y^2 = w$, then $-10 < w < 10$.''
+	Thus, the statement has the following logical form:
+	$[\exists x \in \BR (x^2 + 5x = w)] \wedge [\exists y \in \BR (4 - y^2 = w)] \rightarrow -10 < w < 10$.
+	In this statement $w$ is a free variable.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.1.4}
+Translate the following statements into idiomatic English.
+\begin{enumerate}
+	\item $\forall x [(H(x) \wedge \neg \exists y M(x, y)) \rightarrow U(x)]$,
+	where $H(x)$ means ``$x$ is a man,'' $M(x, y)$ means ``$x$ is married to $y$,''
+	and $U(x)$ means ``$x$ is unhappy.''
+	
+	\item $\exists z (P(z, x) \wedge S(z, y) \wedge W(y))$,
+	where $P(z, x)$ means ``$z$ is a parent of $x$,'' $S(z, y)$ means ``$z$ and $y$ are siblings,''
+	and $W(y)$ means ``$y$ is a woman.''
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item An initial direct translation of this statement is 
+	``For all people $x$, if $x$ is male and there does not exist a person $y$ to whom $x$ is married, then $x$ is unhappy.''
+	More idiomatically, this statement translates to ``All unmarried men are unhappy.''
+	
+	\item An initial direct translation of this statement is 
+	``There exists a person $z$ who is a parent of $x$ and is siblings with the woman $y$.''
+	More idiomatically, this statement translates to ``$y$ is a sister to one of $x$'s parents.''
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.1.5}
+Translate the following statements into idiomatic mathematical English.
+\begin{enumerate}
+	\item $\forall x [(P(x) \wedge \neg (x = 2)) \rightarrow O(x)]$,
+	where $P(x)$ means ``$x$ is a prime number'' and $O(x)$ means ``$x$ is odd.''
+	
+	\item $\exists x [P(x) \wedge \forall y (P(y) \rightarrow y \leq x)]$,
+	where $P(x)$ means ``$x$ is a perfect number.''
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item An initial direct translation of this statement is 
+	``For all $x$, if $x$ is a prime number not equal to 2, then $x$ is odd.''
+	More idiomatically, we can rephrase this statement as ``All prime numbers aside from 2 are odd.''
+	
+	\item An initial direct translation of this statement is 
+	``There exists $x$ such that $x$ is a perfect number and for all numbers $y$, if $y$ is a perfect number then $y$ is less than or equal to $x$.''
+	More idiomatically, we can rephrase this statement as ``There exists a largest perfect number.''
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.1.6}
+Translate the following statements into idiomatic mathematical English.
+Are they true or false?
+The universe of discourse is $\BR$.
+\begin{enumerate}
+	\item $\neg \exists x (x^2 + 2x + 3 = 0 \wedge x^2 + 2x - 3 = 0)$
+	
+	\item $\neg [\exists x (x^2 + 2x + 3 = 0) \wedge \exists x (x^2 + 2x - 3 = 0)]$
+	
+	\item $\neg \exists x (x^2 + 2x + 3 = 0) \wedge \neg \exists x (x^2 + 2x - 3 = 0)$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+Since this exercise involves the equations $x^2 + 2x + 3 = 0$ and $x^2 + 2x - 3 = 0$, we first solve them over $\BC$ using the quadratic formula.
+The solutions to $x^2 + 2x + 3 = 0$ are $x = -1 \pm \sqrt{2}i$,
+while the solutions to $x^2 + 2x - 3 = 0$ are $x = -3$ and $x = 1$.
+\begin{enumerate}
+	\item This statement translates to ``There does not exist $x \in \BR$ which is a root of both $x^2 + 2x + 3$ and $x^2 + 2x - 3$.''
+	Comparing the solutions to both equations, we conclude that this statement is true.
+	
+	\item This statement translates to ``The polynomials $x^2 + 2x + 3$ and $x^2 + 2x - 3$ do not both have a real root.''
+	We can rephrase this as ``$x^2 + 2x + 3$ or $x^2 + 2x - 3$ does not have a real root.''
+	Since $x^2 + 2x + 3$ only has complex roots $x = -1 \pm \sqrt{2}i$, we conclude that this statement is true.
+	
+	\item This statement translates to ``Both $x^2 + 2x + 3$ and $x^2 + 2x - 3$ do not have real roots.''
+	Since $x^2 + 2x - 3$ has real roots $x = -3$ and $x = 1$, we conclude that this statement is false.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.1.7}
+Are these statements true or false?
+The universe of discourse is the set of all people, and $P(x, y)$ means ``$x$ is a parent of $y$.''
+\begin{enumerate}
+	\item $\exists x \forall y P(x, y)$
+	\item $\forall x \exists y P(x, y)$
+	\item $\neg \exists x \exists y P(x, y)$
+	\item $\exists x \neg \exists y P(x, y)$
+	\item $\exists x \exists y \neg P(x, y)$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+We translate the statements before determining whether they are true or false.
+\begin{enumerate}
+	\item ``There is a person $x$ who is a parent of all people $y$.'' \\
+	This statement is false since there is no single person who is the parent of everyone.
+	In particular, a person can't be their own parent (at least without time travel shenanigans).
+	
+	\item ``For all people $x$, there is a person $y$ who is $x$'s child.'' \\
+	This statement is false since not everyone is a parent.
+	For example prepubescent children biologically cannot be parents at that stage of their life.
+	
+	\item ``There does not exist a person $x$ who has a child $y$.'' \\
+	This statement is false because there are people who do have children.
+	
+	\item ``There exists a person $x$ who does not have a child $y$.'' \\
+	This statement is true, since there are people who either choose not to have children or are physically incapable of doing so.
+	
+	\item ``There exist people $x$ and $y$ for whom $x$ is not the parent of $y$.'' \\
+	This statement is true.
+	For example we can take any two people who are not related to each other.
+\end{enumerate}
+To summarize, Statements (1), (2), and (3) are false, while Statements (4) and (5) are true.
+\end{proof}
+
+
+\begin{statement}{2.1.8}
+Are these statements true or false?
+The universe of discourse is $\BN$.
+\begin{enumerate}
+	\item $\forall x \exists y (2x - y = 0)$
+	\item $\exists y \forall x (2x - y = 0)$
+	\item $\forall x \exists y (x - 2y = 0)$
+	\item $\forall x (x < 10 \rightarrow \forall y (y < x \rightarrow y < 9))$
+	\item $\exists y \exists z (y + z = 100)$
+	\item $\forall x \exists y (y > x \wedge \exists z (y + z = 100))$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item This statement is true.
+	If $x$ is an arbitrary natural number, then $y = 2x$ is a natural number such that $2x - y = 0$.
+	
+	\item This statement is false.
+	There is no single natural number $y$ such that $2x - y = 0$ for all natural numbers $x$.
+	
+	\item This statement is false.
+	Suppose $x = 1$, then the value of $y$ such that $x - 2y = 0$ would be $y = 1/2$, but $1/2$ is not a natural number.
+	
+	\item This statement is true.
+	The largest natural number which is strictly less than 10 is 9, so if $x < 10$ we know that $x \leq 9$.
+	Then, if $y$ is a natural number $y < x$, we have the following chain of inequalities $y < x \leq 9$.
+	
+	\item This statement is true.
+	For example, we can take $y = z = 50$.
+	
+	\item This statement is false.
+	For example, if $x = 101$, then for any $y > 101$ there is no natural number $z$ such that $y + z = 100$.
+	Similarly, for any $y$ such that there is a natural number $z$ with $y + z = 100$, then $y = 100 - z \leq 100 < 101$.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.1.9}
+Same as Exercise 2.1.8 but with $\BR$ as the universe of discourse.
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item This statement is true.
+	If $x$ is an arbitrary real number, then $y = 2x$ is a real number such that $2x - y = 0$.
+	
+	\item This statement is false.
+	There is no single real number $y$ such that $2x - y = 0$ for all real numbers $x$.
+	
+	\item This statement is true.
+	If $x$ is an arbitrary real number, then $y = x/2$ is a real number such that $x - 2y = 0$.
+	
+	\item This statement is false.
+	For example, we can take $x = 9.9$ and $y = 9.8$.
+	Then $x < 10$ and $y < x$, but $y > 9$.
+	
+	\item This statement is true.
+	For example, we can take $y = z = 50$.
+	
+	\item This statement is true.
+	If we let $x \in \BR$ be arbitrary, then in fact for any real number $y$ with $y > x$ we can take $z = 100 - y$ to be a real number such that $y + z = 100$.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.1.10}
+Same as Exercise 2.1.8 but with $\BZ$ as the universe of discourse.
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item This statement is true.
+	If $x$ is an arbitrary integer, then $y = 2x$ is an integer such that $2x - y = 0$.
+	
+	\item This statement is false.
+	There is no single integer $y$ such that $2x - y = 0$ for all integers $x$.
+	
+	\item This statement is false.
+	Suppose $x = 1$, then the value of $y$ such that $x - 2y = 0$ would be $y = 1/2$, but $1/2$ is not an integer.
+	
+	\item This statement is true.
+	The largest integer which is strictly less than 10 is 9, so if $x < 10$ we know that $x \leq 9$.
+	Then, if $y$ is an integer with $y < x$, we have the following chain of inequalities $y < x \leq 9$.
+	
+	\item This statement is true.
+	For example, we can take $y = z = 50$.
+	
+	\item This statement is true.
+	If we let $x \in \BZ$ be arbitrary, then in fact for any integer $y$ with $y > x$ we can take $z = 100 - y$ to be an integer such that $y + z = 100$.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.2.1}
+Negate these statements and then reexpress the results as equivalent positive statements.
+\begin{enumerate}
+	\item Everyone who is majoring in math has a friend who needs help with his or her homework.
+	
+	\item Everyone has a roommate who dislikes everyone.
+	
+	\item $A \cup B \subseteq C \setminus D$
+	
+	\item $\exists x \forall y [y > x \rightarrow \exists z (z^2 + 5z = y)]$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item Let $M(x)$ stand for ``$x$ is majoring in math, $F(x, y)$ for ``$x$ is friends with $y$,''
+	and $H(x)$ for ``$x$ needs help with their homework.''
+	Then the original statement takes the following logical form:
+	$\forall x [M(x) \rightarrow \exists y (F(x, y) \wedge H(y))]$.
+	Our next step is to negate the statement.
+	For this first part of the exercise we write down all of the steps in processing the negation.
+	\begin{align*}
+		& \neg \forall x [M(x) \rightarrow \exists y (F(x, y) \wedge H(y))] \\
+		&= \neg \forall x [\neg M(x) \vee \exists y (F(x, y) \wedge H(y))] \\
+		&= \exists x \neg [\neg M(x) \vee \exists y (F(x, y) \wedge H(y))] \\
+		&= \exists x [M(x) \wedge \neg \exists y (F(x, y) \wedge H(y))] \\
+		&= \exists x [M(x) \wedge \forall y \neg (F(x, y) \wedge H(y))] \\
+		&= \exists x [M(x) \wedge \forall y (\neg F(x, y) \vee \neg H(y))] \\
+		&= \exists x [M(x) \wedge \forall y (F(x, y) \rightarrow \neg H(y))]
+	\end{align*}
+	This last statement translates to ``There is a math major for whom all of their friends don't need homework help.''
+	
+	\item Let $R(x, y)$ stand for ``$x$ is $y$'s roommate,'' and $L(x, y)$ for ``$x$ likes $y$.''
+	Then the original statement takes the following logical form:
+	$\forall x \exists y (R(x, y) \wedge \forall z \neg L(y, z))$.
+	Our next step is to negate the statement.
+	From here on we will abbreviate some steps, such as passing a negation through multiple quantifiers at once.
+	\begin{align*}
+		& \neg \forall x \exists y (R(x, y) \wedge \forall z \neg L(y, z)) \\
+		&= \exists x \forall y (\neg R(x, y) \vee \neg \forall z \neg L(y, z)) \\
+		&= \exists x \forall y (\neg R(x, y) \vee \exists z L(y, z)) \\
+		&= \exists x \forall y (R(x, y) \rightarrow \exists z L(y, z))
+	\end{align*}
+	This last statement translates to ``There is someone for whom all of their roommates like at least one person.''
+	
+	\item We first need to translate $A \cup B \subseteq C \setminus D$ into logical symbols.
+	As in Chapter 1, we use the convention that lowercase letters stand for the statement that $x$ is in the set named with the corresponding capital letter.
+	For example $a$ stands for the statement $x \in A$.
+	\begin{align*}
+		& \forall x (x \in A \cup B \rightarrow x \in C \setminus D) \\
+		&= \forall x [(x \in A) \vee (x \in B) \rightarrow (x \in C) \wedge (x \notin D)] \\
+		&= \forall x [\neg (a \vee b) \vee (c \wedge \neg d)]
+	\end{align*}
+	Our next step is to negate the statement.
+	\begin{align*}
+		& \neg \forall x [\neg (a \vee b) \vee (c \wedge \neg d)] \\
+		&= \exists x [(a \vee b) \wedge (\neg c \vee d)] \\
+		&= \exists x [((x \in A) \vee (x \in B)) \wedge ((x \notin C) \vee (x \in D))]
+	\end{align*}
+	In other words $A \cup B \nsubseteq C \setminus D$ means that there is $x \in A \cup B$
+	such that $x \notin C \setminus D$, i.e. $x \notin C$ or $x \in D$.
+	
+	\item Since we are already given the statement in logical symbols, all we need to do is negate it.
+	\begin{align*}
+		& \neg \exists x \forall y [y > x \rightarrow \exists z (z^2 + 5z = y)] \\
+		&= \forall x \exists y \neg [\neg(y > x) \vee \exists z (z^2 + 5z = y)] \\
+		&= \forall x \exists y [y > x \wedge \forall z (z^2 + 5z \neq y)]
+	\end{align*}
+	In other words, the negated statement states that for all $x$, there exists $y$ such that
+	$y > x$ and the equation $z^2 + 5z = y$ has no solutions in the universe of discourse.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.2.2}
+Negate these statements and then reexpress the results as equivalent positive statements.
+\begin{enumerate}
+	\item There is someone in the freshman class who doesn't have a roommate.
+	
+	\item Everyone likes someone, but no one likes everyone.
+	
+	\item $\forall a \in A \, \exists b \in B \, (a \in C \leftrightarrow b \in C)$
+	
+	\item $\forall y > 0 \, \exists x (ax^2 + bx + c = y)$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item Let $F(x)$ stand for ``$x$ is in the freshman class,'' and $R(x, y)$ for ``$x$ is $y$'s roommate.''
+	Then the original statement takes the following logical form:
+	$\exists x (F(x) \wedge \neg \exists y R(x, y))$.
+	Our next step is to negate the statement.
+	\begin{align*}
+		& \neg \exists x (F(x) \wedge \neg \exists y R(x, y)) \\
+		&= \forall x (\neg F(x) \vee \exists y R(x, y)) \\
+		&= \forall x (F(x) \rightarrow \exists y R(x, y))
+	\end{align*}
+	This last statement translates to ``Every member of the freshman class has a roommate.''
+	
+	\item Let $L(x, y)$ stand for ``$x$ likes $y$''.
+	Then the original statement takes the following logical form:
+	$(\forall x \exists y L(x, y)) \wedge \neg (\exists w \forall z L(w, z))$.
+	Our next step is to negate the statement.
+	\begin{align*}
+		& \neg [(\forall x \exists y L(x, y)) \wedge \neg (\exists w \forall z L(w, z))] \\
+		&= \neg (\forall x \exists y L(x, y)) \vee (\exists w \forall z L(w, z)) \\
+		&= (\exists x \forall y \neg L(x, y)) \vee (\exists w \forall z L(w, z))
+	\end{align*}
+	This last statement translates to ``There is someone who likes everyone, or there is someone who dislikes everyone.''
+	
+	\item Since we are already given the statement in logical symbols, all we need to do is negate it.
+	\begin{align*}
+		& \neg [\forall a \in A \, \exists b \in B \, (a \in C \leftrightarrow b \in C)] \\
+		&= \exists a \in A \, \forall b \in B \, \neg (a \in C \leftrightarrow b \in C) \\
+		&= \exists a \in A \, \forall b \in B \, 
+			[\neg (a \in C \rightarrow b \in C) \vee \neg (b \in C \rightarrow a \in C)] \\
+		&= \exists a \in A \, \forall b \in B \,
+			[(a \in C \wedge b \notin C) \vee (a \notin C \wedge b \in C)]
+	\end{align*}
+	
+	\item Since we are already given the statement in logical symbols, all we need to do is negate it.
+	\begin{equation*}
+		\neg [\forall y > 0 \, \exists x (ax^2 + bx + c = y)]
+		= \exists y > 0 \, \forall x (ax^2 + bx + c \neq y)
+	\end{equation*}
+\end{enumerate}	
+\end{proof}
+
+
+\begin{statement}{2.2.3}
+Are these statements true or false?
+The universe of discourse is $\BN$.
+\begin{enumerate}
+	\item $\forall x (x < 7 \rightarrow \exists a \exists b \exists c (a^2 + b^2 + c^2 = x))$
+	
+	\item $\exists! x (x^2 + 3 = 4x)$
+	
+	\item $\exists! x (x^2 = 4x + 5)$
+	
+	\item $\exists x \exists y (x^2 = 4x + 5 \wedge y^2 = 4y + 5)$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+Recall that the convention in \emph{How to Prove It} is to include zero as a natural number.
+\begin{enumerate}
+	\item This statement is true.
+	For each natural number $x < 7$, we can pick natural numbers $a, b, c$ such that $a^2 + b^2 + c^2 = x$.
+	We list choices for each possible value of $x$.
+	\begin{equation*}
+		\begin{array}{c c c c}
+			x = 0 & a = 0 & b = 0 & c = 0 \\
+			x = 1 & a = 1 & b = 0 & c = 0 \\
+			x = 2 & a = 1 & b = 1 & c = 0 \\
+			x = 3 & a = 1 & b = 1 & c = 1 \\
+			x = 4 & a = 2 & b = 0 & c = 0 \\
+			x = 5 & a = 2 & b = 1 & c = 0 \\
+			x = 6 & a = 2 & b = 1 & c = 1
+		\end{array}
+	\end{equation*}
+	
+	\item This statement is false.
+	We can factor $x^2 - 4x + 3$ as $(x - 1)(x - 3)$, giving us two distinct natural number
+	solutions to the equation $x^2 + 3 = 4x$.
+	Thus, while solutions to the equation do exist in $\BN$, there is not a single unique solution.
+	
+	\item This statement is true.
+	We can factor $x^2 - 4x - 5$ as $(x - 5)(x + 1)$, giving us two integer solutions
+	to the equation $x^2 = 4x + 5$.
+	Only one of those solutions, $x = 5$ is in $\BN$, so there exists a unique natural number
+	solution to the equation.
+	
+	\item This statement is true.
+	As discussed above, $x = y = 5$ is a natural number solution to the two equations
+	$x^2 = 4x + 5$ and $y^2 = 4y + 5$, which are simply the same equation phrased in two ways.
+	Since we only need $x$ and $y$ to exist, and there is no condition that they be distinct,
+	it is okay to simply use $x = y = 5$.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.2.4}
+Show that the second quantifier negation law, 
+which says that $\neg \forall x P(x)$ is equivalent to $\exists x \neg P(x)$,
+can be derived from the first,
+which says that $\neg \exists x P(x)$ is equivalent to $\forall x \neg P(x)$.
+\emph{Hint: Use the double negation law.}
+\end{statement}
+
+\begin{proof}
+Following the hint, we start by using the double negation law to observe that $\neg \forall x P(x)$
+is equivalent to $\neg \forall x \neg \neg P(x)$.
+Next, we use the first quantifier negation law to see that $\neg \forall x \neg \neg P(x)$
+is equivalent to $\neg \neg \exists x \neg P(x)$.
+By the double negation law once again, $\neg \neg \exists x \neg P(x)$ 
+is equivalent to $\exists x \neg P(x)$.
+Thus, we conclude that $\neg \forall x P(x)$ is equivalent to $\exists x \neg P(x)$.
+\end{proof}
+
+
+\begin{statement}{2.2.5}
+Show that $\neg \exists x \in A \, P(x)$ is equivalent to $\forall x \in A \, \neg P(x)$.
+\end{statement}
+
+\begin{proof}
+We first recall that $\exists x \in A \, P(x)$ is shorthand for $\exists x (x \in A \wedge P(x))$.
+Similarly, $\forall x \in A \, P(x)$ is shorthand for $\forall x (x \in A \rightarrow P(x))$.
+Starting from $\neg \exists x \in A \, P(x)$, expand the shorthand and use the quantifier negation laws.
+\begin{align*}
+	\neg \exists x \in A \, P(x)
+	&= \neg \exists x (x \in A \wedge P(x)) \\
+	&= \forall x \neg (x \in A \wedge P(x)) \\
+	&= \forall x (x \notin A \vee \neg P(x)) \\
+	&= \forall x (x \in A \rightarrow \neg P(x)) \\
+	&= \forall x \in A \, \neg P(x)
+\end{align*}
+Thus, we see that $\neg \exists x \in A \, P(x)$ is equivalent to $\forall x \in A \, \neg P(x)$.
+\end{proof}
+
+
+\begin{statement}{2.2.6}
+Show that the existential quantifier distributes over disjunction.
+In other words show that $\exists x (P(x) \vee Q(x))$ is equivalent to $\exists x P(x) \vee \exists x Q(x)$.
+\emph{Hint: Use the fact, discussed in this section, that the universal quantifier distributes over conjunction.}
+\end{statement}
+
+\begin{proof}
+We use the double negation law to follow the hint and use the fact that the universal quantifier distributes over conjunction.
+\begin{align*}
+	\exists x (P(x) \vee Q(x))
+	&= \exists x \neg \neg (P(x) \vee Q(x)) \\
+	&= \neg \forall x \neg (P(x) \vee Q(x)) \\
+	&= \neg \forall x (\neg P(x) \wedge \neg Q(x)) \\
+	&= \neg [(\forall x \neg P(x)) \wedge (\forall x \neg Q(x))] \\
+	&= \neg [\neg (\exists x P(x)) \wedge \neg (\exists Q(x))] \\
+	&= \neg \neg (\exists x P(x) \vee \exists x Q(x)) \\
+	&= \exists x P(x) \vee \exists x Q(x)
+\end{align*}
+Thus, we conclude that the existential quantifier distributes over disjunction.
+In other words $\exists x (P(x) \vee Q(x))$ is equivalent to $\exists x P(x) \vee \exists x Q(x)$.
+\end{proof}
+
+
+\begin{statement}{2.2.7}
+Show that $\exists x (P(x) \rightarrow Q(x))$ is equivalent to $\forall x P(x) \rightarrow \exists x Q(x)$.
+\end{statement}
+
+\begin{proof}
+\begin{align*}
+	\exists x (P(x) \rightarrow Q(x))
+	&= \exists x (\neg P(x) \vee Q(x)) \\
+	&= \exists x \neg P(x) \vee \exists x Q(x) \\
+	&= \neg \forall x P(x) \vee \exists x Q(x) \\
+	&= \forall x P(x) \rightarrow \exists x Q(x)
+\end{align*}
+\end{proof}
+
+
+\begin{statement}{2.2.8}
+Show that $(\forall x \in A \, P(x)) \wedge (\forall x \in B \, P(x))$ is equivalent to $\forall x \in (A \cup B) \, P(x)$.
+\emph{Hint: Start by writing out the meanings of the bounded quantifiers in terms of unbounded quantifiers.}
+\end{statement}
+
+\begin{proof}
+We follow the hint and start by writing out the meanings of the bounded quantifiers in terms of unbounded ones.
+\begin{align*}
+	& (\forall x \in A \, P(x)) \wedge (\forall x \in B \, P(x)) \\
+	&= [\forall x (x \in A \rightarrow P(x))] \wedge [\forall x (x \in B \rightarrow P(x))] \\
+	&= \forall x [(x \in A \rightarrow P(x)) \wedge (x \in B \rightarrow P(x))] \\
+	&= \forall x [(x \notin A \vee P(x)) \wedge (x \notin B \vee P(x))] \\
+	&= \forall x [(x \notin A \wedge x \notin B) \vee P(x)] \\
+	&= \forall x [\neg (x \in A \cup B) \vee P(x)] \\
+	&= \forall x (x \in A \cup B \rightarrow P(x)) \\
+	&= \forall x \in (A \cup B) \, P(x)
+\end{align*}
+Thus, we conclude $(\forall x \in A \, P(x)) \wedge (\forall x \in B \, P(x))$ is equivalent to $\forall x \in (A \cup B) \, P(x)$.
+\end{proof}
+
+
+\begin{statement}{2.2.9}
+Is $\forall x (P(x) \vee Q(x))$ equivalent to $\forall x P(x) \vee \forall x Q(x)$?
+Explain.
+\emph{Hint: Try assigning meanings to $P(x)$ and $Q(x)$.}
+\end{statement}
+
+\begin{proof}
+To see why $\forall x (P(x) \vee Q(x))$ is not equivalent to $\forall x P(x) \vee \forall x Q(x)$,
+consider the following example.
+Let $\BZ$ be the universe of discourse, $P(x)$ stand for ``$x$ is an even number,''
+and $Q(x)$ for ``$x$ is an odd number.''
+In this scenario, $\forall x (P(x) \vee Q(x))$ translates to the true statement 
+``Every integer is even or odd.''
+On the other hand, $\forall x P(x) \vee \forall x Q(x)$ translates to the false statement
+``Every integer is even, or every integer is odd.''
+\end{proof}
+
+
+\begin{statement}{2.2.10}
+\begin{enumerate}
+	\item Show that $(\exists x \in A \, P(x)) \vee (\exists x \in B \, P(x))$ is equivalent to
+	$\exists x \in (A \cup B) \, P(x)$.
+	
+	\item Is $(\exists x \in A \, P(x)) \wedge (\exists x \in B \, P(x))$ equivalent to
+	$\exists x \in (A \cap B) \, P(x)$?
+	Explain.
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item We start by writing out the meanings of the bounded quantifiers.
+	\begin{align*}
+		&= (\exists x \in A \, P(x)) \vee (\exists x \in B \, P(x)) \\
+		&= [\exists x (x \in A \wedge P(x))] \vee [\exists x (x \in B \wedge P(x))] \\
+		&= \exists x [(x \in A \vee x \in B) \wedge P(x)] \\
+		&= \exists x (x \in A \cup B \wedge P(x)) \\
+		&= \exists x \in (A \cup B) \, P(x)
+	\end{align*}
+	Thus, $(\exists x \in A \, P(x)) \vee (\exists x \in B \, P(x))$ is equivalent to
+	$\exists x \in (A \cup B) \, P(x)$.
+	
+	\item To see why $(\exists x \in A \, P(x)) \wedge (\exists x \in B \, P(x))$ is not equivalent to
+	$\exists x \in (A \cap B) \, P(x)$, we consider two examples.
+	The first example is when $A$ and $B$ are disjoint.
+	In this case, $\exists x \in (A \cap B) \, P(x)$ is false simply because $A \cap B$ is empty.
+	Even when $A$ and $B$ are not disjoint, it is not necessarily the case that the $a \in A$
+	such that $P(a)$ is true be the same as the $b \in B$ such that $P(b)$ is true.
+	For example, consider $A = \{ 1, 2 \}$, $B = \{ 2, 3 \}$, and $P(x)$ standing for the statement
+	``$x$ is an odd number.''
+	In this case, both $A$ and $B$ contain odd numbers (1 and 3, respectively),
+	but $A \cap B = \{ 2 \}$ does not contain any odd numbers.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.2.11}
+Show that the statements $A \subseteq B$ and $A \setminus B = \varnothing$ are equivalent by writing each in logical symbols and then showing that the resulting formulas are equivalent.
+\end{statement}
+
+\begin{proof}
+We start by writing $A \subseteq B$ in logical symbols as $\forall x (x \in A \rightarrow B)$.
+\begin{align*}
+	\forall x (x \in A \rightarrow B)
+	&= \forall x (x \notin A \vee x \in B) \\
+	&= \forall x \neg (x \in A \wedge x \notin B) \\
+	&= \neg \exists x (x \in A \wedge x \notin B) \\
+	&= \neg \exists x (x \in  A \setminus B)
+\end{align*}
+This last statement means $A \setminus B = \varnothing$.
+Thus, we conclude that $A \subseteq B$ and $A \setminus B = \varnothing$ are equivalent.
+\end{proof}
+
+
+\begin{statement}{2.2.12}
+Show that the statements $C \subseteq A \cup B$ and $C \setminus A \subseteq B$ are equivalent by writing each in logical symbols and then showing that the resulting formulas are equivalent.
+\end{statement}
+
+\begin{proof}
+We start by writing $C \subseteq A \cup B$ in logical symbols as 
+$\forall x (x \in C \rightarrow x \in A \cup B)$.
+\begin{align*}
+	\forall x (x \in C \rightarrow x \in A \cup B)
+	&= \forall x (x \notin C \vee (x \in A \vee x \in B)) \\
+	&= \forall x (\neg (x \in C \wedge x \notin A) \vee x \in B) \\
+	&= \forall x (x \in C \setminus A \rightarrow x \in B)
+\end{align*}
+This last statement means that $C \setminus A \subseteq B$.
+Thus, we conclude that $C \subseteq A \cup B$ and $C \setminus A \subseteq B$ are equivalent.
+\end{proof}
+
+
+\begin{statement}{2.2.13}
+\begin{enumerate}
+	\item Show that the statements $A \subseteq B$ and $A \cup B = B$ are equivalent by writing each in logical symbols and then showing that the resulting formulas are equivalent.
+	\emph{Hint: You may find Exercise 1.5.11 useful.}
+	
+	\item Show that the statements $A \subseteq B$ and $A \cap B = A$ are equivalent.
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+Following the hint, we recall that in Exercise 1.5.11 we proved that
+$(P \vee Q) \leftrightarrow Q$ is equivalent to $P \rightarrow Q$, and that
+$(P \wedge Q) \leftrightarrow Q$ is equivalent to $Q \rightarrow P$.
+\begin{enumerate}
+	\item First we write out $A \cup B = B$ in logical symbols as
+	$\forall x (x \in A \cup B \leftrightarrow x \in B)$.
+	This is equivalent to $\forall x [(x \in A \vee x \in B) \leftrightarrow x \in B]$.
+	By the first equivalence from Exercise 1.5.11, with $P(x) = x \in A$ and $Q(x) = x \in B$,
+	this is equivalent to $\forall x (x \in A \rightarrow x \in B)$.
+	In other words, $A \subseteq B$.
+	Thus, $A \subseteq B$ and $A \cup B = B$ are equivalent.
+	
+	\item First we write out $A \cap B = A$ in logical symbols as
+	$\forall x (x \in A \cap B \leftrightarrow x \in A)$.
+	This is equivalent to $\forall x [(x \in A \wedge x \in B) \leftrightarrow x \in A]$.
+	By the second equivalence from Exercise 1.5.11, with $P(x) = x \in B$ and $Q(x) = x \in A$,
+	this is equivalent to $\forall x (x \in A \rightarrow x \in B)$.
+	In other words, $A \subseteq B$.
+	Thus, $A \subseteq B$ and $A \cap B = A$ are equivalent.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.2.14}
+Show that the statements $A \cap B = \varnothing$ and $A \setminus B = A$ are equivalent.
+\end{statement}
+
+\begin{proof}
+First we write out $A \cap B = \varnothing$ in logical symbols as 
+$\neg \exists x (x \in A \wedge x \in B)$.
+By the quantifier negation law, this is equivalent to $\forall x (x \notin A \vee x \notin B)$.
+This in turn is equivalent to $\forall x (x \in A \rightarrow x \notin B)$.
+Using the fact that $(P \wedge Q) \leftrightarrow Q$ is equivalent to $Q \rightarrow P$,
+with $P(x) = x \notin B$ and $Q(x) = x \in A$, we see that this is equivalent to
+$\forall x [(x \in A \wedge x \notin B) \leftrightarrow x \in A]$.
+In other words, $\forall x [x \in A \setminus B \leftrightarrow x \in A]$.
+Thus, we conclude that $A \cap B = \varnothing$ and $A \setminus B = A$ are equivalent.
+\end{proof}
+
+
+\begin{statement}{2.2.15}
+Let $T(x, y)$ mean ``$x$ is a teacher of $y$.''
+What do the following statements mean?
+Under what circumstances would each be true?
+Are any of them equivalent to each other?
+\begin{enumerate}
+	\item $\exists! y T(x, y)$
+	
+	\item $\exists x \exists! y T(x, y)$
+	
+	\item $\exists! x \exists y T(x, y)$
+	
+	\item $\exists y \exists! x T(x, y)$
+	
+	\item $\exists! x \exists! y T(x, y)$
+	
+	\item $\exists x \exists y [T(x, y) \wedge \neg \exists u \exists v (T(u, v) \wedge (u \neq x \vee v \neq y))]$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item This statement means ``Teacher $x$ has exactly one student, $y$.''
+	Note that the truth of this statement will depend on who Teacher $x$ is.
+	
+	\item To better understand the statement, we first expand out the $\exists!$ quantifier.
+	\begin{equation*}
+		\exists x \exists! y T(x, y)
+		= \exists x [\exists y [T(x, y) \wedge \neg \exists z (T(x, z) \wedge z \neq y)]]
+	\end{equation*}
+	This statement means ``There exists a teacher, $x$, with exactly one student, $y$.''
+	Note that for this statement to be true, there only needs to exist at least one teacher with a single student.
+	There can be multiple different teachers, each with exactly one student, and
+	there can be some of those teachers who share the same single student.
+	
+	\item To better understand the statement, we first expand out the $\exists!$ quantifier.
+	\begin{equation*}
+		\exists! x \exists y T(x, y)
+		= \exists x [\exists y T(x, y) \wedge \neg \exists z (\exists y T(z, y) \wedge z \neq x)]
+	\end{equation*}
+	This statement means ``There exists exactly one teacher, $x$, who has at least one student.''
+	Note that for this statement to be true, only the teacher needs to exist and be unique;
+	that unique teacher could have multiple students.
+	
+	\item To better understand the statement, we first expand out the $\exists!$ quantifier.
+	\begin{equation*}
+		\exists y \exists! x T(x, y)
+		= \exists y [\exists x [T(x, y) \wedge \neg \exists z (T(z, y) \wedge z \neq x)]]
+	\end{equation*}
+	This statement means ``There is a student, $y$, with exactly one teacher $x$.''
+	Note that for this statement to be true, there only needs to exist at least one student with a single teacher.
+	There can be multiple different students, each with exactly one teacher,
+	and there can be some of those students who share the same single teacher.
+	
+	\item To better understand the statement, we first expand out the second $\exists!$ quantifier.
+	\begin{align*}
+		& \exists! x \exists! y T(x, y) \\
+		&= \exists! x [\exists y (T(x, y) \wedge \neg \exists z (T(x, z) \wedge z \neq y))] \\
+		&= \exists! x [\exists y (T(x, y) \wedge \forall z (T(x, z) \rightarrow z = y))]
+	\end{align*}
+	This statement means ``There is a unique teacher, $x$, with exactly one student, $y$.''
+	Note that this statement is still true if there exist other teachers who have multiple students.
+	There just cannot be any teachers aside from $x$ who have exactly one student.
+	
+	\item To better understand the statement, we use the quantifier negation law on the
+	inner negated quantifier.
+	\begin{align*}
+		& \exists x \exists y 
+			[T(x, y) \wedge \neg \exists u \exists v (T(u, v) \wedge (u \neq x \vee v \neq y))] \\
+		&= \exists x \exists y
+			[T(x, y) \wedge \forall u \forall v (\neg T(u, v) \vee (u = x \wedge v = y))] \\
+		&= \exists x \exists y
+			[T(x, y) \wedge \forall u \forall v (T(u, v) \rightarrow (u = x \wedge v = y))]
+	\end{align*}
+	This statement means ``There are people, $x$ and $y$, such that $x$ is $y$'s teacher, 
+	and for all other people, $u$ and $v$, if $u$ is $v$'s teacher, then $u = x$ and $v = y$.''
+	In other words, $x$ and $y$ are the only people with a student-teacher relationship,
+	and in particular $x$ is $y$'s teacher.
+\end{enumerate}
+\emph{Velleman may want us to consider the fifth and sixth statements to be equivalent to each other, but both expanding out the definition of $\exists!$ and considering the following example seem to say otherwise.}
+
+To see why the fifth and sixth statements are not equivalent,
+consider the following statement: $P(c, x)$ stands for $x^2 + 3x + c = 0$,
+where the universe of discourse is $\BC$.
+By the quadratic formula, the values of $c$ and $x$ which make $P(c, x)$ true satisfy
+\begin{equation*}
+	x = \frac{-3 \pm \sqrt{9 - 4c}}{2}.
+\end{equation*}
+When $9 - 4c > 0$, there are two distinct real solutions.
+When $9 - 4c = 0$, or in other words when $c = 9/4$, there is exactly one real solution, $x = -3/2$.
+Lastly, when $9 - 4c < 0$, there are two distinct complex solutions.
+Since there is a unique value of $c$ for which there is exactly one solution to $x^2 + 3x + 2 = 0$,
+the statement $\exists! c \exists! x P(c, x)$ is true.
+However, since there are other values of $c$ which give different solutions to $x^2 + 3x + 2 = 0$,
+the statement 
+$\exists c \exists x [P(c, x) \wedge \forall u \forall v (P(u, v) \rightarrow (u = c \wedge v = x))]$
+is false.
+\end{proof}
+
+
+\begin{statement}{2.3.1}
+Analyze the logical forms of the following statements.
+You may use the symbols $\in, \notin, =, \neq, \wedge, \vee, \rightarrow, \leftrightarrow,
+ \forall, \text{ and } \exists$
+in your answers, but not $\subseteq, \nsubseteq, \mathscr{P}, \cap, \cup, \setminus, \{, \},
+\text{ or } \neg$.
+(Thus, you must write out the definitions of some set theory notation, and you must use
+equivalences to get rid of any occurrences of $\neg$.)
+\begin{enumerate}
+	\item $\mathcal{F} \subseteq \mathscr{P}(A)$
+	
+	\item $A \subseteq \{ 2n + 1 \mid n \in \BN \}$
+	
+	\item $\{ n^2 + n + 1 \mid n \in \BN \} \subseteq \{ 2n + 1 \mid n \in \BN \}$
+	
+	\item $\mathscr{P} \left( \bigcup_{i \in I} A_i \right) 
+	\nsubseteq \bigcup_{i \in I} \mathscr{P}(A_i)$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item We start out by expanding the logical form of being a subset.
+	\begin{align*}
+		\mathcal{F} \subseteq \mathscr{P}(A)
+		&= \forall X (X \in \mathcal{F} \rightarrow X \in \mathscr{P}(A)) \\
+		&= \forall X [X \in \mathcal{F} \rightarrow \forall x(x \in X \rightarrow x \in A)]
+	\end{align*}
+	
+	\item We start out by expanding the logical form of being a subset.
+	\begin{align*}
+		A \subseteq \{ 2n + 1 \mid n \in \BN \}
+		&= \forall a (a \in A \rightarrow a \in \{ 2n + 1 \mid n \in \BN \}) \\
+		&= \forall a [a \in A \rightarrow \exists n \in \BN (a = 2n + 1)]
+	\end{align*}
+	
+	\item We start out by expanding the logical form of being a subset.
+	\begin{align*}
+		& \{ n^2 + n + 1 \mid n \in \BN \} \subseteq \{ 2n + 1 \mid n \in \BN \} \\
+		&= \forall n \in \BN (n^2 + n + 1 \in \{ 2n + 1 \mid n \in \BN \}) \\
+		&= \forall n \in \BN \exists m \in \BN (n^2 + n + 1 = 2m + 1)
+	\end{align*}
+	
+	\item First, we write out the logical form of being an element of
+	$\mathscr{P} \left( \bigcup_{i \in I} A_i \right)$.
+	\begin{align*}
+		X \in \mathscr{P} \left( \bigcup_{i \in I} A_i \right)
+		&= X \subseteq \bigcup_{i \in I} A_i \\
+		&= \forall x \left( x \in X \rightarrow x \in \bigcup_{i \in I} A_i \right) \\
+		&= \forall x(x \in X \rightarrow \exists i \in I (x \in A_i))
+	\end{align*}
+	Next, we write out the logical form of not being an element of
+	$\bigcup_{i \in I} \mathscr{P}(A_i)$.
+	\begin{align*}
+		X \notin \bigcup_{i \in I} \mathscr{P}(A_i)
+		&= \nexists i \in I (X \subseteq A_i) \\
+		&= \nexists i \in I [\forall x (x \in X \rightarrow x \in A_i)] \\
+		&= \forall i \in I [\exists x (x \in X \wedge x \notin A_i)]
+	\end{align*}
+	Since the initial logical form of $\mathscr{P} \left( \bigcup_{i \in I} A_i \right) 
+	\nsubseteq \bigcup_{i \in I} \mathscr{P}(A_i)$ is
+	\begin{equation*}
+		\exists X 
+		\left[ X \in \mathscr{P} \left( \bigcup_{i \in I} A_i \right) \wedge
+		X \notin \bigcup_{i \in I} \mathscr{P}(A_i) \right],
+	\end{equation*}
+	we can combine the work we did analyzing the logical forms of being an element of
+	$\mathscr{P} \left( \bigcup_{i \in I} A_i \right)$
+	and not being an element of
+	$\bigcup_{i \in I} \mathscr{P}(A_i)$
+	to get the final logical form.
+	\begin{equation*}
+		\exists X 
+		\left[ \forall x(x \in X \rightarrow \exists i \in I (x \in A_i)) \wedge
+		\forall i \in I (\exists x (x \in X \wedge x \notin A_i)) \right]
+	\end{equation*}
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.3.2}
+Analyze the logical forms of the following statements.
+You may use the symbols $\in, \notin, =, \neq, \wedge, \vee, \rightarrow, \leftrightarrow,
+ \forall, \text{ and } \exists$
+in your answers, but not $\subseteq, \nsubseteq, \mathscr{P}, \cap, \cup, \setminus, \{, \},
+\text{ or } \neg$.
+(Thus, you must write out the definitions of some set theory notation, and you must use
+equivalences to get rid of any occurrences of $\neg$.)
+\begin{enumerate}
+	\item $x \in \bigcup \mathcal{F} \setminus \bigcup \mathcal{G}$
+	
+	\item $\{ x \in B \mid x \notin C \} \in \mathscr{P}(A)$
+	
+	\item $x \in \bigcap_{i \in I} (A_i \cup B_i)$
+	
+	\item $x \in \left( \bigcap_{i \in I} A_i \right) \cup \left( \bigcap_{i \in I} B_i \right)$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item We start out by writing the logical form of being an element of the union of a family of sets.
+	\begin{align*}
+		x \in \bigcup \mathcal{F} \setminus \bigcup \mathcal{G}
+		&= [\exists A (A \in \mathcal{F} \wedge x \in A)] \wedge
+			\neg [\exists B (B  \in \mathcal{G} \wedge x \in B)] \\
+		&= [\exists A (A \in \mathcal{F} \wedge x \in A)] \wedge
+			[\forall B (B \notin \mathcal{G} \vee x \notin B)] \\
+		&= [\exists A (A \in \mathcal{F} \wedge x \in A)] \wedge
+			[\forall B (B \in \mathcal{G} \rightarrow x \notin B)]
+	\end{align*}
+	
+	\item We start out by writing the logical form of being an element of the power set.
+	\begin{align*}
+		\{ x \in B \mid x \notin C \} \in \mathscr{P}(A)
+		&= \{ x \in B \mid x \notin C \} \subseteq A \\
+		&= \forall x (x \in B \wedge x \notin C \rightarrow x \in A)
+	\end{align*}
+	
+	\item We start out by writing the logical form of being an element of the intersection of a
+	family of sets.
+	\begin{align*}
+		x \in \bigcap_{i \in I} (A_i \cup B_i)
+		&= \forall i \in I (x \in A_i \cup B_i) \\
+		&= \forall i \in I (x \in A_i \vee x \in B_i)
+	\end{align*}
+	
+	\item We start out by writing the logical form of being an element of the union of two sets.
+	\begin{align*}
+		x \in \left( \bigcap_{i \in I} A_i \right) \cup \left( \bigcap_{i \in I} B_i \right)
+		&= \left( x \in \bigcap_{i \in I} A_i \right) \vee
+			\left( x \in \bigcap_{i \in I} B_i \right) \\
+		&= [\forall i \in I (x \in A_i)] \vee [\forall i \in I (x \in B_i)]
+	\end{align*}
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.3.3}
+We've seen that $\mathscr{P}(\varnothing) = \{ \varnothing \}$, and
+$\{ \varnothing \} \neq \varnothing$.
+What is $\mathscr{P}( \{ \varnothing \} )$?
+\end{statement}
+
+\begin{proof}
+Since $\mathscr{P}(\varnothing) = \{ \varnothing \}$,
+and $\{ \varnothing \} \neq \varnothing$,
+$\mathscr{P}(\{ \varnothing \}) = \{ \varnothing, \{ \varnothing \} \}$.
+\end{proof}
+
+
+\begin{statement}{2.3.4}
+Suppose $\mathcal{F} =$ \{\{red, green, blue\}, \{orange, red, blue\}, \{purple, red, green, blue\}\}.
+Find $\bigcap \mathcal{F}$ and $\bigcup \mathcal{F}$.
+\end{statement}
+
+\begin{proof}
+\begin{align*}
+	\bigcap \mathcal{F} &= \{ x \mid \forall A \in \mathcal{F} (x \in A) \} = \{ \text{red, blue} \} \\
+	\bigcup \mathcal{F} &= \{ x \mid \exists A \in \mathcal{F} (x \in A) \} =
+		\{ \text{red, green, blue, orange, purple} \}
+\end{align*}
+\end{proof}
+
+
+\begin{statement}{2.3.5}
+Suppose $\mathcal{F} =$ \{\{3, 7, 12\}, \{5, 7, 16\}, \{5, 12, 23\}\}.
+Find $\bigcap \mathcal{F}$ and $\bigcup \mathcal{F}$.
+\end{statement}
+
+\begin{proof}
+\begin{align*}
+	\bigcap \mathcal{F} &= \{ x \mid \forall A \in \mathcal{F} (x \in A) \} = \varnothing \\
+	\bigcup \mathcal{F} &= \{ x \mid \exists A \in \mathcal{F} (x \in A) \} =
+		\{ 3, 5, 7, 12, 16, 23 \}
+\end{align*}
+\end{proof}
+
+
+\begin{statement}{2.3.6}
+Let $I = \{ 2, 3, 4, 5 \}$, and for each $i \in I$ let $A_i = \{ i, i + 1, i - 1, 2i \}$.
+\begin{enumerate}
+	\item List the elements of all the sets $A_i$ for $i \in I$.
+	
+	\item Find $\bigcap_{i \in I} A_i$ and $\bigcup_{i \in I} A_i$.
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item For each $i \in I$, the sets $A_i$ are as follows.
+	\begin{align*}
+		A_2 &= \{ 2, 1, 3, 4 \} \\
+		A_3 &= \{ 3, 4, 2, 6 \} \\
+		A_4 &= \{ 4, 5, 3, 8 \} \\
+		A_5 &= \{ 5, 6, 4, 10 \}
+	\end{align*}
+	
+	\item We now compute $\bigcap_{i \in I} A_i$ and $\bigcup_{i \in I} A_i$
+	\begin{align*}
+		\bigcap_{i \in I} A_i &= \{ 4 \} \\
+		\bigcup_{i \in I} A_i &= \{ 1, 2, 3, 4, 5, 6, 8, 10 \}
+	\end{align*}
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.3.7}
+Let $P =$ \{Johann Sebastian Bach, Napoleon Bonaparte, Johann Wolfgang von Goethe,
+David Hume, Wolfgang Amadeus Mozart, Isaac Newton, George Washington\}
+and let $Y =$ \{1750, 1751, 1752, $\dots$, 1759\}.
+For each $y \in Y$, let $A_y =$ 
+\{$p \in P \mid$ the person $p$ was alive at some time during the year $y$\}.
+Find $\bigcup_{y \in Y} A_y$ and $\bigcap_{y \in Y} A_y$.
+\end{statement}
+
+\begin{proof}
+We can look at Wikipedia to find the birth and death dates for all of the people in set $P$.
+\begin{itemize}
+	\item \href{https://en.wikipedia.org/wiki/Johann_Sebastian_Bach}{Johann Sebastian Bach}:
+	31 March 1685 to 28 July 1750
+	
+	\item \href{https://en.wikipedia.org/wiki/Napoleon}{Napoleon Bonapart}:
+	15 August 1769 to 5 May 1821
+	
+	\item \href{https://en.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe}
+	{Johann Wolfgang von Goethe}: 28 August 1749 to 22 March 1832
+	
+	\item \href{https://en.wikipedia.org/wiki/David_Hume}{David Hume}:
+	7 May 1711 to 25 August 1776
+	
+	\item \href{https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart}
+	{Wolfgang Amadeus Mozart}: 27 January 1756 to 5 December 1791
+	
+	\item \href{https://en.wikipedia.org/wiki/Isaac_Newton}{Isaac Newton}:
+	25 December 1642 to 20 March 1726
+	
+	\item \href{https://en.wikipedia.org/wiki/George_Washington}{George Washington}:
+	22 February 1732 to 14 December 1799
+\end{itemize}
+From these birth and death dates, we can write out the elements for each set $A_y$.
+\begin{itemize}
+	\item $A_{1750} =$ \{Bach, von Goethe, Hume, Washington\}
+	
+	\item $A_{y} =$ \{von Goethe, Hume, Washington\} for $y = 1751, 1752, \dots, 1755$
+	
+	\item $A_{y} =$ \{von Goethe, Hume, Washington, Mozart\} for $y = 1756, 1752, \dots, 1759$
+\end{itemize}
+Now that we have written out the sets $A_y$, we see that
+$\bigcup_{y \in Y} A_y =$ \{Bach, von Goethe, Hume, Washington, Mozart\}, and
+$\bigcap_{y \in Y} A_y =$ \{von Goeth, Hume, Washington\}.
+\end{proof}
+
+
+\begin{statement}{2.3.8}
+Let $I = \{ 2, 3 \}$, and for each $i \in I$ let $A_i = \{ i, 2i \}$ and $B_i = \{ i, i + 1 \}$.
+\begin{enumerate}
+	\item List the elements of the sets $A_i$ and $B_i$ for $i \in I$.
+	
+	\item Find $\bigcap_{i \in I} (A_i \cup B_i)$
+	and $\left( \bigcap_{i \in I} A_i \right) \cup \left( \bigcap_{i \in I} B_i \right)$.
+	Are they the same?
+	
+	\item In parts (3) and (4) of Exercise 2.3.2 you analyzed the statements
+	$x \in \bigcap_{i \in I} (A_i \cup B_i)$ and
+	$x \in \left( \bigcap_{i \in I} A_i \right) \cup \left( \bigcap_{i \in I} B_i \right)$
+	What can you conclude from your answer to Part (2) about whether or not
+	these statements are equivalent?
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+\hfill
+\begin{enumerate}
+	\item $A_2 = \{ 2, 4 \}, A_3 = \{ 3, 6 \}, B_2 = \{ 2, 3 \}, B_3 = \{ 3, 4 \}$
+	
+	\item First we compute $\bigcap_{i \in I} (A_i \cup B_i)$.
+	\begin{equation*}
+		\bigcap_{i \in I} (A_i \cup B_i)
+		= (A_2 \cup B_2) \cap (A_3 \cup B_3)
+		= \{ 2, 3, 4 \} \cap \{ 3, 4, 6 \}
+		= \{ 3, 4 \}
+	\end{equation*}
+	Next we compute $\left( \bigcap_{i \in I} A_i \right) \cup \left( \bigcap_{i \in I} B_i \right)$.
+	\begin{equation*}
+		\left( \bigcap_{i \in I} A_i \right) \cup \left( \bigcap_{i \in I} B_i \right)
+		= (A_2 \cap A_3) \cup (B_2 \cap B_3)
+		= \varnothing \cup \{ 3 \}
+		= \{ 3 \}
+	\end{equation*}
+	As we can see, the two sets $\bigcap_{i \in I} (A_i \cup B_i)$ and
+	$\left( \bigcap_{i \in I} A_i \right) \cup \left( \bigcap_{i \in I} B_i \right)$ are different.
+	
+	\item Based on the answer to Part (2), we can conclude that the statements
+	$x \in \bigcap_{i \in I} (A_i \cup B_i)$ and
+	$x \in \left( \bigcap_{i \in I} A_i \right) \cup \left( \bigcap_{i \in I} B_i \right)$
+	are not equivalent.
+\end{enumerate}
+\end{proof}
+
+
+\begin{statement}{2.3.9}
+\begin{enumerate}
+	\item Analyze the logical forms of the statements
+	$x \in \bigcup_{i \in I} (A_i \setminus B_i)$,
+	$x \in \left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$, and
+	$x \in \left( \bigcap_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)$.
+	Do you think that any of these statements are equivalent to each other?
+	
+	\item Let $I$, $A_i$, and $B_i$ be defined as in Exercise 2.3.8.
+	Find $\bigcup_{i \in I} (A_i \setminus B_i)$,
+	$\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$, and
+	$\left( \bigcap_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)$.
+	Now do you think any of the statements in part (1) are equivalent?
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+% Fill in!
+\end{proof}
+
+
+\begin{statement}{2.3.10}
+Give an example of an index set $I$ and indexed families of sets
+$\{ A_i \mid i \in I \}$ and $\{ B_i \mid i \in I \}$
+such that
+$\bigcup_{i \in I} (A_i \cap B_i) \neq
+\left( \bigcup_{i \in I} A_i \right) \cap \left( \bigcup_{i \in I} B_i \right)$.
+\end{statement}
+
+\begin{proof}
+% Fill in!
+\end{proof}
+
+
+\begin{statement}{2.3.11}
+Show that for any sets $A$ and $B$,
+$\mathscr{P}(A \cap B) = \mathscr{P}(A) \cap \mathscr{P}(B)$
+by showing that the statements $x \in \mathscr{P}(A \cap B)$ and 
+$x \in \mathscr{P}(A) \cap \mathscr{P}(B)$ are equivalent.
+\end{statement}
+
+\begin{proof}
+% Fill in!
+\end{proof}
+
+
+\begin{statement}{2.3.12}
+Give examples of sets $A$ and $B$ for which
+$\mathscr{P}(A \cup B) \neq \mathscr{P}(A) \cup \mathscr{P}(B)$.
+\emph{Note: In my digital copy of the book this exercise has a typo and asks for examples 
+of sets for $A$ and $B$ for which
+$\mathscr{P}(A \cup B) = \mathscr{P}(A) \cup \mathscr{P}(B)$.}
+\end{statement}
+
+\begin{proof}
+One example of sets $A$ and $B$ for which
+$\mathscr{P}(A \cup B) \neq \mathscr{P}(A) \cup \mathscr{P}(B)$
+is the case where $A = \{ 1, 2 \}$ and $B = \{ 2, 3 \}$.
+In this situation, since $A \cup B = \{ 1, 2, 3 \}$, we have $\{ 1, 2, 3 \} \in \mathscr{P}(A \cup B)$.
+However, $\{ 1, 2, 3 \} \notin \mathscr{P}(A) \cup \mathscr{P}(B)$.
+Thus, for this choice of $A$ and $B$, 
+$\mathscr{P}(A \cup B) \neq \mathscr{P}(A) \cup \mathscr{P}(B)$.
+
+We can also consider two somewhat silly examples of sets $A$ and $B$ for which
+$\mathscr{P}(A \cup B) = \mathscr{P}(A) \cup \mathscr{P}(B)$.
+This first such example is where $A = B$.
+In this case, $\mathscr{P}(A \cup B) = \mathscr{P}(A)$
+and similarly $\mathscr{P}(A) \cup \mathscr{P}(B) = \mathscr{P}(A) \cup \mathscr{P}(A)
+= \mathscr{P}(A)$.
+The other silly example is when at least one of $A$ or $B$ is empty.
+For instance, if $B =\varnothing$, then $A \cup B = A$.
+This means $\mathscr{P}(A \cup B) = \mathscr{P}(A)$.
+In addition, since $\mathscr{P}(\varnothing) = \{ \varnothing \}$,
+we also have $\mathscr{P}(A) \cup \mathscr{P}(B) = \mathscr{P}(A) \cup \{ \varnothing \}
+= \mathscr{P}(A)$, as $\varnothing \in \mathscr{P}(A)$ for any set $A$.
+\end{proof}
+
+
+\begin{statement}{2.3.13}
+Verify the following identities by writing out (using logical symbols) what it means for an object $x$
+to be an element of each set and then using logical equivalences.
+\begin{enumerate}
+	\item $\bigcup_{i \in I} (A_i \cup B_i)
+	= \left( \bigcup_{i \in I} A_i \right) \cup \left( \bigcup_{i \in I} B_i \right)$
+	
+	\item $\left( \bigcap \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right)
+	= \bigcap (\mathcal{F} \cup \mathcal{G})$
+	
+	\item $\bigcap_{i \in I} (A_i \setminus B_i)
+	= \left( \bigcap_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+% Fill in!
+\end{proof}
+
+
+\begin{statement}{2.3.14}
+Sometimes each set in an indexed family of sets has \emph{two} indices.
+For this problem, use the following definitions:
+$I = \{ 1, 2 \}, J = \{ 3, 4 \}$.
+For each $i \in I$ and $j \in J$, let $A_{i, j} = \{ i, j, i + j \}$.
+Thus, for example, $A_{2, 3} = \{ 2, 3, 5 \}$.
+\begin{enumerate}
+	\item For each $j \in J$ let $B_j = \bigcup_{i \in I} A_{i, j} = A_{1, j} \cup A_{2, j}$.
+	Find $B_3$ and $B_4$.
+	
+	\item Find $\bigcap_{j \in J} B_j$.
+	(Note that, by replacing $B_j$ with its definition, we could say that
+	$\bigcap_{j \in J} B_j = \bigcap_{j \in J} \left( \bigcup_{i \in I} A_{i, j} \right)$.)
+	
+	\item Find $\bigcup_{i \in I} \left( \bigcap_{j \in J} A_{i, j} \right)$.
+	\emph{(Hint: You may want to do this in two steps, corresponding to parts (1) and (2).)}
+	Are $\bigcap_{j \in J} \left( \bigcup_{i \in I} A_{i, j} \right)$
+	and $\bigcup_{i \in I} \left( \bigcap_{j \in J} A_{i, j} \right)$ equal?
+	
+	\item Analyze the logical forms of the statements
+	$x \in \bigcap_{j \in J} \left( \bigcup_{i \in I} A_{i, j} \right)$
+	and $x \in \bigcup_{i \in I} \left( \bigcap_{j \in J} A_{i, j} \right)$.
+	Are the equivalent?
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+% Fill in!
+\end{proof}
+
+
+\begin{statement}{2.3.15}
+\begin{enumerate}
+	\item Show that if $\mathcal{F} = \varnothing$, then the statement $x \in \bigcup \mathcal{F}$
+	will be false no matter what $x$ is.
+	It follows that $\bigcup \varnothing = \varnothing$.
+	
+	\item Show that if $\mathcal{F} = \varnothing$, then the statement $x \in \bigcap \mathcal{F}$
+	will be true no matter what $x$ is.
+	In a context in which it is clear what the universe of discourse $U$ is,
+	we might therefore want to say that $\bigcap \varnothing = U$.
+	However, this has the unfortunate consequence that the notation $\bigcap \varnothing$
+	will mean different things in different contexts.
+	Furthermore, when working with sets whose elements are sets,
+	mathematicians often do not use a universe of discourse at all.
+	(For more on this, see the next exercise.)
+	For these reasons, some mathematicians will consider the notation $\bigcap \varnothing$
+	to be meaningless.
+	We will avoid this problem in this book by using the notation $\bigcap \mathcal{F}$
+	only in contexts in which we can be sure that $\mathcal{F} \neq \varnothing$.
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+% Fill in!
+\end{proof}
+
+
+\begin{statement}{2.3.16}
+In Section 2.3 we saw that a set can have other sets as elements.
+When discussing sets whose elements are sets, it might seem most natural to consider the universe of discourse to be the set of all sets.
+However, as we will see in this problem, assuming there is such a set leads to contradictions.
+
+Suppose $U$ were the set of all sets.
+Note that in particular $U$ is a set, so we would have $U \in U$.
+This is not yet a contradiction;
+although most sets are not elements of themselves, perhaps some sets are elements of themselves.
+But it suggests that the sets in the universe $U$ could be split into two categories:
+the unusual sets that, like $U$ itself, are elements of themselves,
+and the more typical sets that are not.
+Let $R$ be the set of sets in the second category.
+In other words, $R = \{ A \in U \mid A \notin A \}$.
+This means that for any set $A$ in the universe $U$,
+$A$ will be an element of $R$ if and only if $A \notin A$.
+In other words, we have $\forall A \in U (A \in R \leftrightarrow A \notin A)$.
+\begin{enumerate}
+	\item Show that applying this last fact to the set $R$ itself
+	(in other words, plugging in $R$ for $A$) leads to a contradiction.
+	This contradiction was discovered by Bertrand Russell (1872--1970) in 1901,
+	and is known as \emph{Russell's paradox}.
+	
+	\item Think some more about the paradox in part (1).
+	What do you think it tells us about sets?
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+% Fill in!
+\end{proof}
+\end{document}
