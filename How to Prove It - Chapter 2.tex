@@ -1241,13 +1241,66 @@ Let $I = \{ 2, 3 \}$, and for each $i \in I$ let $A_i = \{ i, 2i \}$ and $B_i = 
 	\item Let $I$, $A_i$, and $B_i$ be defined as in Exercise 2.3.8.
 	Find $\bigcup_{i \in I} (A_i \setminus B_i)$,
 	$\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$, and
-	$\left( \bigcap_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)$.
-	Now do you think any of the statements in part (1) are equivalent?
+	$\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)$.
+	Now do you think any of the statements in Part (1) are equivalent?
 \end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in!
+\hfill
+\begin{enumerate}
+	\item The first statement we analyze is $x \in \bigcup_{i \in I} (A_i \setminus B_i)$.
+	\begin{align*}
+		x \in \bigcup_{i \in I} (A_i \setminus B_i)
+		&= \exists i \in I (x \in A_i \setminus B_i) \\
+		&= \exists i \in I (x \in A_i \wedge x \notin B_i)
+	\end{align*}
+	Next, we consider 
+	$x \in \left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$.
+	\begin{align*}
+		x \in \left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)
+		&= \left[ x \in \bigcup_{i \in I} A_i \right]
+			\wedge \left[ x \notin \bigcup_{i \in I} B_i \right] \\
+		&= [\exists i \in I (x \in A_i)] \wedge [\forall i \in I (x \notin B_i)]
+	\end{align*}
+	Finally, we consider 
+	$x \in \left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)$.
+	\begin{align*}
+		x \in \left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)
+		&= \left[ x \in \bigcup_{i \in I} A_i \right]
+			\wedge \left[ x \notin \bigcap_{i \in I} B_i \right] \\
+		&= [\exists i \in I (x \in A_i)] \wedge [\exists i \in I (x \notin B_i)]
+	\end{align*}
+	I do not think that any of the statements are equivalent to each other.
+	The first states that there is some index $i \in I$ for which $x \in A_i$ and $x \notin B_i$,
+	but there may be other indices for which $x \in A_i \wedge x \notin B_i$ is false.
+	The second states that while there is some index $i \in I$ for which $x \in A_i$,
+	$x \notin B_i$ for all indices $i \in I$.
+	The third states simply that there are indices $i, j \in I$, which may be distinct,
+	such that $x \in A_i$ and $x \notin B_j$.
+	
+	\item Recall that $A_2 = \{ 2, 4 \}, A_3 = \{ 3, 6 \}, B_2 = \{ 2, 3 \}, B_3 = \{ 3, 4 \}$,
+	as defined in Exercise 2.3.8.
+	We now compute each of the sets discussed in Part 1.
+	\begin{equation*}
+		\bigcup_{i \in I} (A_i \setminus B_i)
+		= (A_2 \setminus B_2) \cup (A_3 \setminus B_3)
+		= \{ 4 \} \cup \{ 6 \}
+		= \{ 4, 6 \}
+	\end{equation*}
+	\begin{equation*}
+		\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)
+		= \{ 2, 3, 4, 6 \} \setminus \{ 2, 3, 4 \}
+		= \{ 6 \}
+	\end{equation*}
+	\begin{equation*}
+		\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)
+		= \{ 2, 3, 4, 6 \} \setminus \{ 3 \}
+		= \{ 2, 4, 6 \}
+	\end{equation*}
+	As we can see, none of the three sets are equal to each other.
+	This confirms the thoughts we had in Part (1) about the non-equivalence of the three statements.
+\end{enumerate}
 \end{proof}
 
 
