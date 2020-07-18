@@ -1337,12 +1337,31 @@ and see that the two sets are not equal.
 \begin{statement}{2.3.11}
 Show that for any sets $A$ and $B$,
 $\mathscr{P}(A \cap B) = \mathscr{P}(A) \cap \mathscr{P}(B)$
-by showing that the statements $x \in \mathscr{P}(A \cap B)$ and 
-$x \in \mathscr{P}(A) \cap \mathscr{P}(B)$ are equivalent.
+by showing that the statements $X \in \mathscr{P}(A \cap B)$ and 
+$X \in \mathscr{P}(A) \cap \mathscr{P}(B)$ are equivalent.
 \end{statement}
 
 \begin{proof}
-% Fill in!
+Let $A$ and $B$ be arbitrary sets.
+We start by writing the logical form for $X \in \mathscr{P}(A \cap B)$.
+\begin{equation*}
+	\forall x [x \in X \rightarrow (x \in A \wedge x \in B)]
+\end{equation*}
+By the equivalence of
+$P \rightarrow (Q \wedge R)$ and $(P \rightarrow Q) \wedge (P \rightarrow R)$, 
+which we proved in Exercise 1.5.12,
+we can rewrite the statement as
+\begin{equation*}
+	\forall x [(x \in X \rightarrow x \in A) \wedge (x \in X \rightarrow x \in B)].
+\end{equation*}
+Now we use the fact that the universal quantifier distributes over conjunction to end up with
+\begin{equation*}
+	\forall x (x \in X \rightarrow x \in A) \wedge \forall x (x \in X \rightarrow x \in B).
+\end{equation*}
+This is the logical form of the statement $X \in \mathscr{P}(A) \cap \mathscr{P}(B)$.
+Therefore, since the statements $X \in \mathscr{P}(A \cap B)$ and 
+$X \in \mathscr{P}(A) \cap \mathscr{P}(B)$ are equivalent,
+we conclude that $\mathscr{P}(A \cap B) = \mathscr{P}(A) \cap \mathscr{P}(B)$.
 \end{proof}
 
 
