@@ -1471,7 +1471,26 @@ Thus, for example, $A_{2, 3} = \{ 2, 3, 5 \}$.
 \end{statement}
 
 \begin{proof}
-% Fill in!
+\hfill
+\begin{enumerate}
+	\item We start by writing down the logical form of the statement $x \in \bigcup \mathcal{F}$.
+	\begin{equation*}
+		\exists A \in \mathcal{F} (x \in A) = \exists A (A \in \mathcal{F} \wedge x \in A)
+	\end{equation*}
+	When $\mathcal{F} = \varnothing$, the statement $A \in \mathcal{F}$ is always false.
+	Thus, when $\mathcal{F}$ is empty the statement $A \in \mathcal{F} \wedge x \in A$ is false
+	regardless of the choice of $x$.
+	From this, we conclude that $\bigcup \varnothing = \varnothing$.
+	
+	\item We start by writing down the logical form of the statement $x \in \bigcap \mathcal{F}$.
+	\begin{equation*}
+		\forall A \in \mathcal{F} (x \in A)
+		= \forall A (A \in \mathcal{F} \rightarrow x \in A)
+	\end{equation*}
+	When $\mathcal{F}$ is empty, the statement $A \in \mathcal{F}$ is always false.
+	Thus, the statement $A \in \mathcal{F} \rightarrow x \in A$ is true
+	regardless of the choice of $x$.
+\end{enumerate}
 \end{proof}
 
 
