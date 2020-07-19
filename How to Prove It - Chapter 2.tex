@@ -5,7 +5,7 @@
 \usepackage{framed}
 \usepackage{fullpage}
 \usepackage{hyperref}
-    \hypersetup{colorlinks=true,citecolor=blue,urlcolor =black,linkbordercolor={1 0 0}}
+    \hypersetup{colorlinks=true,citecolor=blue,urlcolor =blue,linkbordercolor={1 0 0}}
 \usepackage{mathtools}
 \usepackage[table]{xcolor}
 
@@ -1504,6 +1504,20 @@ In other words, we have $\forall A \in U (A \in R \leftrightarrow A \notin A)$.
 \end{statement}
 
 \begin{proof}
-% Fill in!
+\hfill
+\begin{enumerate}
+	\item Since $R$ is a set, and therefore is an element of $U$, then we can consider the statement
+	$R \in R \leftrightarrow R \notin R$.
+	This statement says that if $R \in R$, then $R \notin R$, and vice-versa.
+	In other words, we end up with the contradiction $R \in R \wedge R \notin R$.
+	
+	\item This paradox tells us that allowing for a set of all sets causes trouble,
+	and that we need to be more strict and precise about the definition of a set
+	beyond the naive definition of ``a collection of elements''.
+	For more discussion about Russell's paradox and the ways we can look at
+	\href{https://en.wikipedia.org/wiki/Russell\%27s_paradox}{Wikipedia}
+	or \href{https://plato.stanford.edu/entries/russell-paradox/}
+	{the Stanford encyclopedia of philosophy}.
+\end{enumerate}
 \end{proof}
 \end{document}
