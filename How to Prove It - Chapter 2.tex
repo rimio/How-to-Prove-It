@@ -1413,7 +1413,77 @@ to be an element of each set and then using logical equivalences.
 \end{statement}
 
 \begin{proof}
-% Fill in!
+\hfill
+\begin{enumerate}
+	\item We start by writing out the logical form of the statement
+	$x \in \bigcup{i \in I} (A_i \cup B_i)$.
+	\begin{align*}
+		\exists i \in I (x \in A_i \vee x \in B_i)
+		&= \exists i [i \in I \wedge (x \in A_i \vee x \in B_i)] \\
+		&= \exists i [(i \in I \wedge x \in A_i) \vee (i \in I \wedge x \in B_i)] \\
+		&= \exists i (i \in I \wedge x \in A_i) \vee \exists i (i \in I \wedge x \in B_i)
+	\end{align*}
+	Note that this last equivalence comes from Exercise 2.2.6, in which we proved that the
+	existential quantifier distributes over disjunction.
+	We then continue the chain of equivalences from the last statement
+	\begin{align*}
+		\exists i \in I (x \in A_i) \vee \exists i \in I (x \in B_i)
+		&= \left( x \in \bigcup_{i \in I} A_i \right)
+			\vee \left( x \in \bigcup_{i \in I} B_i \right) \\
+		&= x \in \left( \bigcup_{i \in I} A_i \right) \cup \left( \bigcup_{i \in I} B_i \right)
+	\end{align*}
+	Thus, we conclude that
+	$\bigcup_{i \in I} (A_i \cup B_i)
+	= \left( \bigcup_{i \in I} A_i \right) \cup \left( \bigcup_{i \in I} B_i \right)$.
+	
+	\item We start by writing out the logical form of the statement
+	 $x \in \left( \bigcap \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right)$.
+	 \begin{align*}
+	 	\left( x \in \bigcap \mathcal{F} \right) \wedge \left( x \in \bigcap \mathcal{G} \right)
+	 	&= [\forall A \in \mathcal{F} (x \in A)] \wedge [\forall A \in \mathcal{G} (x \in A)] \\
+	 	&= [\forall A (A \in \mathcal{F} \rightarrow x \in A)] \wedge
+	 		[\forall A (A \in \mathcal{G} \rightarrow x \in A)] \\
+		&= \forall A [(A \in \mathcal{F} \rightarrow x \in A) \wedge 
+			(A \in \mathcal{G} \rightarrow x \in A)] \\
+		&= \forall A [(A \in \mathcal{F} \vee A \in \mathcal{G}) \rightarrow x \in A]
+	 \end{align*}
+	 Note that this last equivalence comes from Part (1) of Exercise 1.5.7,
+	 in which we proved that $(P \rightarrow R) \wedge (Q \rightarrow R)$ is equivalent to
+	 $(P \vee Q) \rightarrow R$.
+	 We then continue the chain of equivalences from the last statement.
+	 \begin{align*}
+	 	\forall A (A \in \mathcal{F} \cup \mathcal{G} \rightarrow x \in A)
+	 	&= \forall A \in \mathcal{F} \cup \mathcal{G} (x \in A) \\
+	 	&= x \in \bigcap (\mathcal{F} \cup \mathcal{G})
+	 \end{align*}
+	 Thus, we conclude that
+	 $\left( \bigcap \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right)
+	= \bigcap (\mathcal{F} \cup \mathcal{G})$.
+	
+	\item We start by writing out the logical form of the statement
+	$x \in \bigcap_{i \in I} (A_i \setminus B_i)$.
+	\begin{align*}
+		\forall i \in I (x \in A_i \wedge x \notin B_i) 
+		&= \forall i [i \in I \rightarrow (x \in A_i \wedge x \notin B_i)] \\
+		&= \forall [(i \in I \rightarrow x \in A_i) \wedge (i \in I \rightarrow x \notin B_i)]
+	\end{align*}
+	Not that this last equivalenc comes from Exercise 1.5.12,
+	in which we proved that $P \rightarrow (Q \wedge R)$ is equivalent to
+	$(P \rightarrow Q) \wedge (P \rightarrow R)$.
+	We then continue the chain of equivalences from the last statement.
+	\begin{align*}
+		\forall i (i \in I \rightarrow x \in A_i) \wedge \forall i (i \in I \rightarrow x \notin B_i)
+		&= \forall i \in I (x \in A_i) \wedge \forall i (i \notin I \vee x \notin B_i) \\
+		&= \left( x \in \bigcap_{i \in I} A_i \right) \wedge \forall i \neg (i \in I \wedge x \in B_i) \\
+		&= \left( x \in \bigcap_{i \in I} A_i \right) \wedge \neg \exists i (i \in I \wedge x \in B_i) \\
+		&= \left( x \in \bigcap_{i \in I} A_i \right) \wedge \neg \exists i \in I (x \in B_i) \\
+		&= \left( x \in \bigcap_{i \in I} A_i \right) \wedge \left( x \notin \bigcup_{i \in I} B_i \right) \\
+		&= x \in \left( \bigcap_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)
+	\end{align*}
+	Thus, we conclude that
+	$\bigcap_{i \in I} (A_i \setminus B_i)
+	= \left( \bigcap_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$.
+\end{enumerate}
 \end{proof}
 
 
