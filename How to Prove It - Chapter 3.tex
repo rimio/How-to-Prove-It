@@ -80,7 +80,23 @@ Consider the following theorem.
 \end{statement}
 
 \begin{proof}
-% Fill in!
+\hfill
+\begin{enumerate}
+	\item This theorem has three hypotheses: $n$ is an integer, $n > 1$, and $n$ is not prime.
+	The conclusion of the theorem is that $2^n - 1$ is not prime.
+	In the case when $n = 6 = 2 \times 3$, all of the hypotheses are satisfied,
+	so the theorem tells us that $2^6 - 1$ is not prime.
+	We can directly check that $2^6 - 1 = 63 = 3^2 \times 7$ is not prime.
+	
+	\item In the case when $n = 15 = 3 \times 5$, all of the hypotheses are satisfied.
+	This means that the theorem tells us that $2^{15} - 1$ is not prime.
+	As discussed in Part (1) of Exercise I.1, $2^{15} - 1 = 32767 = 31 \times 1057$.
+	
+	\item In the case when $n = 11$, not all of the hypotheses are satisfied.
+	In particular, 11 is prime.
+	Because not all of the hypotheses of the theorem are satisfied,
+	we cannot draw any conclusions from it.
+\end{enumerate}
 \end{proof}
 
 
