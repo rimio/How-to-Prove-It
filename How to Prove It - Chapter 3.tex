@@ -121,7 +121,38 @@ Consider the following theorem.
 \end{statement}
 
 \begin{proof}
-% Fill in!
+\hfill
+\begin{enumerate}
+	\item This theorem has one implicit hypothesis, that $a, b, c$ are all real numbers,
+	and one explicit hypothesis, that $b^2 > 4ac$.
+	The conclusion of the theorem is that the quadratic equation $ax^2 + bx + c = 0$
+	has exactly two real solutions.
+	
+	\item To give an instance of the theorem, we only need to specify values for $a$, $b$, and $c$
+	since those are the only variables listed in the hypothesis.
+	The values of $x$ associated with a specific instance of the theorem are determined
+	by the given values of $a, b, c$, since the $x$ values are the two real solutions to the
+	quadratic equation $ax^2 + bx + c = 0$.
+	In other words, $x$ is a dummy variable for the set 
+	$S = \{ x \in \BR \mid ax^2 + bx + c = 0 \}$ for given values of $a, b, c$.
+	When phrased this way, the conclusion of theorem states that $S$ contains
+	exactly two distinct elements.
+	
+	\item In the case $a = 2, b = -5, c = 3$, we have $b^2 = (-5)^2 = 25$ 
+	and $4ac = 4(2)(3) = 24$.
+	Thus, the hypotheses $b^2 > 4ac$ is satisfied, and the theorem applies.
+	We can then conclude that the quadratic equation $2x^2 - 5x + 3 = 0$ has two real solutions.
+	Factoring the quadratic as $(2x - 3)(x - 1) = 0$, we can directly check that the two
+	real solutions are $x = 3/2$ and $x = 1$.
+	
+	\item In the case $a = 2, b = 4, c = 3$, we have $b^2 = 4^2 = 16$
+	and $4ac = 4(2)(3) = 24$.
+	In other words, $b^2 \ngtr 4ac$.
+	Since not all of the hypotheses of the theorem are satisfied,
+	we cannot draw any conclusions from it.
+	In particular, the theorem does not tell us anything about the solution set of
+	the quadratic equation $2x^2 + 4x + 3 = 0$.
+\end{enumerate}
 \end{proof}
 
 
