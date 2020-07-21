@@ -211,7 +211,15 @@ Prove that if $a < b < 0$ then $a^2 > b^2$.
 \end{statement}
 
 \begin{proof}
-% Fill in!
+Suppose $a < b < 0$.
+Then $a - b < 0$ and $a + b < 0$.
+We can then multiply both sides of the inequality $a - b < 0$ by $a + b$
+to get $(a - b)(a + b) = a^2 - b^2 > 0$.
+Since $a^2 - b^2 > 0$, it follows that $a^2 > b^2$.
+Therefore, if $a < b < 0$ then $a^2 > b^2$.
+
+\emph{Note that an alternative strategy would be to mimic the proof of the theorem in Example 3.1.2 and instead multiply the given inequality by the negative numbers $a$ and $b$, respectively.
+This would then result in the chain of inequalities $a^2 > ab > b^2 > 0$, which also gives the desired conclusion.}
 \end{proof}
 
 
