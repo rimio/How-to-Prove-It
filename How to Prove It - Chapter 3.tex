@@ -276,7 +276,13 @@ Prove that if $x \in A$, then if $x \in D$ then $x \notin B$.
 \end{statement}
 
 \begin{proof}
-% Fill in!
+Suppose $x \in A$.
+We prove the contrapositve statement: if $x \in B$ then $x \notin D$.
+Now suppose $x \in B$.
+Then, since $x \in A$ as well, it follows that $x \in A \cap B$.
+As $A \cap B \subseteq C \setminus D$, it then follows that $x \in C \setminus D$.
+From this, we conclude that $x \notin D$, which completes our proof of the contrapositive statement.
+Therefore, if $x \in A$, then if $x \in D$ then $x \notin B$.
 \end{proof}
 
 
