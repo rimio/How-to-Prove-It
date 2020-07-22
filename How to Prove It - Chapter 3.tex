@@ -244,7 +244,13 @@ $a^5 - a = (a^3 - a) \cdot \underline{?}$.})
 \end{statement}
 
 \begin{proof}
-% Fill in.
+Suppose $a^3 > a$, which we can rewrite as $a^3 - a > 0$.
+Following the hint, we note that we can factor $a^5 - a$ as $(a^3 - a)(a^2 + 1)$.
+Since $a^2 \geq 0$ for all $a \in \BR$, we know that $a^2 + 1 > 0$.
+Thus, multiplying the inequality $a^3 - a > 0$ by the positive number $a^2 + 1$
+gives us $0 < (a^3 - a)(a^2 + 1) = a^5 - a$.
+In other words, we conclude that $a^5 > a$.
+Therefore, if $a^3 > a$ then $a^5 > a$.
 \end{proof}
 
 
