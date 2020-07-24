@@ -439,7 +439,20 @@ Consider the following incorrect theorem.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item The attempted proof makes a mistake in the statement
+	``Since $x \neq 3$, $x^2 \neq 9$, so $x^2 - 9 \neq 0$.''
+	We only know that $x \neq 3$, but otherwise $x$ could be any other real number.
+	In particular, we could have $x = -3$, which would then result in $x^2 = 9$.
+	Since the rest of the proof hinges on the assumption that $x^2 \neq 9$, it is rendered invalid.
+	
+	\item Consider $x = -3$ and $y = 1$.
+	In this case, $x^2y = (-3)^2(1) = 9$ and $9y = 9(1) = 9$, but $y \neq 0$.
+	Therefore, this counter example shows that the theorem is correct,
+	since we were able to find values of $x$ and $y$ which satisfy the hypotheses but
+	then lead to an incorrect conclusion.
+\end{enumerate}
 \end{proof}
 
 
