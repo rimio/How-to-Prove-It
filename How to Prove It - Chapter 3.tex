@@ -457,7 +457,15 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.1}
-% Fill in
+This problem could be solved by using truth tables, but don't do it that way.
+Instead, use the methods for writing proofs discussed so far in this chapter.
+\begin{enumerate}
+	\item Suppose $P \rightarrow Q$ and $Q \rightarrow R$ are both true.
+	Prove that $P \rightarrow R$ is true.
+	
+	\item Suppose $\neg R \rightarrow (P \rightarrow \neg Q)$ is true.
+	Prove that $P \rightarrow (Q \rightarrow R)$ is true.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -466,7 +474,15 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.2}
-% Fill in
+This problem could be solved using truth tables, but don't do it that way.
+Instead, use the methods for writing proofs discussed so far in this chapter.
+\begin{enumerate}
+	\item Suppose $P \rightarrow Q$ and $R \rightarrow \neg Q$ are both true.
+	Prove that $P \rightarrow \neg R$ is true.
+	
+	\item Suppose that $P$ is true.
+	Prove that $Q \rightarrow \neg (Q \rightarrow \neg P)$ is true.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -475,7 +491,8 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.3}
-% Fill in
+Suppose $A \subseteq C$, and $B$ and $C$ are disjoint.
+Prove that if $x \in A$ then $x \notin B$.
 \end{statement}
 
 \begin{proof}
@@ -484,7 +501,8 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.4}
-% Fill in
+Suppose that $A \setminus B$ is disjoint from $C$ and $x \in A$.
+Prove that if $x \in C$ then $x \in B$.
 \end{statement}
 
 \begin{proof}
@@ -493,7 +511,7 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.5}
-% Fill in
+Prove that it cannot be the case that $x \in A \setminus B$ and $x \in B \setminus C$.
 \end{statement}
 
 \begin{proof}
@@ -502,7 +520,11 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.6}
-% Fill in
+Use the method of proof by contradiction to prove the theorem in Example 3.2.1.
+\begin{theorem}
+	Suppose $A \cap C \subseteq B$ and $a \in C$.
+	Prove that $a \notin A \setminus B$.
+\end{theorem}
 \end{statement}
 
 \begin{proof}
@@ -511,7 +533,11 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.7}
-% Fill in
+Use the method of proof by contradiction to prove the theorem in Example 3.2.5.
+\begin{theorem}
+	Suppose $A \subseteq B$, $a  \in A$, and $a \notin B \setminus C$.
+	Prove that $a \in C$.
+\end{theorem}
 \end{statement}
 
 \begin{proof}
@@ -520,7 +546,8 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.8}
-% Fill in
+Suppose that $y + x = 2y - x$, and $x$ and $y$ are not both zero.
+Prove that $y \neq 0$.
 \end{statement}
 
 \begin{proof}
@@ -529,7 +556,8 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.9}
-% Fill in
+Suppose that $a$ and $b$ are nonzero real numbers.
+Prove that if $a < 1/a < b < 1/b$ then $a < -1$.
 \end{statement}
 
 \begin{proof}
@@ -538,7 +566,8 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.10}
-% Fill in
+Suppose that $x$ and $y$ are real numbers.
+Prove that if $x^2y = 2x + y$, then if $y \neq 0$ then $x \neq 0$.
 \end{statement}
 
 \begin{proof}
@@ -547,7 +576,8 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.11}
-% Fill in
+Suppose that $x$ and $y$ are real numbers.
+Prove that if $x \neq 0$, then if $y = (3x^2 + 2y) / (x^2 + 2)$ then $y = 3$.
 \end{statement}
 
 \begin{proof}
@@ -556,7 +586,22 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.12}
-% Fill in
+Consider the following incorrect theorem.
+\begin{theorem}
+	Suppose $x$ and $y$ are real numbers and $x + y = 10$.
+	Then $x \neq 3$ and $y \neq 8$.
+\end{theorem}
+\begin{enumerate}
+	\item What's wrong with the following proof of the theorem?
+	\begin{proof}
+		Suppose the conclusion of the theorem if false.
+		Then $x = 3$ and $y = 8$.
+		But then $x + y = 11$, which contradicts the given information that $x + y = 10$.
+		Therefore, the conclusion must be true.
+	\end{proof}
+	
+	\item Show that the theorem is incorrect by finding a counterexample.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -565,7 +610,24 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.13}
-% Fill in
+Consider the following incorrect theorem.
+\begin{theorem}
+	Suppose that $A \subseteq C$, $B \subseteq C$, and $x \in A$.
+	Then $x \in B$.
+\end{theorem}
+\begin{enumerate}
+	\item What's wrong with the following proof of the theorem?
+	\begin{proof}
+		Suppose that $x \notin B$.
+		Since $x \in A$ and $A \subseteq C$, $x \in C$.
+		Since $x \notin B$ and $B \subseteq C$, $x \notin C$.
+		But now we have proven both $x \in C$ and $x \notin C$,
+		so we have reached a contradiction.
+		Therefore $x \in B$.
+	\end{proof}
+	
+	\item Show that the theorem is incorrect by finding a counterexample.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -574,7 +636,7 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.14}
-% Fill in
+Use truth tables so show that modus tollens is a valid rule of inference.
 \end{statement}
 
 \begin{proof}
@@ -583,7 +645,11 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.15}
-% Fill in
+Use truth tables to check the correctness of the theorem in Example 3.2.4.
+\begin{theorem}
+	Suppose $P \rightarrow (Q \rightarrow R)$.
+	Prove that $\neg R \rightarrow (P \rightarrow \neg Q)$.
+\end{theorem}
 \end{statement}
 
 \begin{proof}
@@ -592,7 +658,7 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.16}
-% Fill in
+Use truth tables to check the correctness of the statements in Exercise 3.2.1.
 \end{statement}
 
 \begin{proof}
@@ -601,7 +667,7 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.17}
-% Fill in
+Use truth tables to check the correctness of the statements in Exercise 3.2.2.
 \end{statement}
 
 \begin{proof}
@@ -610,7 +676,20 @@ Consider the following incorrect theorem.
 
 
 \begin{statement}{3.2.18}
-% Fill in
+Can the proof in Example 3.2.2 be modified to prove that if $x^2 + y = 13$ and $x \neq 3$ then $y \neq 4$?
+Explain.
+Below is the theorem from Example 3.2.2 and its proof.
+\begin{theorem}
+	If $x^2 + y = 13$ and $y \neq 4$ then $x \neq 3$.
+\end{theorem}
+\begin{proof}
+	Suppose $x^2 + y = 13$ and $y \neq 4$.
+	Suppose $x = 3$.
+	Substituting this into the equation $x^2 + y = 13$, we get $9 + y = 13$, so $y = 4$.
+	But this contradicts the fact that $y \neq 4$.
+	Therefore $x \neq 3$.
+	Thus, if $x^2 + y = 13$ and $y \neq 4$ then $x \neq 3$.
+\end{proof}
 \end{statement}
 
 \begin{proof}
