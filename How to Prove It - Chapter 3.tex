@@ -469,7 +469,27 @@ Instead, use the methods for writing proofs discussed so far in this chapter.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $P$ is true.
+	Then, since by the assumption $P \rightarrow Q$ is also true, we apply modus ponens
+	to conclude that $Q$ is true.
+	Now we apply modus ponens again, this time the fact that $Q$ is true and the assumption
+	$Q \rightarrow R$ is true to conclude that $R$ is true.
+	Therefore, $P \rightarrow R$ is true.
+	
+	\item Suppose $P$ is true.
+	Now we want to show that $Q \rightarrow R$ is true.
+	This is equivalent to proving the contrapositive statement, $\neg R \rightarrow \neg Q$.
+	To prove $\neg R \rightarrow \neg Q$, suppose $\neg R$ is true.
+	Then, we can combine this assumption with the given assumption that
+	$\neg R \rightarrow (P \rightarrow \neg Q)$ is true to conclude that
+	$P \rightarrow \neg Q$ is true by modus ponens.
+	Now we apply modus ponens again with $P$ and $P \rightarrow \neg Q$ to conclude
+	that $\neg Q$ is true.
+	Therefore, $\neg R \rightarrow \neg Q$ is true, so we conclude that $Q \rightarrow R$ is true.
+	Finally, we conclude that $P \rightarrow (Q \rightarrow R)$ is true.
+\end{enumerate}
 \end{proof}
 
 
