@@ -506,7 +506,22 @@ Instead, use the methods for writing proofs discussed so far in this chapter.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $P$ is true.
+	Then, since $P$ and $P \rightarrow Q$ are both true, we conclude that $Q$ is true
+	by modus ponens.
+	Next, since $Q$ and $R \rightarrow \neg Q$ are both true, we conclude that $\neg R$
+	is true by modus tollens.
+	Therefore, we conclude that $P \rightarrow \neg R$ is true.
+	
+	\item We prove the equivalent contrapositive statement: 
+	that $(Q \rightarrow \neg P) \rightarrow \neg Q$ is true.
+	Suppose $Q \rightarrow \neg P$ is true.
+	Then, since $P$ is true by assumption, we use modus tollens to conclude that $\neg Q$ is true.
+	Thus, $(Q \rightarrow \neg P) \rightarrow \neg Q$ is true.
+	In other words, we conclude that $Q \rightarrow \neg (Q \rightarrow \neg P)$ is true.
+\end{enumerate}
 \end{proof}
 
 
