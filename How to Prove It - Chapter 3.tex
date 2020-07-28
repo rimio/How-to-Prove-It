@@ -544,7 +544,12 @@ Prove that if $x \in C$ then $x \in B$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We prove the equivalent contrapositive statement: if $x \notin B$ then $x \notin C$.
+Suppose $x \notin B$.
+Then, since by assumption $x \in A$, $x \in A \setminus B$.
+Since $A \setminus B$ is disjoint from $C$, it follows that $x \notin C$.
+Thus, if $x \notin B$ then $x \notin C$.
+In other words, we conclude that if $x \in C$ then $x \in B$.
 \end{proof}
 
 
