@@ -621,7 +621,27 @@ Prove that if $a < 1/a < b < 1/b$ then $a < -1$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $a < 1/a < b < 1/b$.
+We then break the proof into two steps: proving that $a < 0$ and then proving that $a < -1$.
+	\begin{lemma}
+		$a < 0$
+	\end{lemma}
+	\begin{proof}
+	Suppose, towards a contradiction, that $a \geq 0$.
+	Since $a$ is nonzero, we can assume, without loss of generality, that $a > 0$.
+	Then, since $0 < a < b$, we can apply Exercise 3.1.6 to conclude that $1/b < 1/a$.
+	This, however, contradicts the fact that $1/a < 1/b$.
+	Thus, we conclude that $a < 0$.
+	\end{proof}
+Now that we have proved that $a < 0$ in the above lemma, we move on to showing that $a < -1$.
+We once again use proof by contradiction.
+Suppose, towards a contradiction, that $a \geq -1$.
+In other words, $-1 \leq a < 0$.
+Since $a$ is negative, dividing both sides of the inequality $a \geq -1$ gives us $1 \leq -1/a$.
+Rearranging this inequality results in $-1 \geq 1/a$.
+Thus, we have $a \geq -1 \geq 1/a$, or most importantly, $a \geq 1/a$.
+This however, contradicts the fact that $a < 1/a$, so we must instead have $a < -1$, as desired.
+Therefore, we conclude that if $a < 1/a < b < 1/b$ then $a < -1$.
 \end{proof}
 
 
