@@ -685,7 +685,7 @@ Consider the following incorrect theorem.
 \begin{enumerate}
 	\item What's wrong with the following proof of the theorem?
 	\begin{proof}
-		Suppose the conclusion of the theorem if false.
+		Suppose the conclusion of the theorem is false.
 		Then $x = 3$ and $y = 8$.
 		But then $x + y = 11$, which contradicts the given information that $x + y = 10$.
 		Therefore, the conclusion must be true.
@@ -696,7 +696,18 @@ Consider the following incorrect theorem.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item The proof incorrectly negates the conclusion when attempting to begin the proof
+	by contradiction.
+	The conclusion, that $x \neq 3$ and $y \neq 8$, has the logical form 
+	$(x \neq 3) \wedge (y \neq 8)$, so its negation is $(x = 3) \vee (y = 8)$, by DeMorgan's laws.
+	Thus, the correct negation of the conclusion is that $x = 3$ \textbf{or} $y = 8$.
+	
+	\item One counterexample is the case of $x = 3$ and $y = 7$.
+	These are two real numbers such that $x + y = 10$, but they do not satisfy the conclusion
+	that $x \neq 3$ \textbf{and} $y \neq 8$, as only $y \neq 8$.
+\end{enumerate}
 \end{proof}
 
 
