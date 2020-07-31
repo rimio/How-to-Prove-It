@@ -754,7 +754,19 @@ Use truth tables so show that modus tollens is a valid rule of inference.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Recall that modus tollens says that if $P \rightarrow Q$ is true and $Q$ is false, then you can conclude that $P$ must also be false.
+We now construct a truth table to evaluate the validity of this form of argument.
+\begin{equation*}
+	\begin{array}{| c c | c c | c |}
+		P & Q & P \rightarrow Q & \neg Q & \neg P \\
+		\hline
+		T & T & T & F & F \\
+		T & F & F & T & F \\
+		F & T & T & F & T \\
+		\rowcolor[HTML]{85C0F9} F & F & T & T & T
+	\end{array}
+\end{equation*}
+This form of argument is valid because whenever all of the premises, $P \rightarrow Q$ and $\neg Q$, are true, the conclusion, $\neg P$, is also true, as indicated by the blue highlighted row.
 \end{proof}
 
 
