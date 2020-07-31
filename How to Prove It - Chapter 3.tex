@@ -733,7 +733,19 @@ Consider the following incorrect theorem.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item The proof incorrectly concludes that since $x \notin B$ and $B \subseteq C$, $x \notin C$.
+	This is an incorrect conclusion because $B$ may be a proper subset of $C$,
+	or in other words $C \setminus B$ may be nonempty.
+	We can also confirm the incorrectness of this conclusion by examining the logical form of
+	the statement $B \subseteq C$, which is $\forall x (x \in B \rightarrow x \in C)$.
+	This is equivalent to $\forall x (x \notin B \vee x \in C)$, which is still true in the case
+	when there are elements $x$ such that $x \notin B$ and $x \in C$.
+	
+	\item Consider the case where $A = \{ 1 \}$, $B = \{ 2 \}$, $C = \{ 1, 2 \}$, and $x = 1$.
+	Clearly $x \in A$, $A \subseteq C$, and $B \subseteq C$, but $x \notin B$.
+\end{enumerate}
 \end{proof}
 
 
