@@ -807,7 +807,53 @@ Use truth tables to check the correctness of the statements in Exercise 3.2.1.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $P \rightarrow Q$ and $Q \rightarrow R$ are both true.
+	Prove that $P \rightarrow R$ is true.
+	\begin{equation*}
+		\begin{array}{| c c c | c  c | c |}
+		P & Q & R & P \rightarrow Q &  Q \rightarrow R & P \rightarrow R\\
+		\hline
+		\rowcolor[HTML]{85C0F9} T & T & T & T & T & T \\
+		T & T & F & T & F & F \\
+		T & F & T & F & T & T \\
+		T & F & F & F & T & F \\
+		\rowcolor[HTML]{85C0F9} F & T & T & T & T & T \\
+		F & T & F & T & F & T \\
+		\rowcolor[HTML]{85C0F9} F & F & T & T & T & T \\
+		\rowcolor[HTML]{85C0F9} F & F & F & T & T & T \\
+		\end{array}
+	\end{equation*}
+	This statement is correct because whenever the premises, $P \rightarrow Q$ and
+	$Q \rightarrow R$ are both true, the conclusion $P \rightarrow R$ is also true,
+	as indicated by the blue highlighted rows.
+	
+	\item Suppose $\neg R \rightarrow (P \rightarrow \neg Q)$ is true.
+	Prove that $P \rightarrow (Q \rightarrow R)$ is true.
+	\begin{equation*}
+		\begin{array}{| c c c | c | c |}
+			P & Q & R & \neg R \rightarrow (P \rightarrow \neg Q)
+				& P \rightarrow (Q \rightarrow R) \\
+			\hline
+			\rowcolor[HTML]{85C0F9} T & T & T & T & T \\
+			T & T & F & F & F \\
+			\rowcolor[HTML]{85C0F9} T & F & T & T & T \\
+			\rowcolor[HTML]{85C0F9} T & F & F & T & T \\
+			\rowcolor[HTML]{85C0F9} F & T & T & T & T \\
+			\rowcolor[HTML]{85C0F9} F & T & F & T & T \\
+			\rowcolor[HTML]{85C0F9} F & F & T & T & T \\
+			\rowcolor[HTML]{85C0F9} F & F & F & T & T \\
+		\end{array}
+	\end{equation*}
+	This statement is correct because whenever the premise, 
+	$\neg R \rightarrow (P \rightarrow \neg Q)$ is true, the conclusion 
+	$P \rightarrow (Q \rightarrow R)$ is also true, as indicated by the blue highlighted rows.
+	
+	Our analysis from Exercise 3.2.15 also provides another perspective for the correctness
+	of the statement, because the premise, $\neg R \rightarrow (P \rightarrow \neg Q)$,
+	and the conclusion, $P \rightarrow (Q \rightarrow R)$, have equivalent logical forms.
+\end{enumerate}
 \end{proof}
 
 
