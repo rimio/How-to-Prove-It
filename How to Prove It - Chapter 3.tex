@@ -862,7 +862,47 @@ Use truth tables to check the correctness of the statements in Exercise 3.2.2.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $P \rightarrow Q$ and $R \rightarrow \neg Q$ are both true.
+	Prove that $P \rightarrow \neg R$ is true.
+	\begin{equation*}
+		\begin{array}{| c c c | c  c | c |}
+		P & Q & R & P \rightarrow Q &  R \rightarrow \neg Q & P \rightarrow \neg R\\
+		\hline
+		T & T & T & T & F & F \\
+		\rowcolor[HTML]{85C0F9} T & T & F & T & T & T \\
+		T & F & T & F & T & F \\
+		T & F & F & F & T & T \\
+		F & T & T & T & F & T \\
+		\rowcolor[HTML]{85C0F9} F & T & F & T & T & T \\
+		\rowcolor[HTML]{85C0F9} F & F & T & T & T & T \\
+		\rowcolor[HTML]{85C0F9} F & F & F & T & T & T \\
+		\end{array}
+	\end{equation*}
+	This statement is correct because whenever the premises, $P \rightarrow Q$ and
+	$R \rightarrow \neg Q$ are both true, the conclusion $P \rightarrow \neg R$ is also true,
+	as indicated by the blue highlighted rows.
+	
+	\item Suppose that $P$ is true.
+	Prove that $Q \rightarrow \neg (Q \rightarrow \neg P)$ is true.
+	\begin{equation*}
+		\begin{array}{| c c | c | c |}
+			P & Q & P & Q \rightarrow \neg (Q \rightarrow \neg P)\\
+			\hline
+			\rowcolor[HTML]{85C0F9} T & T & T & T \\
+			\rowcolor[HTML]{85C0F9} T & F & T & T \\
+			F & T & F & F \\
+			F & F & F & T
+		\end{array}
+	\end{equation*}
+	The statement is correct because whenever the premise $P$ is true, the conclusion
+	$Q \rightarrow \neg (Q \rightarrow \neg P)$ is also true, as indicated by the blue
+	highlighted rows.
+	
+	Note that we can more easily fill out the truth table by observing that the conclusion
+	is logically equivalent to the simpler statement $\neg Q \vee P$.
+\end{enumerate}
 \end{proof}
 
 
