@@ -779,7 +779,26 @@ Use truth tables to check the correctness of the theorem in Example 3.2.4.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\begin{equation*}
+	\begin{array}{| c c c | c | c |}
+		P & Q & R & P \rightarrow (Q \rightarrow R) & \neg R \rightarrow (P \rightarrow \neg Q) \\
+		\hline
+		\rowcolor[HTML]{85C0F9} T & T & T & T & T \\
+		T & T & F & F & F \\
+		\rowcolor[HTML]{85C0F9} T & F & T & T & T \\
+		\rowcolor[HTML]{85C0F9} T & F & F & T & T \\
+		\rowcolor[HTML]{85C0F9} F & T & T & T & T \\
+		\rowcolor[HTML]{85C0F9} F & T & F & T & T \\
+		\rowcolor[HTML]{85C0F9} F & F & T & T & T \\
+		\rowcolor[HTML]{85C0F9} F & F & F & T & T \\
+	\end{array}
+\end{equation*}
+This theorem is correct because whenever the premise, $P \rightarrow (Q \rightarrow R)$ is true, the conclusion $\neg R \rightarrow (P \rightarrow \neg Q)$ is also true, as indicated by the blue highlighted rows.
+
+We can also see that the theorem is correct by comparing the logical form of the premise with the logical form of the conclusion.
+The premise, $P \rightarrow (Q \rightarrow R)$, is equivalent to $\neg P \vee (\neg Q \vee R)$, or simply $\neg P \vee \neg Q \vee R$ by associativity of disjunction.
+Similarly, the conclusion, $\neg R \rightarrow (P \rightarrow \neg Q)$ is equivalent to $R \vee (\neg P \vee \neg Q)$, which is equivalent to $\neg P \vee \neg Q \vee R$ by associativity and commutativity of disjunction.
+Since the premise and conclusion are equivalent logical statements, the conclusion is true whenever the premise is true.
 \end{proof}
 
 
