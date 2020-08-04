@@ -938,7 +938,10 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.1}
-% Fill in
+In Exercise 2.2.7 you used logical equivalences to show that $\exists x (P(x) \rightarrow Q(x))$ is equivalent to $\forall x P(x) \rightarrow \exists x Q(x)$.
+Now use the methods of this section to prove that if $\exists x (P(x) \rightarrow Q(x))$ is true, then $\forall x P(x) \rightarrow \exists x Q(x)$ is true.
+(\emph{Note: The other direction of the equivalence is quite a bit harder to prove.
+See Exercise 3.5.30.})
 \end{statement}
 
 \begin{proof}
@@ -947,7 +950,7 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.2}
-% Fill in
+Prove that if $A$ and $B \setminus C$ are disjoint, then $A \cap B \subseteq C$.
 \end{statement}
 
 \begin{proof}
@@ -956,7 +959,7 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.3}
-% Fill in
+Prove that if $A \subseteq B \setminus C$ then $A$ and $C$ are disjoint.
 \end{statement}
 
 \begin{proof}
@@ -965,7 +968,8 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.4}
-% Fill in
+Suppose $A \subseteq \mathscr{P}(A)$.
+Prove that $\mathscr{P}(A) \subseteq \mathscr{P}(\mathscr{P}(A))$.
 \end{statement}
 
 \begin{proof}
@@ -974,7 +978,12 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.5}
-% Fill in
+The hypothesis of the theorem in Exercise 3.3.4 is $A \subseteq \mathscr{P}(A)$.
+\begin{enumerate}
+	\item Can you think of a set $A$ for which this hypothesis is true?
+	
+	\item Can you think of another?
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -983,7 +992,12 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.6}
-% Fill in
+Suppose $x$ is a real number.
+\begin{enumerate}
+	\item Prove that if $x \neq 1$ then there is a real number $y$ such that $(y + 1)/(y - 2) = x$.
+	
+	\item Prove that if there is a real number $y$ such that $(y + 1)/(y - 2) = x$, then $x \neq 1$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -992,7 +1006,7 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.7}
-% Fill in
+Prove that for every real number $x$, if $x > 2$ then there is a real number $y$ such that $y + 1/y = x$.
 \end{statement}
 
 \begin{proof}
@@ -1001,7 +1015,7 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.8}
-% Fill in
+Prove that if $\mathcal{F}$ is a family of sets and $A \in \mathcal{F}$, then $A \subseteq \bigcup \mathcal{F}$.
 \end{statement}
 
 \begin{proof}
@@ -1010,7 +1024,7 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.9}
-% Fill in
+Prove that if $\mathcal{F}$ is a family of sets and $A \in \mathcal{F}$, then $\bigcap \mathcal{F} \subseteq A$.
 \end{statement}
 
 \begin{proof}
@@ -1019,7 +1033,8 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.10}
-% Fill in
+Suppose that $\mathcal{F}$ is a nonempty family of sets, $B$ is a set, and for all $A \in \mathcal{F}$ that $B \subseteq A$.
+Prove that $B \subseteq \bigcap \mathcal{F}$.
 \end{statement}
 
 \begin{proof}
@@ -1028,7 +1043,8 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.11}
-% Fill in
+Suppose that $\mathcal{F}$ is a family of sets.
+Prove that if $\varnothing \in \mathcal{F}$ then $\bigcap \mathcal{F} = \varnothing$.
 \end{statement}
 
 \begin{proof}
@@ -1037,7 +1053,9 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.12}
-% Fill in
+Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
+Prove that if $\mathcal{F} \subseteq \mathcal{G}$ then $\bigcup \mathcal{F} \subseteq \bigcup \mathcal{G}$.
+\emph{Note: In my digital copy of the book this exercise has a typo and asks for a proof of the incorrect statement that if $\mathcal{F} \subseteq \mathcal{G}$ then $\bigcup \mathcal{F} \subseteq \mathcal{G}$.}
 \end{statement}
 
 \begin{proof}
@@ -1046,7 +1064,8 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.13}
-% Fill in
+Suppose $\mathcal{F}$ and $\mathcal{G}$ are nonempty families of sets.
+Prove that if $\mathcal{F} \subseteq \mathcal{G}$ then $\bigcap \mathcal{G} \subseteq \bigcap \mathcal{F}$.
 \end{statement}
 
 \begin{proof}
@@ -1055,7 +1074,9 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.14}
-% Fill in
+Suppose that $\{ A_i \mid i \in I \}$ is an indexed family of sets.
+Prove that $\bigcup_{i \in I} \mathscr{P}(A_i) \subseteq \mathscr{P} \left( \bigcup_{i \in I} A_i \right)$.
+(\emph{Hint: First make sure you know what all the notation means!})
 \end{statement}
 
 \begin{proof}
@@ -1064,7 +1085,9 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.15}
-% Fill in
+Suppose $\{ A_i \mid i \in I \}$ is an indexed family of sets and $I \neq \varnothing$.
+Prove that $\bigcap_{i \in I} A_i \in \bigcap_{i \in I} \mathscr{P}(A_i)$.
+\emph{Note: In my digital copy of the book this exercise has a typo and says that $I = \varnothing$.}
 \end{statement}
 
 \begin{proof}
@@ -1073,7 +1096,8 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.16}
-% Fill in
+Prove the converse of the statement proven in Example 3.3.5.
+In other words, prove that if $\mathcal{F} \subseteq \mathscr{P}(B)$ then $\bigcup \mathcal{F} \subseteq B$.
 \end{statement}
 
 \begin{proof}
@@ -1082,7 +1106,8 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.17}
-% Fill in
+Suppose $\mathcal{F}$ and $\mathcal{G}$ are nonempty families of sets, and every element of $\mathcal{F}$ is a subset of every element of $\mathcal{G}$.
+Prove that $\bigcup \mathcal{F} \subseteq \bigcap \mathcal{G}$.
 \end{statement}
 
 \begin{proof}
@@ -1091,7 +1116,12 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.18}
-% Fill in
+In this problem all variables range over $\BZ$, the set of all integers.
+\begin{enumerate}
+	\item Prove that if $a$ divides $b$ and $a$ divides $c$, then $a$ divides $b + c$.
+	
+	\item Prove that if $ac$ divides $bc$ and $c \neq 0$, then $a$ divides $b$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -1100,7 +1130,13 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.19}
-% Fill in
+\begin{enumerate}
+	\item Prove that for all real numbers $x$ and $y$ there is a real number $z$ such that
+	$x + z = y - z$.
+	
+	\item Would the statement in Part (1) be correct if ``real number'' were changed to ``integer''?
+	Justify your answer.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -1109,7 +1145,17 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.20}
-% Fill in
+Consider the following theorem:
+\begin{theorem}
+	For every real number $x$, $x^2 \geq 0$.
+\end{theorem}
+What's wrong with the following proof of the theorem?
+\begin{proof}
+	Suppose not.
+	Then for every for every real number $x$, $x^2 < 0$.
+	In particular, plugging in $x = 3$ we would get $9 < 0$, which is clearly false.
+	This contradiction shows that for every number $x$, $x^2 \geq 0$.
+\end{proof}
 \end{statement}
 
 \begin{proof}
@@ -1118,7 +1164,25 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.21}
-% Fill in
+Consider the following incorrect theorem:
+\begin{theorem}
+	If $\forall x \in A (x \neq 0)$ and $A \subseteq B$ then $\forall x \in B (x \neq 0)$.
+\end{theorem}
+\begin{enumerate}
+	\item What's wrong with the following proof of the theorem?
+	\begin{proof}
+		Suppose that $\forall x \in A (x \neq 0)$ and $A \subseteq B$.
+		Let $x$ be an arbitrary element of $A$.
+		Since $\forall x \in A (x \neq 0)$, we can conclude that $x \neq 0$.
+		Also, since $A \subseteq B$, $x \in B$.
+		Since $x \in B$, $x \neq 0$, and $x$ was arbitrary, 
+		we can conclude that $\forall x \in B (x \neq 0)$.
+	\end{proof}
+	
+	\item Find a counterexample to the theorem.
+	In other words, find an example of sets $A$ and $B$ for which the hypotheses of the theorem
+	are true but the conclusion is false.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -1127,7 +1191,22 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.22}
-% Fill in
+Consider the following incorrect theorem:
+\begin{theorem}
+	$\exists x \in \BR \forall y \in \BR (xy^2 = y - x)$.
+\end{theorem}
+What's wrong with the following proof of the theorem?
+\begin{proof}
+	Let $x = y / (y^2 + 1)$. Then
+	\begin{equation*}
+		y - x
+		= y - \frac{y}{y^2 + 1}
+		= \frac{y^3}{y^2 + 1}
+		= \frac{y}{y^2 + 1} \cdot y^2
+		= xy^2.
+	\end{equation*}
+\end{proof}
+% This value of x depends on y. The theorem asks for a single x, independent of y, that works for all values of y.
 \end{statement}
 
 \begin{proof}
@@ -1136,7 +1215,31 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.23}
-% Fill in
+Consider the following incorrect theorem:
+\begin{theorem}
+	Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
+	If $\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$ are disjoint,
+	then so are $\mathcal{F}$ and $\mathcal{G}$.
+\end{theorem}
+\begin{enumerate}
+	\item What's wrong with the following proof of the theorem?
+	\begin{proof}
+		Suppose $\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$ are disjoint.
+		Suppose $\mathcal{F}$ and $\mathcal{G}$ are not disjoint.
+		Then we can choose some set $A$ such that $A \in \mathcal{F}$ and $A \in \mathcal{G}$.
+		Since $A \in \mathcal{F}$, by Exercise 3.3.8, $A \subseteq \bigcup \mathcal{F}$,
+		so every element of $A$ is in $\bigcup \mathcal{F}$.
+		Similarly, since $A \in \mathcal{G}$, every element of $A$ is in $\bigcup \mathcal{G}$.
+		But then every element of $A$ is in both $\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$,
+		and this is impossible since $\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$ are disjoint.
+		Thus, we have reached a contradiction, 
+		so $\mathcal{F}$ and $\mathcal{G}$ must be disjoint.
+	\end{proof}
+	% How do we know that A is nonempty?
+	
+	\item Find a counterexample to the theorem.
+	% Choose F and G such that their intersection is the set containing the empty set.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -1145,7 +1248,27 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.24}
-% Fill in
+Consider the following putative theorem:
+\begin{theorem}
+	For all real numbers $x$ and $y$, $x^2 + xy - 2y^2 = 0$.
+\end{theorem}
+\begin{enumerate}
+	\item What's wrong with the following proof of the theorem?
+	\begin{proof}
+		Let $x$ and $y$ be equal to some arbitrary real number $r$.
+		Then
+		\begin{equation*}
+			x^2 + xy - 2y^2 = r^2 + r \cdot r - 2r^2 = 0.
+		\end{equation*}
+		Since $x$ and $y$ were both arbitrary, this shows that for all real number
+		$x$ and $y$, $x^2 + xy - 2y^2 = 0$.
+	\end{proof}
+	% There is no assumption that x = y.
+	
+	\item Is the theorem correct?
+	Justify your answer with either a proof or a counterexample.
+	% Theorem is incorrect. Choose x = 1, y = 0 for a counterexample.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -1154,7 +1277,7 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.25}
-% Fill in
+Prove that for every real number $x$ there is a real number $y$ such that for every real number $z$, $yz = (x + z)^2 - (x^2 + z^2)$.
 \end{statement}
 
 \begin{proof}
@@ -1163,7 +1286,17 @@ Since we have found a situation where the premises of the statement are true, bu
 
 
 \begin{statement}{3.3.26}
-% Fill in
+\begin{enumerate}
+	\item Comparing the various rules for dealing with quantifiers in proofs,
+	you should see a similarity between the rules for goals of the form $\forall x P(x)$
+	and givens of the form $\exists x P(x)$.
+	What is this similarity?
+	What about the rules for goals of the form $\exists x P(x)$ and givens of the form $\forall x P(x)$?
+	
+	\item Can you think of a reason why these similarities might be expected?
+	(\emph{Hint: Think about how a proof by contradiction works when
+	the goal starts with a quantifier.})
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
