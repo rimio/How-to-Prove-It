@@ -962,7 +962,15 @@ Prove that if $A$ and $B \setminus C$ are disjoint, then $A \cap B \subseteq C$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $A$ and $B \setminus C$ are disjoint.
+Let $x \in A \cap B$ be arbitrary.
+We now want to show that $x \in C$.
+Suppose, towards a contradiction, that $x \notin C$.
+Since $x \in A \cap B$, $x \in A$ and $x \in B$.
+Then, since $x \in B$ and $x \notin C$, $x \in B \setminus C$.
+It then follows that $x \in A \cap (B \setminus C)$, but this contradicts the assumption that $A$ and $B \setminus C$ are disjoint.
+Thus, $x \in C$, so $A \cap B \subseteq C$.
+Therefore, we conclude that if $A$ and $B \setminus C$ are disjoint, then $A \cap B \subseteq C$.
 \end{proof}
 
 
