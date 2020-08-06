@@ -945,7 +945,15 @@ See Exercise 3.5.30.})
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose that $\exists x (P(x) \rightarrow Q(x))$ is true.
+Now our goal is to prove that the statement $\forall x P(x) \rightarrow \exists x Q(x)$ is true.
+We then suppose that $\forall x P(x)$ is true and update our goal to proving that $\exists x Q(x)$ is true.
+Since $\exists x (P(x) \rightarrow Q(x))$ is true, there exists $x = x_0$ such that $P(x_0) \rightarrow Q(x_0)$ is true.
+Then, since $\forall x P(x)$ is true, the statement $P(x_0)$, in particular, is true.
+Because $P(x_0) \rightarrow Q(x_0)$ is true and $P(x_0)$ is true, we conclude that $Q(x_0)$ is true as well.
+In other words, we have found that there exists $x$ such that $Q(x)$ is true.
+Thus, the statement $\forall x P(x) \rightarrow \exists x Q(x)$ is true, and we ultimately conclude that if $\exists x (P(x) \rightarrow Q(x))$ is true, then $\forall x P(x) \rightarrow \exists x Q(x)$ is true as well.
+This completes the proof.
 \end{proof}
 
 
