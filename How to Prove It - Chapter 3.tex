@@ -979,7 +979,13 @@ Prove that if $A \subseteq B \setminus C$ then $A$ and $C$ are disjoint.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $A \subseteq B \setminus C$ and suppose, towards a contradiction that $A$ and $C$ are not disjoint.
+In other words, there is $x \in A \cap C$.
+Since $x \in A$ and $A \subseteq B \setminus C$, it follows that $x \in B \setminus C$.
+In particular, $x \notin C$.
+However, this contradicts the fact that $x \in A \cap C$ means that $x \in C$.
+Thus, we conclude that $A$ and $C$ are disjoint.
+Therefore, if $A \subseteq B \setminus C$ then $A$ and $C$ are disjoint.
 \end{proof}
 
 
