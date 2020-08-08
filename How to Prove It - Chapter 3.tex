@@ -1013,7 +1013,19 @@ The hypothesis of the theorem in Exercise 3.3.4 is $A \subseteq \mathscr{P}(A)$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Since the empty set $\varnothing$ is a subset of any set $X$, it is a set for which the
+	hypothesis $A \subseteq \mathscr{P}(A)$ is true.
+	
+	\item Once we observe that $A = \varnothing$ satisfies the hypothesis
+	$A \subseteq \mathscr{P}(A)$, the theorem tells us that 
+	$\mathscr{P}(A) \subseteq \mathscr{P}(\mathscr{P}(A))$.
+	In other words, $\mathscr{P}(A)$ is another set which satisfies the hypothesis.
+	We can check this directly by noting that $\mathscr{P}(\varnothing) = \{ \varnothing \}$,
+	$\mathscr{P}(\{ \varnothing \}) = \{ \varnothing, \{ \varnothing \} \}$,
+	and $\{ \varnothing \} \subseteq \{ \varnothing, \{ \varnothing \} \}$.
+\end{enumerate}
 \end{proof}
 
 
