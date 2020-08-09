@@ -1039,7 +1039,27 @@ Suppose $x$ is a real number.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $x \neq 1$.
+	Consider $y = (2x + 1)/(x - 1)$, which is a well-defined real number since $x \neq 1$.
+	We then plug this value of $y$ into the expression $(y + 1)/(y - 2)$.
+	\begin{equation*}
+		\frac{y + 1}{y - 2}
+		= \frac{\frac{2x + 1}{x - 1} + 1}{\frac{2x + 1}{x - 1} - 2}
+		= \frac{2x + 1 + (x - 1)}{2x + 1 - 2(x - 1)}
+		= \frac{3x}{3}
+		= x
+	\end{equation*}
+	Thus, we have found a real number $y$ such that $(y + 1)/(y - 2) = x$.
+	We conclude that that if $x \neq 1$ then there is a real number 
+	$y$ such that $(y + 1)/(y - 2) = x$.
+	
+	\item Suppose there is a real number $y$ such that $(y + 1)/(y - 2) = x$.
+	Since $y + 1 \neq y - 2$ for all real numbers $y$, it follows that $x = (y + 1)/(y - 2) \neq 1$.
+	Therefore, we conclude that if there is a real number $y$ such that 
+	$(y + 1)/(y - 2) = x$, then $x \neq 1$.
+\end{enumerate}
 \end{proof}
 
 
@@ -1048,7 +1068,20 @@ Prove that for every real number $x$, if $x > 2$ then there is a real number $y$
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x > 2$ be an arbitrary real number.
+Consider $y = (x + \sqrt{x^2 - 4})/2$, which is a real number since $x > 2$.
+We then plug this value of $y$ into the expression $y + 1/y$.
+\begin{align*}
+	y + \frac{1}{y}
+	&= \frac{x + \sqrt{x^2 - 4}}{2} + \frac{2}{x + \sqrt{x^2 - 4}} \\
+	&= \frac{x^2 + 2x\sqrt{x^2 - 4} + (x^2 - 4)}{2(x + \sqrt{x^2 - 4})}
+		+ \frac{4}{2(x + \sqrt{x^2 - 4})} \\
+	&= \frac{2x^2 + 2x\sqrt{x^2 - 4}}{2(x + \sqrt{x^2 - 4})} \\
+	&= \frac{2x(x + \sqrt{x^2 - 4})}{2(x + \sqrt{x^2 - 4})} \\
+	&= x
+\end{align*}
+Thus, we have found a real number $y$ such that $y + 1/y = x$.
+Therefore, we conclude that for every real number $x$, if $x > 2$ then there is a real number $y$ such that $y + 1/y = x$.
 \end{proof}
 
 
