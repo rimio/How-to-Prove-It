@@ -1122,7 +1122,13 @@ Prove that $B \subseteq \bigcap \mathcal{F}$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $b \in B$ be arbitrary.
+We want to show that $b \in \bigcap \mathcal{F}$.
+Since $\bigcap \mathcal{F} = \{ x \mid \forall A \in \mathcal{F} (x \in A) \}$, showing that $b \in \bigcap \mathcal{F}$ is equivalent to showing that $b \in A$ for all $A \in \mathcal{F}$.
+Because $B \subseteq A$ for all $A \in \mathcal{F}$ and $b \in B$, it follows that $b \in A$ for all $A \in \mathcal{F}$.
+In other words, $b \in \bigcap \mathcal{F}$.
+Since $b \in B$ was arbitrary, we conclude that $B \subseteq \bigcap \mathcal{F}$.
+This completes the proof.
 \end{proof}
 
 
