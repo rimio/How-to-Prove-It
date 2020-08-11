@@ -1138,7 +1138,13 @@ Prove that if $\varnothing \in \mathcal{F}$ then $\bigcap \mathcal{F} = \varnoth
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $\varnothing \in \mathcal{F}$, and suppose, towards a contradiction, that $\bigcap \mathcal{F} \neq \varnothing$.
+In other words, there exists $x \in \bigcap \mathcal{F}$.
+By the definition of $\bigcap \mathcal{F}$, this means that $x \in X$ for all $X \in \mathcal{F}$.
+In particular, since $X = \varnothing \in \mathcal{F}$, this means that $x \in \varnothing$.
+This, however, is a contradiction against the definition of the empty set.
+We therefore conclude that $\bigcap \mathcal{F} = \varnothing$.
+Thus, if $\varnothing \in \mathcal{F}$ then $\bigcap \mathcal{F} = \varnothing$.
 \end{proof}
 
 
