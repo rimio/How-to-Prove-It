@@ -1107,7 +1107,12 @@ Prove that if $\mathcal{F}$ is a family of sets and $A \in \mathcal{F}$, then $\
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $\mathcal{F}$ is a family of sets and $A \in \mathcal{F}$.
+Let $x \in \bigcap \mathcal{F}$ be arbitrary.
+Recall that $\bigcap \mathcal{F} = \{ x \mid \forall X \in \mathcal{F} (x \in X) \}$.
+In particular, since $A \in \mathcal{F}$, it follows that $x \in A$.
+Since $x \in \bigcap \mathcal{F}$ was arbitrary, we conclude that $\bigcap \mathcal{F} \subseteq A$.
+Therefore, if $\mathcal{F}$ is a family of sets and $A \in \mathcal{F}$, then $\bigcap \mathcal{F} \subseteq A$.
 \end{proof}
 
 
