@@ -1090,7 +1090,15 @@ Prove that if $\mathcal{F}$ is a family of sets and $A \in \mathcal{F}$, then $A
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $\mathcal{F}$ is a family of sets and $A \in \mathcal{F}$.
+Let $a \in A$ be arbitrary.
+We want to show that $a \in \bigcup \mathcal{F}$.
+Since $\bigcup \mathcal{F} = \{ x \mid \exists X \in \mathcal{F} (x \in X) \}$, showing that $a \in \bigcup \mathcal{F}$ is equivalent to showing that there is $X \in \mathcal{F}$ such that $a \in X$.
+Let $X = A$.
+By assumption, $A \in \mathcal{F}$ and $a \in A$.
+Thus, we have found $X \in \mathcal{F}$ such that $a \in X$, so $a \in \bigcup \mathcal{F}$.
+Since $a \in A$ was arbitrary, we conclude that $A \subseteq \bigcup \mathcal{F}$.
+Therefore, if $\mathcal{F}$ is a family of sets and $A \in \mathcal{F}$, then $A \subseteq \bigcup \mathcal{F}$.
 \end{proof}
 
 
