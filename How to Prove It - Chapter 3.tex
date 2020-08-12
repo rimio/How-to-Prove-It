@@ -1171,7 +1171,18 @@ Prove that if $\mathcal{F} \subseteq \mathcal{G}$ then $\bigcap \mathcal{G} \sub
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $\mathcal{F} \subseteq \mathcal{F}$.
+Let $x \in \bigcap \mathcal{G}$ be arbitrary.
+By the definition of $\bigcap \mathcal{G}$, this means that for all $X \in \mathcal{G}$, $x \in X$.
+Note that the assumption that $\mathcal{G}$ is nonempty makes this a non-vacuous statement.
+Now, let $Y \in \mathcal{F}$ be arbitrary.
+Note that such a $Y$ exists by the assumption that $\mathcal{F}$ is nonempty.
+Since $\mathcal{F} \subseteq \mathcal{G}$, $Y \in \mathcal{G}$.
+Because $Y \in \mathcal{G}$ and for all $X \in \mathcal{G}$, $x \in X$, it follows that $x \in Y$.
+Therefore, since $Y \in \mathcal{F}$ was arbitrary, $x \in Y$ for all $Y \in \mathcal{F}$.
+In other words, $x \in \bigcap \mathcal{F}$ by the definition of $\bigcap \mathcal{F}$.
+Since $x \in \bigcap \mathcal{G}$ was arbitrary, we conclude that $\bigcap \mathcal{G} \subseteq \bigcap \mathcal{F}$.
+Thus, if $\mathcal{F} \subseteq \mathcal{G}$ then $\bigcap \mathcal{G} \subseteq \bigcap \mathcal{F}$.
 \end{proof}
 
 
