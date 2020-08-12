@@ -1193,7 +1193,13 @@ Prove that $\bigcup_{i \in I} \mathscr{P}(A_i) \subseteq \mathscr{P} \left( \big
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $X \in \bigcup_{i \in I} \mathscr{P}(A_i)$ be arbitrary.
+By the definition of $\bigcup_{i \in I} \mathscr{P}(A_i)$, this means that there is $i \in I$ such that $X \in \mathscr{P}(A_i)$.
+Further unraveling the definition of being an element of the power set of a set $A$, this means that there is $i \in I$ such that $X \subseteq A_i$.
+Since $X \subseteq A_i$ and $A_i \subseteq \bigcup_{i \in I} A_i$, it follows that $X \subseteq \bigcup_{i \in I} A_i$.
+In other words, $X \in \mathscr{P} \left( \bigcup_{i \in I} A_i \right)$.
+Since $X \in \bigcup_{i \in I} \mathscr{P}(A_i)$ was arbitrary, we conclude that $\bigcup_{i \in I} \mathscr{P}(A_i) \subseteq \mathscr{P} \left( \bigcup_{i \in I} A_i \right)$.
+This completes the proof.
 \end{proof}
 
 
