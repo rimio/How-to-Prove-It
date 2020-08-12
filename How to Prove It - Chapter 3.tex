@@ -1155,7 +1155,13 @@ Prove that if $\mathcal{F} \subseteq \mathcal{G}$ then $\bigcup \mathcal{F} \sub
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $\mathcal{F} \subseteq \mathcal{G}$.
+Let $x \in \bigcup \mathcal{F}$ be arbitrary.
+By the definition of $\bigcup \mathcal{F}$, this means that there is $X \in \mathcal{F}$ such that $x \in X$.
+Then, since $\mathcal{F} \subseteq \mathcal{G}$, it follows that $X \in \mathcal{G}$ as well.
+Since $x \in X$ and $X \in \mathcal{G}$, $x \in \bigcup \mathcal{G}$ by the definition of $\bigcup \mathcal{G}$.
+Thus, since $x \in \bigcup \mathcal{F}$ was arbitrary, we conclude that $\bigcup \mathcal{F} \subseteq \bigcup \mathcal{G}$.
+Therefore, if $\mathcal{F} \subseteq \mathcal{G}$ then $\bigcup \mathcal{F} \subseteq \bigcup \mathcal{G}$.
 \end{proof}
 
 
