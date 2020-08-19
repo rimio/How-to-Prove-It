@@ -1227,7 +1227,14 @@ In other words, prove that if $\mathcal{F} \subseteq \mathscr{P}(B)$ then $\bigc
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $\mathcal{F} \subseteq \mathscr{P}(B)$.
+Let $x \in \bigcup \mathcal{F}$ be arbitrary.
+By the definition of $\bigcup \mathcal{F}$, this means that there is $X \in \mathcal{F}$ such that $x \in X$.
+Then, since $\mathcal{F} \subseteq \mathscr{P}(B)$, $X \in \mathscr{P}(B)$.
+In other words, by the definition of the power set of $B$, $X \subseteq B$.
+It then follows that $x \in B$.
+Since $x \in \bigcup \mathcal{F}$ was arbitrary, we conclude that $\bigcup \mathcal{F} \subseteq B$.
+Therefore, we conclude that if $\mathcal{F} \subseteq \mathscr{P}(B)$ then $\bigcup \mathcal{F} \subseteq B$.
 \end{proof}
 
 
