@@ -1210,7 +1210,14 @@ Prove that $\bigcap_{i \in I} A_i \in \bigcap_{i \in I} \mathscr{P}(A_i)$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We start by unraveling the definitions of what it means to be an element of $\bigcap_{i \in I} \mathscr{P}(A_i)$.
+The first layer of definitions states that $X \in \bigcap_{i \in I} \mathscr{P}(A_i)$ if and only if $X \in \mathscr{P}(A_i)$ for all $i \in I$.
+Unraveling one step further, this is equivalent to $X \subseteq A_i$ for all $i \in I$, by the definition of the power set of a set $A$.
+In other words, proving that $\bigcap_{i \in I} A_i \in \bigcap_{i \in I} \mathscr{P}(A_i)$ is equivalent to proving that $\bigcap_{i \in I} A_i \subseteq A_i$ for all $i \in I$.
+This follows directly from the definition of $\bigcap_{i \in I} A_i$.
+Letting $x \in \bigcap_{i \in I} A_i$ be arbitrary, $x \in A_i$ for all $i \in I$.
+Therefore, $\bigcap_{i \in I} A_i \subseteq A_i$ for all $i \in I$.
+This completes the proof that $\bigcap_{i \in I} A_i \in \bigcap_{i \in I} \mathscr{P}(A_i)$.
 \end{proof}
 
 
