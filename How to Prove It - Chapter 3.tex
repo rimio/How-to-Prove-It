@@ -1293,7 +1293,26 @@ In this problem all variables range over $\BZ$, the set of all integers.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Let $x, y \in \BR$ be arbitrary. 
+	Consider the real number $z = (y - x) / 2$.
+	We plug this value for $z$ into the expressions $x + z$ and $y - z$ to check that they are equal.
+	\begin{align*}
+		x + z &= x + \frac{y - x}{2} = \frac{x + y}{2} \\
+		y - z &= y - \frac{y - x}{2} = \frac{x + y}{2}
+	\end{align*}
+	As we can see, $x + z = (x + y) / 2 = y - z$.
+	This completes the proof.
+	
+	\item The statement in Part (1) would be incorrect if ``real number'' were changed to ``integer''.
+	This comes from the way in which $z$ is defined by 
+	isolating $z$ in the equation $x + z = y - z$ to get $z = (y - x) / 2$.
+	The difference of two real numbers is not guaranteed to be an integer,
+	let alone an integer that is divisible by 2.
+	For example, consider the case of $x = 0$ and $y = 1$.
+	In this case, the proof gives us a value of $z = 1/2$, which is not an integer.
+\end{enumerate}
 \end{proof}
 
 
