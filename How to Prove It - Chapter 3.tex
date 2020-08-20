@@ -1244,7 +1244,12 @@ Prove that $\bigcup \mathcal{F} \subseteq \bigcap \mathcal{G}$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x \in \bigcup \mathcal{F}$ be arbitrary.
+By the definition of $\bigcup \mathcal{F}$, this means that there is $X \in \mathcal{F}$ such that $x \in X$.
+Then, by the assumption that every element of $\mathcal{F}$ is a subset of every element of $\mathcal{G}$, we know that for all $Y \in \mathcal{G}$, $X \subseteq Y$.
+It follows that $x \in Y$ for all $Y \in \mathcal{G}$.
+In other words, by the definition of $\bigcap \mathcal{G}$, $x \in \bigcap \mathcal{G}$.
+Hence, since $x \in \bigcup \mathcal{F}$ was arbitrary, we conclude that $\bigcup \mathcal{F} \subseteq \bigcap \mathcal{G}$.
 \end{proof}
 
 
