@@ -1263,7 +1263,22 @@ In this problem all variables range over $\BZ$, the set of all integers.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $a$ divides $b$ and $a$ divides $c$.
+	Since $a$ divides $b$, there is $m \in \BZ$ such that $ma = b$.
+	Similarly, since $a$ divides $c$, there is $n \in \BZ$ such that $na = c$.
+	It then follows that $b + c = ma + na = (m + n)a$.
+	Since $m + n$ is an integer, we conclude that $a$ divides $b + c$.
+	Therefore, if $a$ divides $b$ and $a$ divides $c$, then $a$ divides $b + c$.
+	
+	\item Suppose $ac$ divides $bc$ and $c \neq 0$.
+	Since $ac$ divides $bc$, there is $m \in \BZ$ such that $mac = bc$.
+	Then, since $c \neq 0$, we can divide both sides of the equation 
+	by $c$ to conclude that $ma = b$.
+	In other words, $a$ divides $b$.
+	Therefore, we conclude that if $ac$ divides $bc$ and $c \neq 0$, then $a$ divides $b$.
+\end{enumerate}
 \end{proof}
 
 
