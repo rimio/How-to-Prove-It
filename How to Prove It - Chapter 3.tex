@@ -1360,7 +1360,17 @@ Consider the following incorrect theorem:
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item The issue with the attempted proof is in the statement
+	``Let $x$ be an arbitrary element of $A$''.
+	The goal of the proof is to prove that for all $x \in B$, $x \neq 0$,
+	so we must instead start with an arbitrary element of $B$.
+	
+	\item One counterexample to the theorem is when $A = \{ 1, 2, 3 \}$ and $B = \{ 0, 1, 2, 3 \}$.
+	In this case, all elements of $A$ are nonzero and $A \subseteq B$, 
+	but not all elements of $B$ are nonzero.
+\end{enumerate}
 \end{proof}
 
 
