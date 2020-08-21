@@ -1495,7 +1495,22 @@ Prove that for every real number $x$ there is a real number $y$ such that for ev
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x \in \BR$ be arbitrary.
+Let $y = 2x$.
+Now let $z \in \BR$ be arbitrary.
+We then have $yz = (2x)z = 2xz$.
+We also have $(x + z)^2 - (x^2 + z^2) = x^2 + 2xz + z^2 - x^2 - z^2 = 2xz$.
+Thus, $yz = 2xz = (x + z)^2 - (x^2 + z^2)$.
+This completes the proof.
+
+\emph{
+Note that in order to properly prove the statement, we must be careful about the order in which we perform the setup.
+We first have to let $x \in \BR$ be arbitrary.
+Once we do that, we then define $y$.
+When defining $y$, the only variable we can use is $x$, since that is the only other variable that has been introduced at this point.
+Only after we have defined $y$ can we let $z \in \BR$ be arbitrary.
+One way we can think about the order of introducing variables is that while the value of $y$ might depend on the choice of $x$, once the values of $x$ and $y$ have been set, then the rest of the statement has to hold true for any value of $z$.
+}
 \end{proof}
 
 
