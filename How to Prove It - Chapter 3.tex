@@ -1529,7 +1529,30 @@ One way we can think about the order of introducing variables is that while the 
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item The similarity between the rules for goals of the form $\forall x P(x)$
+	and givens of the form $\exists x P(x)$ is that both involve introduce a variable $x$.
+	When working toward a goal of the form $\forall x P(x)$, we introduce an arbitrary $x$
+	and try to prove $P(x)$, while when working with a given $\exists x P(x)$,
+	we introduce an arbitrary $x$ that satisfies $P(x)$.
+	For goals of the form $\exists x P(x)$ and givens of the form $\forall x P(x)$, we instead
+	try to find or construct a particular value $a$ to plug in for $x$.
+	When working toward a goal of the form $\exists x P(x)$, we construct a particular value $a$
+	such that $P(a)$ is true, while when working with a given $\forall x P(x)$, we try to find
+	a relevant value $a$ to then immediately plug into the statement $P$ and conclude
+	that $P(a)$ is true.
+	
+	\item One reason why these similarities might be expected comes from the quantifier
+	negation laws: $\neg \forall x P(x)$ is equivalent to $\exists x \neg P(x)$
+	and $\neg \exists x P(x)$ is equivalent to $\forall x \neg P(x)$.
+	If we are performing proof by contradiction when the goal starts with a quantifier,
+	we use those negation laws when we add the negated goal as a given and then
+	attempt to work toward a contradiction.
+	In other words, a goal of the form $\forall x P(x)$ would turn into a given of the form
+	$\exists x \neg P(x)$, while a goal of the form $\exists x P(x)$ would turn into a given
+	of the form $\forall x \neg P(x)$.
+\end{enumerate}
 \end{proof}
 
 
