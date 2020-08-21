@@ -1429,7 +1429,24 @@ Consider the following incorrect theorem:
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item The issue with the attempted proof lies in the statement
+	``Then we can choose some set $A$ such that $A \in \mathcal{F}$ and $A \in \mathcal{G}$''.
+	We do not know that $A$ is nonempty since there are no assumptions as to whether or not
+	$\varnothing \in \mathcal{F} \cap \mathcal{G}$.
+	If $A = \varnothing$, then there is no contradiction to having 
+	$A \in \mathcal{F} \cap \mathcal{G}$ and having 
+	$\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$ being disjoint,
+	since $A$ contains no elements.
+	
+	\item One counterexample to the theorem is the case where 
+	$\mathcal{F} = \{ \varnothing, \{ 1 \} \}$ and
+	$\mathcal{G} = \{ \varnothing, \{ 2 \} \}$.
+	In this case, $\bigcup \mathcal{F} = \{ 1 \}$ and $\bigcup \mathcal{G} = \{ 2 \}$,
+	which are clearly disjoint, but $\mathcal{F} \cap \mathcal{G} = \{ \varnothing \}$.
+	As discussed previously, the set containing the empty set is \textbf{not} empty.
+\end{enumerate}
 \end{proof}
 
 
