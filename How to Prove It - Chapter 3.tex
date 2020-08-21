@@ -1390,11 +1390,13 @@ What's wrong with the following proof of the theorem?
 		= xy^2.
 	\end{equation*}
 \end{proof}
-% This value of x depends on y. The theorem asks for a single x, independent of y, that works for all values of y.
 \end{statement}
 
 \begin{proof}
-% Fill in
+The issue in the proof is that this value of $x$ depends on the value of $y$.
+This is different from what the theorem states: that there is a single value of $x$, \textbf{independent} of the value of $y$, such that $xy^2 = y - x$ for all values of $y$.
+In terms of proof structure, we need to start by defining the real number $x$, which at this point cannot be defined in terms of $y$ since $y$ hasn't been introduced in the proof.
+Only after $x$ is defined, would we take an arbitrary $y \in \BR$ and attempt to show that $xy^2 = y - x$.
 \end{proof}
 
 
