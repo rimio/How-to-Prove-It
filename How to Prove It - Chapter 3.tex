@@ -36,6 +36,7 @@
 \newcommand{\BQ}{\mathbb Q}
 \newcommand{\BZ}{\mathbb Z}
 \newcommand{\BN}{\mathbb N}
+\newcommand{\powerset}[1]{\mathscr{P} \left( #1 \right)}
 
 % We can even define a new command for \newcommand!
 \newcommand{\nc}{\newcommand}
@@ -990,21 +991,21 @@ Therefore, if $A \subseteq B \setminus C$ then $A$ and $C$ are disjoint.
 
 
 \begin{statement}{3.3.4}
-Suppose $A \subseteq \mathscr{P}(A)$.
-Prove that $\mathscr{P}(A) \subseteq \mathscr{P}(\mathscr{P}(A))$.
+Suppose $A \subseteq \powerset{A}$.
+Prove that $\powerset{A} \subseteq \powerset{\powerset{A}}$.
 \end{statement}
 
 \begin{proof}
-Let $X \in \mathscr{P}(A)$ be arbitrary.
+Let $X \in \powerset{A}$ be arbitrary.
 By the definition of the power set of a set $A$, $X \subseteq A$.
-Then, since $A \subseteq \mathscr{P}(A)$, it follows that $X \subseteq \mathscr{P}(A)$.
-In other words, $X$ is an element of the power set of $\mathscr{P}(A)$.
-Since $X$ was arbitrary, we conclude that $\mathscr{P}(A) \subseteq \mathscr{P}(\mathscr{P}(A))$.
+Then, since $A \subseteq \powerset{A}$, it follows that $X \subseteq \powerset{A}$.
+In other words, $X$ is an element of the power set of $\powerset{A}$.
+Since $X$ was arbitrary, we conclude that $\powerset{A} \subseteq \powerset{\powerset{A}}$.
 \end{proof}
 
 
 \begin{statement}{3.3.5}
-The hypothesis of the theorem in Exercise 3.3.4 is $A \subseteq \mathscr{P}(A)$.
+The hypothesis of the theorem in Exercise 3.3.4 is $A \subseteq \powerset{A}$.
 \begin{enumerate}
 	\item Can you think of a set $A$ for which this hypothesis is true?
 	
@@ -1016,14 +1017,14 @@ The hypothesis of the theorem in Exercise 3.3.4 is $A \subseteq \mathscr{P}(A)$.
 \hfill
 \begin{enumerate}
 	\item Since the empty set $\varnothing$ is a subset of any set $X$, it is a set for which the
-	hypothesis $A \subseteq \mathscr{P}(A)$ is true.
+	hypothesis $A \subseteq \powerset{A}$ is true.
 	
 	\item Once we observe that $A = \varnothing$ satisfies the hypothesis
-	$A \subseteq \mathscr{P}(A)$, the theorem tells us that 
-	$\mathscr{P}(A) \subseteq \mathscr{P}(\mathscr{P}(A))$.
-	In other words, $\mathscr{P}(A)$ is another set which satisfies the hypothesis.
-	We can check this directly by noting that $\mathscr{P}(\varnothing) = \{ \varnothing \}$,
-	$\mathscr{P}(\{ \varnothing \}) = \{ \varnothing, \{ \varnothing \} \}$,
+	$A \subseteq \powerset{A}$, the theorem tells us that 
+	$\powerset{A} \subseteq \powerset{\powerset{A}}$.
+	In other words, $\powerset{A}$ is another set which satisfies the hypothesis.
+	We can check this directly by noting that $\powerset{\varnothing} = \{ \varnothing \}$,
+	$\powerset{\{ \varnothing \}} = \{ \varnothing, \{ \varnothing \} \}$,
 	and $\{ \varnothing \} \subseteq \{ \varnothing, \{ \varnothing \} \}$.
 \end{enumerate}
 \end{proof}
@@ -1188,53 +1189,53 @@ Thus, if $\mathcal{F} \subseteq \mathcal{G}$ then $\bigcap \mathcal{G} \subseteq
 
 \begin{statement}{3.3.14}
 Suppose that $\{ A_i \mid i \in I \}$ is an indexed family of sets.
-Prove that $\bigcup_{i \in I} \mathscr{P}(A_i) \subseteq \mathscr{P} \left( \bigcup_{i \in I} A_i \right)$.
+Prove that $\bigcup_{i \in I} \powerset{A_i} \subseteq \powerset{\bigcup_{i \in I} A_i}$.
 (\emph{Hint: First make sure you know what all the notation means!})
 \end{statement}
 
 \begin{proof}
-Let $X \in \bigcup_{i \in I} \mathscr{P}(A_i)$ be arbitrary.
-By the definition of $\bigcup_{i \in I} \mathscr{P}(A_i)$, this means that there is $i \in I$ such that $X \in \mathscr{P}(A_i)$.
+Let $X \in \bigcup_{i \in I} \powerset{A_i}$ be arbitrary.
+By the definition of $\bigcup_{i \in I} \powerset{A_i}$, this means that there is $i \in I$ such that $X \in \powerset{A_i}$.
 Further unraveling the definition of being an element of the power set of a set $A$, this means that there is $i \in I$ such that $X \subseteq A_i$.
 Since $X \subseteq A_i$ and $A_i \subseteq \bigcup_{i \in I} A_i$, it follows that $X \subseteq \bigcup_{i \in I} A_i$.
-In other words, $X \in \mathscr{P} \left( \bigcup_{i \in I} A_i \right)$.
-Since $X \in \bigcup_{i \in I} \mathscr{P}(A_i)$ was arbitrary, we conclude that $\bigcup_{i \in I} \mathscr{P}(A_i) \subseteq \mathscr{P} \left( \bigcup_{i \in I} A_i \right)$.
+In other words, $X \in \powerset{\bigcup_{i \in I} A_i}$.
+Since $X \in \bigcup_{i \in I} \powerset{A_i}$ was arbitrary, we conclude that $\bigcup_{i \in I} \powerset{A_i} \subseteq \powerset{\bigcup_{i \in I} A_i}$.
 This completes the proof.
 \end{proof}
 
 
 \begin{statement}{3.3.15}
 Suppose $\{ A_i \mid i \in I \}$ is an indexed family of sets and $I \neq \varnothing$.
-Prove that $\bigcap_{i \in I} A_i \in \bigcap_{i \in I} \mathscr{P}(A_i)$.
+Prove that $\bigcap_{i \in I} A_i \in \bigcap_{i \in I} \powerset{A_i}$.
 \emph{Note: In my digital copy of the book this exercise has a typo and says that $I = \varnothing$.}
 \end{statement}
 
 \begin{proof}
-We start by unraveling the definitions of what it means to be an element of $\bigcap_{i \in I} \mathscr{P}(A_i)$.
-The first layer of definitions states that $X \in \bigcap_{i \in I} \mathscr{P}(A_i)$ if and only if $X \in \mathscr{P}(A_i)$ for all $i \in I$.
+We start by unraveling the definitions of what it means to be an element of $\bigcap_{i \in I} \powerset{A_i}$.
+The first layer of definitions states that $X \in \bigcap_{i \in I} \powerset{A_i}$ if and only if $X \in \powerset{A_i}$ for all $i \in I$.
 Unraveling one step further, this is equivalent to $X \subseteq A_i$ for all $i \in I$, by the definition of the power set of a set $A$.
-In other words, proving that $\bigcap_{i \in I} A_i \in \bigcap_{i \in I} \mathscr{P}(A_i)$ is equivalent to proving that $\bigcap_{i \in I} A_i \subseteq A_i$ for all $i \in I$.
+In other words, proving that $\bigcap_{i \in I} A_i \in \bigcap_{i \in I} \powerset{A_i}$ is equivalent to proving that $\bigcap_{i \in I} A_i \subseteq A_i$ for all $i \in I$.
 This follows directly from the definition of $\bigcap_{i \in I} A_i$.
 Letting $x \in \bigcap_{i \in I} A_i$ be arbitrary, $x \in A_i$ for all $i \in I$.
 Therefore, $\bigcap_{i \in I} A_i \subseteq A_i$ for all $i \in I$.
-This completes the proof that $\bigcap_{i \in I} A_i \in \bigcap_{i \in I} \mathscr{P}(A_i)$.
+This completes the proof that $\bigcap_{i \in I} A_i \in \bigcap_{i \in I} \powerset{A_i}$.
 \end{proof}
 
 
 \begin{statement}{3.3.16}
 Prove the converse of the statement proven in Example 3.3.5.
-In other words, prove that if $\mathcal{F} \subseteq \mathscr{P}(B)$ then $\bigcup \mathcal{F} \subseteq B$.
+In other words, prove that if $\mathcal{F} \subseteq \powerset{B}$ then $\bigcup \mathcal{F} \subseteq B$.
 \end{statement}
 
 \begin{proof}
-Suppose $\mathcal{F} \subseteq \mathscr{P}(B)$.
+Suppose $\mathcal{F} \subseteq \powerset{B}$.
 Let $x \in \bigcup \mathcal{F}$ be arbitrary.
 By the definition of $\bigcup \mathcal{F}$, this means that there is $X \in \mathcal{F}$ such that $x \in X$.
-Then, since $\mathcal{F} \subseteq \mathscr{P}(B)$, $X \in \mathscr{P}(B)$.
+Then, since $\mathcal{F} \subseteq \powerset{B}$, $X \in \powerset{B}$.
 In other words, by the definition of the power set of $B$, $X \subseteq B$.
 It then follows that $x \in B$.
 Since $x \in \bigcup \mathcal{F}$ was arbitrary, we conclude that $\bigcup \mathcal{F} \subseteq B$.
-Therefore, we conclude that if $\mathcal{F} \subseteq \mathscr{P}(B)$ then $\bigcup \mathcal{F} \subseteq B$.
+Therefore, we conclude that if $\mathcal{F} \subseteq \powerset{B}$ then $\bigcup \mathcal{F} \subseteq B$.
 \end{proof}
 
 
@@ -1612,7 +1613,7 @@ Prove that for any sets $A$, $B$, and $C$, $A \setminus (B \cap C) = (A \setminu
 
 
 \begin{statement}{3.4.7}
-Use the methods of this chapter to prove that for any sets $A$ and $B$, $\mathscr{P}(A \cap B) = \mathscr{P}(A) \cap \mathscr{P}(B)$.
+Use the methods of this chapter to prove that for any sets $A$ and $B$, $\powerset{A \cap B} = \powerset{A} \cap \powerset{B}$.
 \end{statement}
 
 \begin{proof}
