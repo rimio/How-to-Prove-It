@@ -1622,7 +1622,7 @@ Use the methods of this chapter to prove that for any sets $A$ and $B$, $\powers
 
 
 \begin{statement}{3.4.8}
-% Fill in
+Prove that $A \subseteq B$ if and only if $\powerset{A} \subseteq \powerset{B}$.
 \end{statement}
 
 \begin{proof}
@@ -1631,7 +1631,7 @@ Use the methods of this chapter to prove that for any sets $A$ and $B$, $\powers
 
 
 \begin{statement}{3.4.9}
-% Fill in
+Prove that if $x$ and $y$ are odd integers, then $xy$ is odd.
 \end{statement}
 
 \begin{proof}
@@ -1640,7 +1640,7 @@ Use the methods of this chapter to prove that for any sets $A$ and $B$, $\powers
 
 
 \begin{statement}{3.4.10}
-% Fill in
+Prove that if $x$ and $y$ are odd integers, then $x - y$ is even.
 \end{statement}
 
 \begin{proof}
@@ -1649,7 +1649,7 @@ Use the methods of this chapter to prove that for any sets $A$ and $B$, $\powers
 
 
 \begin{statement}{3.4.11}
-% Fill in
+Prove that for every integer $n$, $n^3$ is even if and only if $n$ is even.
 \end{statement}
 
 \begin{proof}
@@ -1658,7 +1658,29 @@ Use the methods of this chapter to prove that for any sets $A$ and $B$, $\powers
 
 
 \begin{statement}{3.4.12}
-% Fill in
+Consider the following putative theorem:
+\begin{theorem}
+	Suppose $m$ is an even integer and $n$ is an odd integer.
+	Then $n^2 - m^2 = n + m$.
+\end{theorem}
+\begin{enumerate}
+	\item What is wrong with the following proof of the theorem?
+	\begin{proof}
+		Since $m$ is even, we can choose some integer $k$ such that $m = 2k$.
+		Similarly, since $n$ is odd we have $n = 2k + 1$.
+		Therefore
+		\begin{align*}
+			n^2 - m^2 &= (2k + 1)^2 - (2k)^2 \\
+			&= 4k^2 + 4k + 1 - 4k^2 \\
+			&= 4k + 1 \\
+			&= (2k + 1) + (2k) \\
+			&= n + m.
+		\end{align*}
+	\end{proof}
+	
+	\item Is the theorem correct?
+	Justify your answer with either a proof or a counterexample.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
