@@ -1689,7 +1689,7 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.13}
-% Fill in
+Prove that for all $x \in \BR$, there exists $y \in \BR$ such that $x + y = xy$ if and only if $x = 1$.
 \end{statement}
 
 \begin{proof}
@@ -1698,7 +1698,7 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.14}
-% Fill in
+Prove that there exists $z \in \BR$, such that for all $x \in \BR^+$, there exists $y \in \BR$ such that $y - x = y/x$ if and only if $x = z$.
 \end{statement}
 
 \begin{proof}
@@ -1707,7 +1707,8 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.15}
-% Fill in
+Suppose $B$ is a set and $\mathcal{F}$ is a family of sets.
+Prove that $\bigcup \{ A \setminus B \mid A \in \mathcal{F} \} \subseteq \bigcup (\mathcal{F} \setminus \powerset{B})$.
 \end{statement}
 
 \begin{proof}
@@ -1716,7 +1717,8 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.16}
-% Fill in
+Suppose $\mathcal{F}$ and $\mathcal{G}$ are nonempty families of sets and every element of $\mathcal{F}$ is disjoint from some element of $\mathcal{G}$.
+Prove that $\bigcup \mathcal{F}$ and $\bigcap \mathcal{G}$ are disjoint.
 \end{statement}
 
 \begin{proof}
@@ -1725,7 +1727,7 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.17}
-% Fill in
+Prove that for any set $A$, $A = \bigcup \powerset{A}$.
 \end{statement}
 
 \begin{proof}
@@ -1734,7 +1736,35 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.18}
-% Fill in
+Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
+\begin{enumerate}
+	\item Prove that $\bigcup (\mathcal{F} \cap \mathcal{G}) \subseteq
+	\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$.
+	
+	\item What is wrong with the following proof that 
+	$\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right) \subseteq
+	 \bigcup (\mathcal{F} \cap \mathcal{G})$?
+	 \begin{proof}
+	 	Suppose $x \in \left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$.
+	 	This means that $x \in \bigcup \mathcal{F}$ and $x \in \bigcup \mathcal{G}$,
+	 	so there exists $A \in \mathcal{F}$ such that $x \in A$, 
+	 	and there exists $A \in \mathcal{G}$ such that $x \in A$.
+	 	Thus, we can choose a set $A$ such that 
+	 	$A \in \mathcal{F}$, $A \in \mathcal{G}$, and $x \in A$.
+	 	Since $A \in \mathcal{F}$ and $A \in \mathcal{G}$, $A \in \mathcal{F} \cap \mathcal{G}$.
+	 	Therefore there exists $A \in \mathcal{F} \cap \mathcal{G}$ such that $x \in A$.,
+	 	so $x \in \bigcup (\mathcal{F} \cap \mathcal{G})$.
+	 	Since $x$ was arbitrary, we can conclude that
+	 	$\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right) \subseteq
+	 	\bigcup (\mathcal{F} \cap \mathcal{G})$.
+	 \end{proof}
+	 % The existence statement doesn't guarantee that the A in F containing x and the A in G
+	 % containing x are the same set. They could be different sets.
+	 
+	 \item Find an example of families of sets $\mathcal{F}$ and $\mathcal{G}$ for which
+	 $\bigcup (\mathcal{F} \cap \mathcal{G}) \neq
+	\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -1743,7 +1773,8 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.19}
-% Fill in
+Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
+Prove that $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right) \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$ if and only if for all $A \in \mathcal{F}$ and for all $B \in \mathcal{G}$, $A \cap B \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$ .
 \end{statement}
 
 \begin{proof}
@@ -1752,7 +1783,8 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.20}
-% Fill in
+Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
+Prove that $\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$ are disjoint if and only if for all $A \in \mathcal{F}$ and $B \in \mathcal{G}$, $A$ and $B$ are disjoint.
 \end{statement}
 
 \begin{proof}
@@ -1761,7 +1793,34 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.21}
-% Fill in
+Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
+\begin{enumerate}
+	\item Prove that $\left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)
+	\subseteq \bigcup (\mathcal{F} \setminus \mathcal{G})$.
+	
+	\item What's wrong with the following proof that $\bigcup (\mathcal{F} \setminus \mathcal{G})
+	\subseteq \left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)$?
+	\begin{proof}
+		Suppose $x \in \bigcup (\mathcal{F} \setminus \mathcal{G})$.
+		Then we can choose some $A \in \mathcal{F} \setminus \mathcal{G}$ such that $x \in A$.
+		Since $A \in \mathcal{F} \setminus \mathcal{G}$, 
+		$A \in \mathcal{F}$ and $A \notin \mathcal{G}$.
+		Since $A \in \mathcal{F}$, $x \in \bigcup \mathcal{F}$.
+		Since $x \in A$ and $A \notin \mathcal{G}$, $x \notin \bigcup \mathcal{G}$.
+		Therefore $x \in \left( \bigcup \mathcal{F} \right) \setminus
+		\left( \bigcup \mathcal{G} \right)$.
+	\end{proof}
+	% There might be another set B in G such that x is in B.
+	
+	\item Prove that $\bigcup (\mathcal{F} \setminus \mathcal{G})
+	\subseteq \left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)$
+	if and only if for all $A \in \mathcal{F} \setminus \mathcal{G}$ and for all $B \in \mathcal{G}$,
+	$A \cap B = \varnothing$.
+	
+	\item Find an example of families of sets $\mathcal{F}$ and $\mathcal{G}$ for which
+	$\bigcup (\mathcal{F} \setminus \mathcal{G})
+	\neq \left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)$
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -1770,7 +1829,8 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.22}
-% Fill in
+Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
+Prove that if $\bigcup \mathcal{F} \subseteq \bigcup \mathcal{G}$, then there is some $A \in \mathcal{F}$ such that for all $B \in \mathcal{G}$, $A \subseteq B$.
 \end{statement}
 
 \begin{proof}
@@ -1779,7 +1839,44 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.23}
-% Fill in
+Suppose $B$ is a set, $\{ A_i \mid i \in I \}$ is an indexed family of sets, and $I \neq \varnothing$.
+\begin{enumerate}
+	\item What proof strategies are used in the following proof of the equation
+	$B \cap \left( \bigcup_{i \in I} A_i \right) = \bigcup_{i \in I} (B \cap A_i)$?
+	\begin{proof}
+		Let $x$ be arbitrary.
+		Suppose $x \in B \cap \left( \bigcup_{i \in I} A_i \right)$.
+		Then $x \in B$ and $x \in \bigcup_{i \in I} A_i$,
+		so we can choose some $i_0 \in I$ such that $x \in A_{i_0}$.
+		Since $x \in B$ and $x \in A_{i_0}$, $x \in B \cap A_{i_0}$.
+		Therefore, $x \in \bigcup_{i \in I} (B \cap A_i)$.
+		
+		Now suppose $x \in \bigcup_{i \in I} (B \cap A_i)$.
+		Then we can choose some $i_0 \in I$ such that $x \in B \cap A_{i_0}$.
+		Therefore $x \in B$ and $x \in A_{i_0}$.
+		Since $x \in A_{i_0}$, $x \in \bigcup_{i \in I} A_i$.
+		Since $x \in B$ and $x \in \bigcup_{i \in I} A_i$,
+		$x \in B \cap \left( \bigcup_{i \in I} A_i \right)$.
+		
+		Since $x$ was arbitrary, we have shown that for all $x$,
+		$x \in B \cap \left( \bigcup_{i \in I} A_i \right)$ if and only if
+		$x \in \bigcup_{i \in I} (B \cap A_i)$, so
+		$B \cap \left( \bigcup_{i \in I} A_i \right) = \bigcup_{i \in I} (B \cap A_i)$.
+	\end{proof}
+	
+	\item Prove that $B \setminus \left( \bigcup_{i \in I} A_i \right) = 
+	\bigcup_{i \in I} (B \setminus A_i)$.
+	
+	\item Can you discover and prove a similar theorem about
+	$B \setminus \left( \bigcap_{i \in I} A_i \right)$?
+	(\emph{Hint: Try to guess the theorem, and then try to prove it.
+	If you can't finish the proof, it might be because your guess was wrong.
+	Change your guess and try again.})
+	
+	\emph{Note: I think this exercise in my copy of the book has a typo, since it asks for
+	us to discover and prove a theorem about $B \setminus \left( \bigcup_{i \in I} A_i \right)$,
+	which we already did in Part (2).}
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -1788,7 +1885,14 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.24}
-% Fill in
+Suppose $\{ A_i \mid i \in I \}$ and $\{ B_i \mid i \in I \}$ are indexed families of sets and $I \neq \varnothing$.
+\begin{enumerate}
+	\item Prove that $\bigcup_{i \in I} (A_i \setminus B_i) \subseteq
+	\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$.
+	
+	\item Find an example for which $\bigcup_{i \in I} (A_i \setminus B_i) \neq
+	\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -1797,7 +1901,14 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.25}
-% Fill in
+Suppose $\{ A_i \mid i \in I \}$ and $\{ B_i \mid i \in I \}$ are indexed families of sets.
+\begin{enumerate}
+	\item Prove that $\bigcup_{i \in I} (A_i \cap B_i) \subseteq
+	\left( \bigcup_{i \in I} A_i \right) \cap \left( \bigcup_{i \in I} B_i \right)$.
+	
+	\item Find an example for which $\bigcup_{i \in I} (A_i \cap B_i) \neq
+	\left( \bigcup_{i \in I} A_i \right) \cap \left( \bigcup_{i \in I} B_i \right)$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
@@ -1806,7 +1917,7 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.26}
-% Fill in
+Prove that for all integers $a$ and $b$ there is an integer $c$ such that $a$ divides $c$ and $b$ divides $c$.
 \end{statement}
 
 \begin{proof}
@@ -1815,7 +1926,14 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.27}
-% Fill in
+\begin{enumerate}
+	\item Prove that for ever integer $n$, $15$ divides $n$ if and only if
+	$3$ divides $n$ and $5$ divides $n$.
+	
+	\item Prove that it is \emph{not} true that for every integer $n$,
+	$60$ divides $n$ if and only if $6$ divides $n$ and $10$ divides $n$.
+	% Consider n = 90
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
