@@ -1629,7 +1629,12 @@ Prove that if $A \subseteq B \setminus C$ and $A \neq \varnothing$ then $B \nsub
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $A \subseteq B \setminus C$ and $A \neq \varnothing$.
+Since $A \neq \varnothing$, there is $x \in A$.
+Then, since $A \subseteq B \setminus C$, it follows that $x \in B \setminus C$.
+By the definition of $B \setminus C$, this means that $x \in B$ and $x \notin C$.
+In other words, $B \nsubseteq C$.
+Thus, we conclude that if $A \subseteq B \setminus C$ and $A \neq \varnothing$ then $B \nsubseteq C$.
 \end{proof}
 
 
