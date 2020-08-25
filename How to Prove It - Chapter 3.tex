@@ -1601,7 +1601,13 @@ Prove that for every set $C$, $C \setminus B \subseteq C \setminus A$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $C$ be an arbitrary set.
+Now let $x \in C \setminus B$ be arbitrary.
+By the definition of $C \setminus B$, $x \in C$ and $x \notin B$.
+Since $x \notin B$ and $A \subseteq B$, it follows that $x \notin A$.
+Then, since $x \in C$ and $x \notin A$, $x \in C \setminus A$.
+Because $x \in C \setminus B$ was arbitrary, we conclude that $C \setminus B \subseteq C \setminus A$.
+Finally, since $C$ was an arbitrary set, we conclude that for every set $C$, $C \setminus B \subseteq C \setminus A$.
 \end{proof}
 
 
