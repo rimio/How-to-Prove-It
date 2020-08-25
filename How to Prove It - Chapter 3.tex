@@ -1562,7 +1562,21 @@ Use the methods of this chapter to prove that $\forall x (P(x) \wedge Q(x))$ is 
 \end{statement}
 
 \begin{proof}
-% Fill in
+We first prove the forward direction: $\forall x (P(x) \wedge Q(x)) \rightarrow \forall x P(x) \wedge \forall x Q(x)$.
+Suppose $\forall x (P(x) \wedge Q(x))$ is true.
+Now let $x_1$ and $x_2$ be arbitrary.
+By the assumption, $P(x_1) \wedge Q(x_1)$ is true, so in particular $P(x_1)$ is true.
+Since $x_1$ was arbitrary, we conclude that $\forall x P(x)$ is true.
+Using the same argument with $x_2$, we also conclude that $\forall x Q(x)$ is true.
+In other words, $\forall x P(x) \wedge \forall x Q(x)$ is true.
+This completes the proof of the forward direction.
+
+Now we prove the other direction: $\forall x P(x) \wedge \forall x Q(x) \rightarrow \forall x (P(x) \wedge Q(x))$.
+Suppose $\forall x P(x) \wedge \forall x Q(x)$ is true.
+Let $x_1$ be arbitrary.
+By the assumption, $P(x_1)$ is true, and $Q(x_1)$ is true as well.
+In other words, $P(x_1) \wedge Q(x_1)$ is true.
+Since $x_1$ was arbitrary, we conclude that $\forall x (P(x) \wedge Q(x))$ is true. This completes the proof of the reverse direction.
 \end{proof}
 
 
