@@ -1740,7 +1740,24 @@ Prove that for every integer $n$, $n^3$ is even if and only if $n$ is even.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $n \in \BZ$ be arbitrary.
+To prove the forward direction, we instead check the contrapositive statement: if $n$ is odd then $n^3$ is odd.
+Suppose $n$ is odd, so there is $k \in \BZ$ such that $n = 2k + 1$.
+We now compute $n^3$.
+\begin{equation*}
+	n^3 = (2k + 1)^3 = 8k^3 + 12k^2 + 6k + 1 = 2(4k^3 + 6k^2 + 3k) + 1
+\end{equation*}
+In other words, $n^3 = 2j + 1$ where $j = 4k^3 + 6k^2 + 3k$ is an integer.
+Thus we conclude that $n^3$ is even.
+Hence, if $n^3$ is even, then $n$ is even as well.
+
+Now we check the backward direction: if $n$ is even then $n^3$ is even.
+Suppose $n$ is even, so there is $k \in \BZ$ such that $n = 2k$.
+Computing $n^3$ gives us $n^3 = (2k)^3 = 8k^3 = 2(4k^3)$.
+In other words, $n^3 = 2j$ where $j = 4k^3$ is an integer.
+Thus we conclude that $n^3$ is even.
+Hence, if $n$ is even, then $n^3$ is even as well.
+This completes the proof that for every integer $n$, $n^3$ is even if and only if $n$ is even.
 \end{proof}
 
 
