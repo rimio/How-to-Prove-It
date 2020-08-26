@@ -1657,7 +1657,22 @@ Use the methods of this chapter to prove that for any sets $A$ and $B$, $\powers
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $A$ and $B$ be arbitrary sets.
+We start by showing $\powerset{A \cap B} \subseteq \powerset{A} \cap \powerset{B}$.
+Let $X \in \powerset{A \cap B}$ be arbitrary.
+By the definition of $\powerset{A \cap B}$, $X \subseteq A \cap B$.
+Then, since $A \cap B \subseteq A$, $X \subseteq A$.
+In other words, $X \in \powerset{A}$.
+Similarly, since $A \cap B \subseteq B$, $X \in \powerset{B}$.
+Thus, $X \in \powerset{A} \cap \powerset{B}$, and since $X \in \powerset{A \cap B}$ was arbitrary we conclude that $\powerset{A \cap B} \subseteq \powerset{A} \cap \powerset{B}$.
+
+Next we show $\powerset{A} \cap \powerset{B} \subseteq \powerset{A \cap B}$.
+Let $X \in \powerset{A} \cap \powerset{B}$ be arbitrary.
+It follows that $X \subseteq A$ and $X \subseteq B$, so $X \subseteq A \cap B$.
+In other words, $X \in \powerset{A \cap B}$.
+Thus, since $X \in \powerset{A} \cap \powerset{B}$ was arbitrary, we conclude that $\powerset{A} \cap \powerset{B} \subseteq \powerset{A \cap B}$.
+Now that we have checked both containments, we conclude that $\powerset{A \cap B} = \powerset{A} \cap \powerset{B}$.
+Since $A$ and $B$ were arbitrary sets, this is true for any sets $A$ and $B$.
 \end{proof}
 
 
