@@ -1681,7 +1681,25 @@ Prove that $A \subseteq B$ if and only if $\powerset{A} \subseteq \powerset{B}$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+First, suppose $A \subseteq B$.
+For this part of the proof, our goal is to show $\powerset{A} \subseteq \powerset{B}$.
+Let $X \in \powerset{A}$ be arbitrary.
+By the definition of $\powerset{A}$, $X \subseteq A$.
+Then, since $A \subseteq B$, $X \subseteq B$.
+In other words, $X \in \powerset{B}$.
+Thus, $\powerset{A} \subseteq \powerset{B}$.
+
+Now suppose $\powerset{A} \subseteq \powerset{B}$.
+Our goal for this part of the proof is to show $A \subseteq B$.
+There are two cases to consider: $A = \varnothing$ and $A \neq \varnothing$.
+If $A = \varnothing$, then it is vacuously true that $A \subseteq B$.
+Thus, we can assume, without loss of generality, that $A \neq \varnothing$.
+Let $x \in A$ be arbitrary.
+Then the singleton set $\{ x \}$ is a subset of $A$, and $\{ x \} \in \powerset{A}$.
+Since $\powerset{A} \subseteq \powerset{B}$, $\{ x \} \in \powerset{B}$ as well.
+In other words, $\{ x \} \subseteq B$, so $x \in B$.
+Hence, $A \subseteq B$.
+This completes the proof.
 \end{proof}
 
 
