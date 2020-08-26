@@ -1643,7 +1643,12 @@ Prove that for any sets $A$, $B$, and $C$, $A \setminus (B \cap C) = (A \setminu
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $A$, $B$, and $C$ be arbitrary sets.
+First, $x \in A \setminus (B \cap C)$ is equivalent to $(x \in A) \wedge (x \notin B \cap C)$.
+Since $x \notin B \cap C$ is equivalent to $(x \notin B) \vee (x \notin C)$, $(x \in A) \wedge (x \notin B \cap C)$ is equivalent to $(x \in A) \wedge [(x \notin B) \vee (x \notin C)]$.
+This is then equivalent to $[(x \in A) \wedge (x \notin B)] \vee [(x \in A) \wedge (x \notin C)]$.
+Finally, this is equivalent to $(x \in A \setminus B) \vee (x \in A \setminus C)$, or in other words, $x \in (A \setminus B) \cup (A \setminus C)$.
+Since $A$, $B$, and $C$ were arbitrary sets, we conclude that for any sets $A$, $B$, and $C$, $A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)$.
 \end{proof}
 
 
