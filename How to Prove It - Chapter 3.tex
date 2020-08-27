@@ -1807,11 +1807,31 @@ Consider the following putative theorem:
 
 
 \begin{statement}{3.4.13}
-Prove that for all $x \in \BR$, there exists $y \in \BR$ such that $x + y = xy$ if and only if $x = 1$.
+Prove that $\forall x \in \BR [ \exists y \in \BR (x + y = xy) \leftrightarrow x \neq 1]$.
+\emph{Note: This exercise in my copy of the book has a typo, where instead of $x \neq 1$ it says $x = 1$.}
 \end{statement}
 
 \begin{proof}
-% Fill in
+Translating the statement from logical symbols to mathematical English, we wish to prove that for all $x \in \BR$, there exists $y \in \BR$ such that $x + y = xy$ if and only if $x \neq 1$.
+First, let $x \in \BR$ be arbitrary.
+Now our goal is to prove that there exists $y \in \BR$ such that $x + y = xy$ if and only if $x \neq 1$.
+
+We start by proving the forward direction.
+Suppose there exists $y \in \BR$ such that $x + y = xy$. 
+Next suppose, towards a contradiction, that $x = 1$.
+Plugging this into our equation gives $1 + y = y$, which is a contradiction.
+Thus, we conclude that $x \neq 1$.
+
+Next we prove the backward direction.
+Suppose $x \neq 1$.
+Consider $y = x / (x - 1)$, which is a real number since $x \neq 1$.
+Plugging in this value for $y$ into the expression $x + y$ gives us
+\begin{equation*}
+	x + \frac{x}{x - 1} = \frac{x^2 - x}{x - 1} + \frac{x - 1}{x - 1}
+	= \frac{x^2}{x - 1} = xy.
+\end{equation*}
+Thus, we have found a value of $y$ such that $x + y = xy$.
+Since $x \in \BR$ was arbitrary and we have proved both directions, this completes the proof.
 \end{proof}
 
 
