@@ -1788,7 +1788,21 @@ Consider the following putative theorem:
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item The issue with the attempted proof is in unraveling the definitions of
+	$m$ being even and $n$ being odd.
+	The proof incorrectly assumes that there is a single integer $k$ 
+	such that $m = 2k$ and $n = 2k + 1$, but that is not necessarily the case.
+	Instead, the proof should have said that there is some integer $k$ such that $m = 2k$
+	and some integer $l$ such that $n = 2l$.
+	
+	\item The theorem is incorrect.
+	Consider the case where $m = 2$ and $n = 1$.
+	In this case, $n^2 - m^2 = 1^2 - 2^2 = -3$, while $n + m = 1 + 2 = 3$.
+	Thus, we have found values for $m$ and $n$ that satisfy the hypotheses of the theorem,
+	but do not satisfy the conclusion.
+\end{enumerate}
 \end{proof}
 
 
