@@ -1836,11 +1836,33 @@ Since $x \in \BR$ was arbitrary and we have proved both directions, this complet
 
 
 \begin{statement}{3.4.14}
-Prove that there exists $z \in \BR$, such that for all $x \in \BR^+$, there exists $y \in \BR$ such that $y - x = y/x$ if and only if $x = z$.
+Prove that $\exists z \in \BR \forall x \in \BR^+ [\exists y \in \BR (y - x = y / x) \leftrightarrow x \neq z]$.
+\emph{Note: This exercise in my copy of the book has a typo, where instead of $x \neq z$ it says $x = z$.}
 \end{statement}
 
 \begin{proof}
-% Fill in
+Translating the statement from logical symbols to mathematical English, we wish to prove that there exists $z \in \BR$, such that for all $x \in \BR^+$, there exists $y \in \BR$ such that $y - x = y/x$ if and only if $x \neq z$.
+To start, let $z = 1$ and let $x \in \BR^+$ be arbitrary.
+Now our goal is to prove that there exists $y \in \BR$ such that $y - x = y / x$ if and only if $x \neq 1$.
+
+We start by proving the forward direction.
+Suppose there exists $y \in \BR$ such that $y - x = y / x$.
+Next suppose, towards a contradiction, that $x = 1$.
+Plugging this into our equation gives us $y - 1 = y$, which is a contradiction.
+Thus, we conclude that $x \neq 1$.
+
+Next we prove the backward direction.
+Suppose $x \neq 1$.
+Consider $y = x^2 / (x - 1)$, which is a real number since $x \neq 1$.
+Plugging this value for $y$ into the expression $y - x$ gives us
+\begin{equation*}
+	\frac{x^2}{x - 1} - x = \frac{x^2}{x - 1} - \frac{x^2 - x}{x - 1}
+	= \frac{x}{x - 1} = \frac{y}{x}.
+\end{equation*}
+Thus, we have found a value of $y$ such that $y - x = y / x$.
+
+Since $x \in \BR^+$ was arbitrary and we have proved both directions, this completes the proof.
+\emph{Note that the proof actually holds for all nonzero $x \in \BR$.}
 \end{proof}
 
 
