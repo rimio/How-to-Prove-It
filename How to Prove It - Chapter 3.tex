@@ -1889,7 +1889,14 @@ Prove that $\bigcup \mathcal{F}$ and $\bigcap \mathcal{G}$ are disjoint.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose, towards a contradiction, that $\bigcup \mathcal{F}$ and $\bigcap \mathcal{G}$ are not disjoint.
+Then there is $x \in \left( \bigcup \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right)$.
+Since $x \in \bigcup \mathcal{F}$, there is $A \in \mathcal{F}$ such that $x \in A$.
+Then, by the assumption that every element of $\mathcal{F}$ is disjoint from some element of $\mathcal{G}$, there is a set $B_A \in \mathcal{G}$ such that $A \cap B_A = \varnothing$.
+However, since $x \in \bigcap \mathcal{G}$, $x \in B$ for all $B \in \mathcal{G}$.
+In particular, this means $x \in B_A$, so $x \in A \cap B_A$.
+This, however, is a contradiction to the prior assumption that $A \cap B_A = \varnothing$.
+Thus, we conclude that $\bigcup \mathcal{F}$ and $\bigcap \mathcal{G}$ are disjoint.
 \end{proof}
 
 
