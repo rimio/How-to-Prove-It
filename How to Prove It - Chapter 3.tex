@@ -1905,7 +1905,22 @@ Prove that for any set $A$, $A = \bigcup \powerset{A}$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $A$ be an arbitrary set.
+First note that if $A$ is empty, then $\bigcup \powerset{A} = \bigcup \{ \varnothing \} = \varnothing$, so $A = \bigcup \powerset{A}$ in this case.
+Now we assume that $A$ is nonempty.
+We start by proving that $A \subseteq \bigcup \powerset{A}$.
+Let $x \in A$ be arbitrary.
+Since $x \in A$, the singleton set $S_x = \{ x \}$ is a subset of $A$.
+In other words, $S_x \in \powerset{A}$ and $x \in S_x$, so $x \in \bigcup \powerset{A}$.
+Since $x \in A$ was arbitrary, we conclude that $A \subseteq \bigcup \powerset{A}$.
+
+Next we prove that $\bigcup \powerset{A} \subseteq A$.
+Let $x \in \bigcup \powerset{A}$ be arbitrary.
+By the definition of $\bigcup \powerset{A}$, there is $S \in \powerset{A}$ such that $x \in S$.
+Then, by the definition of $\powerset{A}$, $S \subseteq A$, so it immediately follows that $x \in A$.
+Since $x \in \bigcup \powerset{A}$ was arbitrary, we conclude that $\bigcup \powerset{A} \subseteq A$.
+Hence, we conclude that $A = \bigcup \powerset{A}$.
+Since $A$ was an arbitrary set, this holds for any set $A$.
 \end{proof}
 
 
