@@ -1872,7 +1872,14 @@ Prove that $\bigcup \{ A \setminus B \mid A \in \mathcal{F} \} \subseteq \bigcup
 \end{statement}
 
 \begin{proof}
-% Fill in
+Since the empty set is always a subset of any set $S$, we may assume, without loss of generality, that $\bigcup \{ A \setminus B \mid A \in \mathcal{F} \}$ is nonempty.
+Let $x \in \bigcup \{ A \setminus B \mid A \in \mathcal{F} \}$ be arbitrary.
+Our goal is to show that there exists a set $A \in \mathcal{F} \setminus \powerset{B}$ such that $x \in A$.
+By the definition of $\bigcup \{ A \setminus B \mid A \in \mathcal{F} \}$, there is $A \in \mathcal{F}$ such that $x \in A \setminus B$.
+In particular, this means that $A \nsubseteq B$, or in other words, $A \notin \powerset{B}$.
+Since $A \notin \powerset{B}$, we have $A \in \mathcal{F} \setminus \powerset{B}$, as desired.
+Thus, $x \in \bigcup (\mathcal{F} \setminus \powerset{B})$.
+Since $x \in \bigcup \{ A \setminus B \mid A \in \mathcal{F} \}$ was arbitrary, this completes the proof that $\bigcup \{ A \setminus B \mid A \in \mathcal{F} \} \subseteq \bigcup (\mathcal{F} \setminus \powerset{B})$.
 \end{proof}
 
 
