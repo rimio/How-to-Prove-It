@@ -1990,11 +1990,27 @@ Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
 
 \begin{statement}{3.4.19}
 Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
-Prove that $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right) \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$ if and only if for all $A \in \mathcal{F}$ and for all $B \in \mathcal{G}$, $A \cap B \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$ .
+Prove that $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right) \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$ if and only if for all $A \in \mathcal{F}$ and for all $B \in \mathcal{G}$, $A \cap B \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We start by proving the forward direction.
+Suppose $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right) \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$.
+Let $A \in \mathcal{F}$ and $B \in \mathcal{G}$ be arbitrary.
+Without loss of generality, we may assume that $A \cap B \neq \varnothing$, since otherwise there is nothing to check, as the empty set is a subset of any set.
+Since $A$ and $B$ are not disjoint, there is $x \in A \cap B$.
+Next, since $x \in A$ and $A \in \mathcal{F}$, it follows that $x \in \bigcup \mathcal{F}$.
+Similarly, $x \in \bigcup \mathcal{G}$ as well.
+In other words, $x \in \left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$, so it immediately follows that $x \in \bigcup (\mathcal{F} \cap \mathcal{G})$ from the assumption that $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right) \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$.
+This allows us to conclude that $A \cap B \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$, and since $A$ and $B$ were arbitrary, this holds for all $A \in \mathcal{F}$ and all $B \in \mathcal{G}$.
+This completes the proof of the forward direction.
+
+Now suppose for all $A \in \mathcal{F}$ and for all $B \in \mathcal{G}$, $A \cap B \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$.
+First, without loss of generality, we may assume that $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$ is nonempty, since once again there would be nothing to prove otherwise.
+Let $x \in \left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$ be arbitrary.
+Unraveling the definitions of $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$, this means that there is $A \in \mathcal{F}$ such that $x \in A$, and there is $B \in \mathcal{G}$ such that $x \in B$.
+By the assumption, $A \cap B \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$, so since $x \in A \cap B$, it follows that $x \in \bigcup (\mathcal{F} \cap \mathcal{G})$.
+Since $x$ was arbitrary, this completes the proof that $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right) \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$.
 \end{proof}
 
 
