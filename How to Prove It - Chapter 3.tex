@@ -1952,12 +1952,39 @@ Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
 	 
 	 \item Find an example of families of sets $\mathcal{F}$ and $\mathcal{G}$ for which
 	 $\bigcup (\mathcal{F} \cap \mathcal{G}) \neq
-	\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$
+	\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$.
 \end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Let $x \in \bigcup (\mathcal{F} \cap \mathcal{G})$ be arbitrary.
+	Then, by the definition of $\bigcup (\mathcal{F} \cap \mathcal{G})$, there is
+	$X \in \mathcal{F} \cap \mathcal{G}$ such that $x \in X$.
+	Since $X \in \mathcal{F}$, it follows that $x \in \bigcup \mathcal{F}$.
+	Similarly, since $X \in \mathcal{G}$, it follows that $x \in \bigcup \mathcal{G}$.
+	In other words, $x \in \left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$.
+	Since $x \in \bigcup (\mathcal{F} \cap \mathcal{G})$ was arbitrary, we conclude
+	that $\bigcup (\mathcal{F} \cap \mathcal{G}) \subseteq
+	\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right)$.
+	
+	\item The error in the proof occurs when the existence statement in the definitions of 
+	$\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$ is incorrectly interpreted to mean
+	the set $A \in \mathcal{F}$ containing $x$ and the set $A \in \mathcal{G}$ containing $x$
+	are the same set.
+	They could be different sets, and a correct proof would recognize this by using the definition
+	to assert the existence of a set $A \in \mathcal{F}$ containing $x$ and a set $B \in \mathcal{G}$
+	containing $x$.
+	Here giving the two sets different variable names emphasizes the fact that they need not
+	be equal.
+	
+	\item Consider $\mathcal{F} = \{ \{1, 2\}, \{3\} \}$ and $\mathcal{G} = \{ \{1\}, \{2, 3\} \}$.
+	In this case, $\bigcup \mathcal{F} = \bigcup \mathcal{G} = \{ 1, 2, 3 \}$,
+	so $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right) = \{ 1, 2, 3 \}$.
+	However, $\mathcal{F} \cap \mathcal{G} = \varnothing$, so
+	$\bigcup (\mathcal{F} \cap \mathcal{G}) = \varnothing$.
+\end{enumerate}
 \end{proof}
 
 
