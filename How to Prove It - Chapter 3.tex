@@ -2020,7 +2020,18 @@ Prove that $\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$ are disjoint if and o
 \end{statement}
 
 \begin{proof}
-% Fill in
+We instead prove the equivalent statement that $\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$ are not disjoint if and only if there exist $A \in \mathcal{F}$ and $B \in \mathcal{G}$ such that $A$ and $B$ are not disjoint.
+Note that this equivalent statement comes from breaking the original biconditional statement into the individual directions and then taking the contrapositive of each direction.
+First, suppose $\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$ are not disjoint.
+This means that there is $x$ in the intersection of these two sets.
+In other words, there exists $A \in \mathcal{F}$ such that $x \in A$ and also there exists $B \in \mathcal{G}$ such that $x \in B$.
+Since $x \in A \cap B$, we have found two sets $A \in \mathcal{F}$ and $B \in \mathcal{G}$ such that $A$ and $B$ are not disjoint.
+
+Next, suppose there exist $A \in \mathcal{F}$ and $B \in \mathcal{G}$ such that $A$ and $B$ are not disjoint.
+Since $A$ and $B$ are not disjoint, there exists $x \in A \cap B$.
+Then, since $x \in A$ and $A \in \mathcal{F}$, we know that $x \in \bigcup \mathcal{F}$.
+Similarly, $x \in \bigcup \mathcal{G}$ as well, so we conclude that $\bigcup \mathcal{F}$ and $\bigcup \mathcal{G}$ are not disjoint.
+This completes the proof.
 \end{proof}
 
 
