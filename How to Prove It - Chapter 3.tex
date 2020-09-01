@@ -2175,17 +2175,43 @@ Since $a$ and $b$ were arbitrary, this holds for all integers $a$ and $b$.
 
 \begin{statement}{3.4.27}
 \begin{enumerate}
-	\item Prove that for ever integer $n$, $15$ divides $n$ if and only if
-	$3$ divides $n$ and $5$ divides $n$.
+	\item Prove that for every integer $n$, 15 divides $n$ if and only if
+	3 divides $n$ and 5 divides $n$.
 	
 	\item Prove that it is \emph{not} true that for every integer $n$,
-	$60$ divides $n$ if and only if $6$ divides $n$ and $10$ divides $n$.
+	60 divides $n$ if and only if 6 divides $n$ and 10 divides $n$.
 	% Consider n = 90
 \end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Let $n$ be an arbitrary integer.
+	First, suppose 15 divides $n$.
+	In other words, there is an integer $k$ such that $n = 15k$.
+	Since $15 = 3 \times 5$, we have $n = 3(5k) = 5(3k)$.
+	As $l = 5k$ and $m = 3k$ are both integers, we can write $n = 3l = 5m$,
+	which means 3 and 5 both divide $n$.
+	
+	Now suppose 3 and 5 each divide $n$.
+	In other words, there is an integer $k$ such that $n = 3k$
+	and there is an integer $l$ such that $n = 5l$.
+	To show that 15 divides $n$, we need to find an integer $m$ such that $n = 15m$.
+	Consider $m = 2l - k$.
+	Plugging this value of $m$ into the expression $15m$, we have
+	\begin{equation*}
+		15m = 15(2l - k) = 30l - 15k = 6(5l) - 5(3k) = 6n - 5n = n.
+	\end{equation*}
+	Thus, since $n = 15m$, we conclude that 15 divides $n$.
+	Since $n$ was arbitrary, this completes the proof that for every integer $n$,
+	15 divides $n$ if and only if 3 divides $n$ and 5 divides $n$.
+	
+	\item Consider the case where $n = 90$.
+	Since $90 = 15 \times 6 = 9 \times 10$, both 6 and 10 divide $n$, but 60 does not divide $n$.
+	The key point that allowed us to conclude that $n$ being divisible by 3 and 5 implies that $n$
+	is also divisible by 15 in Part (1) is the fact that 3 and 5 are relatively prime.
+\end{enumerate}
 \end{proof}
 
 
