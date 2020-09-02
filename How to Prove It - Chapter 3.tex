@@ -2067,7 +2067,69 @@ Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Let $x \in \left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)$
+	be arbitrary.
+	In other words, there is $A \in \mathcal{F}$ such that $x \in A$,
+	and there does not exist $B \in \mathcal{G}$ such that $x \in B$, by the definitions of
+	$x  \in \bigcup \mathcal{F}$ and $x \notin \bigcup \mathcal{G}$, respectively.
+	To show that $x \in \bigcup (\mathcal{F} \setminus \mathcal{G})$, we check that
+	$A \in \mathcal{F} \setminus \mathcal{G}$.
+	In particular, we show that $A \notin \mathcal{G}$.
+	If $A \in \mathcal{G}$, then we would have a set in $\mathcal{G}$ containing $x$,
+	which would contradict the prior assumption that no such set exists in $\mathcal{G}$.
+	Thus, we conclude that $A \notin \mathcal{G}$, so it then follows that as
+	$A \in \mathcal{F} \setminus \mathcal{G}$, $x \in \bigcup (\mathcal{F} \setminus \mathcal{G})$.
+	Since $x$ was arbitrary, we conclude that
+	$\left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)
+	\subseteq \bigcup (\mathcal{F} \setminus \mathcal{G})$.
+	
+	\item The issue with the proof lies in the fact that there might be another set $B \in \mathcal{G}$
+	such that $x \in B$.
+	In order for $x$ to be an element of 
+	$\left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)$,
+	there must not be \emph{any} set $B \in \mathcal{G}$ containing $x$.
+	
+	\item First, suppose that for all $A \in \mathcal{F} \setminus \mathcal{G}$
+	and for all $B \in \mathcal{G}$, $A \cap B = \varnothing$.
+	Let $x \in \bigcup \left( \mathcal{F} \setminus \mathcal{G} \right)$ be arbitrary.
+	Then there is some $A \in \mathcal{F} \setminus \mathcal{G}$ such that $x \in A$.
+	Since for all $A \in \mathcal{F} \setminus \mathcal{G}$ and for all $B \in \mathcal{G}$,
+	$A \cap B = \varnothing$, there is no $B \in \mathcal{G}$ such that $x \in B$.
+	Otherwise, if such a $B$ existed, then $x \in A \cap B$ would be a contradiction.
+	Since there is no $B \in \mathcal{G}$ such that $x \in B$, it follows that
+	$x \notin \bigcup \mathcal{G}$.
+	As $x \in A$ and $A \in \mathcal{F}$ means $x \in \bigcup \mathcal{F}$,
+	we conclude that 
+	$x \in \left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)$.
+	Hence, $\bigcup (\mathcal{F} \setminus \mathcal{G})
+	\subseteq \left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)$.
+	
+	To prove the other direction, we work with the contrapositive statement:
+	if there exist $A \in \mathcal{F} \setminus \mathcal{G}$ and $B \in \mathcal{G}$ such that
+	$A \cap B \neq \varnothing$, then
+	$\bigcup (\mathcal{F} \setminus \mathcal{G})
+	\nsubseteq \left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)$.
+	Suppose there is $A \in \mathcal{F} \setminus \mathcal{G}$ and $B \in \mathcal{G}$ such that
+	$A \cap B \neq \varnothing$.
+	Then, since $A \cap B \neq \varnothing$, there exists $x \in A \cap B$.
+	Since $x \in A$ and $A \in \mathcal{F} \setminus \mathcal{G}$,
+	$x \in \bigcup (\mathcal{F} \setminus \mathcal{G})$.
+	In addition, since $A$ is in particular an element of $\mathcal{F}$, $x \in \bigcup \mathcal{F}$.
+	On the other hand, since $x \in B$ and $B \in \mathcal{G}$, $x \in \bigcup \mathcal{G}$ as well.
+	This means that $x \notin \left( \bigcup \mathcal{F} \right) 
+	\setminus \left( \bigcup \mathcal{G} \right)$.
+	In other words, this proves that $\bigcup (\mathcal{F} \setminus \mathcal{G})
+	\nsubseteq \left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)$.
+	This completes the proof.
+	
+	\item Consider $\mathcal{F} \{ \{1\}, \{1, 2\} \}$ and $\mathcal{G} = \{ \{1\}, \{2\} \}$.
+	In this case, $\mathcal{F} \setminus \mathcal{G} = \{ \{1, 2\} \}$,
+	so $\bigcup (\mathcal{F} \setminus \mathcal{G}) = \{ 1, 2 \}$.
+	On the other hand, $\bigcup \mathcal{F} = \bigcup \mathcal{G} = \{ 1, 2 \}$,
+	so $\left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right) = \varnothing$.
+\end{enumerate}
 \end{proof}
 
 
