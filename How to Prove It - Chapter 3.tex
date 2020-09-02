@@ -2135,11 +2135,17 @@ Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
 
 \begin{statement}{3.4.22}
 Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
-Prove that if $\bigcup \mathcal{F} \subseteq \bigcup \mathcal{G}$, then there is some $A \in \mathcal{F}$ such that for all $B \in \mathcal{G}$, $A \subseteq B$.
+Prove that if $\bigcup \mathcal{F} \nsubseteq \bigcup \mathcal{G}$, then there is some $A \in \mathcal{F}$ such that for all $B \in \mathcal{G}$, $A \nsubseteq B$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $\bigcup \mathcal{F} \nsubseteq \bigcup \mathcal{G}$.
+This means that there is $x \in \bigcup \mathcal{F}$ such that $x \notin \bigcup \mathcal{G}$.
+Since $x \in \bigcup \mathcal{F}$, there is $A \in \mathcal{F}$ such that $x \in A$.
+Similarly, since $x \notin \bigcup \mathcal{G}$, we know that for all $B \in \mathcal{G}$, $x \notin B$.
+In particular, this means that $A \nsubseteq B$ for all $B \in \mathcal{G}$.
+Thus, we have found a set $A \in \mathcal{F}$ such that for all $B \in \mathcal{G}$, $A \nsubseteq B$.
+This completes the proof.
 \end{proof}
 
 
