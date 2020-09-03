@@ -2191,7 +2191,22 @@ Suppose $B$ is a set, $\{ A_i \mid i \in I \}$ is an indexed family of sets, and
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item The proof is broken up into two parts: one part to check that
+	$x \in B \cap \left( \bigcup_{i \in I} A_i \right) \rightarrow x \in  \bigcup_{i \in I} (B \cap A_i)$
+	and one part to check that 
+	$x \in \bigcup_{i \in I} (B \cap A_i) B \rightarrow x \in \cap \left( \bigcup_{i \in I} A_i \right)$.
+	Both parts start by taking an arbitrary $x$ and then unraveling the definitions as to what
+	it means to be an element of the starting set for each part.
+	For the first part of the proof, this involves noting that $x \in B$ and using existential instantiation
+	to choose some $i_0 \in I$ such that $x \in A_{i_0}$.
+	For the second part of the proof, existential instantiation is used to choose some $i_0 \in I$
+	such that $x \in B \cap A_{i_0}$.
+	In both parts of the proof, we then check that this $i_0$ satisfies the desired property
+	to conclude that $x \in \bigcup_{i \in I} (B \cap A_i)$ in the first part and that
+	$x \in B \cap \left( \bigcup_{i \in I} A_i \right)$ in the second part.
+\end{enumerate}
 \end{proof}
 
 
