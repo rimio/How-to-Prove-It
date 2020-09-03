@@ -1872,6 +1872,7 @@ Prove that $\bigcup \{ A \setminus B \mid A \in \mathcal{F} \} \subseteq \bigcup
 \end{statement}
 
 \begin{proof}
+% Can also revise wording to make proof a little less clunky and better utilize the fact that it is sufficient to prove the implication (x in A) --> (x in B) to show that A is a subset of B.
 Since the empty set is always a subset of any set $S$, we may assume, without loss of generality, that $\bigcup \{ A \setminus B \mid A \in \mathcal{F} \}$ is nonempty.
 Let $x \in \bigcup \{ A \setminus B \mid A \in \mathcal{F} \}$ be arbitrary.
 Our goal is to show that there exists a set $A \in \mathcal{F} \setminus \powerset{B}$ such that $x \in A$.
@@ -1905,6 +1906,7 @@ Prove that for any set $A$, $A = \bigcup \powerset{A}$.
 \end{statement}
 
 \begin{proof}
+% Can also revise wording to make proof a little less clunky and better utilize the fact that it is sufficient to prove the implication (x in A) --> (x in B) to show that A is a subset of B.
 Let $A$ be an arbitrary set.
 First note that if $A$ is empty, then $\bigcup \powerset{A} = \bigcup \{ \varnothing \} = \varnothing$, so $A = \bigcup \powerset{A}$ in this case.
 Now we assume that $A$ is nonempty.
@@ -1959,6 +1961,8 @@ Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
 \begin{proof}
 \hfill
 \begin{enumerate}
+	% Can also revise wording to make proof a little less clunky and better utilize the fact that it is
+	% sufficient to prove the implication (x in A) --> (x in B) to show that A is a subset of B.
 	\item Let $x \in \bigcup (\mathcal{F} \cap \mathcal{G})$ be arbitrary.
 	Then, by the definition of $\bigcup (\mathcal{F} \cap \mathcal{G})$, there is
 	$X \in \mathcal{F} \cap \mathcal{G}$ such that $x \in X$.
@@ -1994,6 +1998,7 @@ Prove that $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \
 \end{statement}
 
 \begin{proof}
+% Can also revise wording to make proof a little less clunky and better utilize the fact that it is sufficient to prove the implication (x in A) --> (x in B) to show that A is a subset of B.
 We start by proving the forward direction.
 Suppose $\left( \bigcup \mathcal{F} \right) \cap \left( \bigcup \mathcal{G} \right) \subseteq \bigcup (\mathcal{F} \cap \mathcal{G})$.
 Let $A \in \mathcal{F}$ and $B \in \mathcal{G}$ be arbitrary.
@@ -2069,6 +2074,8 @@ Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets.
 \begin{proof}
 \hfill
 \begin{enumerate}
+	% Can also revise wording to make proof a little less clunky and better utilize the fact that it is
+	% sufficient to prove the implication (x in A) --> (x in B) to show that A is a subset of B.
 	\item Let $x \in \left( \bigcup \mathcal{F} \right) \setminus \left( \bigcup \mathcal{G} \right)$
 	be arbitrary.
 	In other words, there is $A \in \mathcal{F}$ such that $x \in A$,
