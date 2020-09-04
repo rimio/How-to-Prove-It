@@ -2335,7 +2335,23 @@ Suppose $\{ A_i \mid i \in I \}$ and $\{ B_i \mid i \in I \}$ are indexed famili
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $x \in \bigcup_{i \in I} (A_i \cap B_i)$.
+	This means there is $i \in I$ such that $x \in A_i \cap B_i$.
+	In other words, there is $i \in I$ such that $x \in A_i$ and $x \in B_i$.
+	Since $x \in A_i$, it follows that $x \in \bigcup_{i \in I} A_i$.
+	Similarly, $x \in B_i$ means that $x \in \bigcup_{i \in I} B_i$.
+	Thus, $x \in \left( \bigcup_{i \in I} A_i \right) \cap \left( \bigcup_{i \in I} B_i \right)$.
+	We conclude that $\bigcup_{i \in I} (A_i \cap B_i) \subseteq
+	\left( \bigcup_{i \in I} A_i \right) \cap \left( \bigcup_{i \in I} B_i \right)$.
+	
+	\item Consider $A_1 = B_2 = \{ 1 \}$ and $A_2 = B_1 = \{ 2 \}$.
+	In this case, $A_1 \cap B_1 = A_2 \cap B_2 = \varnothing$,
+	so $\bigcup_{i \in I} (A_i \cap B_i) = \varnothing$.
+	On the other hand, $\bigcup_{i \in I} A_i = \bigcup_{i \in I} B_i = \{ 1, 2 \}$, so
+	$\left( \bigcup_{i \in I} A_i \right) \cap \left( \bigcup_{i \in I} B_i \right) = \{ 1, 2 \}$.
+\end{enumerate}
 \end{proof}
 
 
