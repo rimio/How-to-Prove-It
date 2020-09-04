@@ -2273,15 +2273,53 @@ Suppose $B$ is a set, $\{ A_i \mid i \in I \}$ is an indexed family of sets, and
 Suppose $\{ A_i \mid i \in I \}$ and $\{ B_i \mid i \in I \}$ are indexed families of sets and $I \neq \varnothing$.
 \begin{enumerate}
 	\item Prove that $\bigcup_{i \in I} (A_i \setminus B_i) \subseteq
+	\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)$.
+	
+	\emph{
+	Note: This exercise in my copy of the book has a typo, where it asks for us to prove that
+	$\bigcup_{i \in I} (A_i \setminus B_i) \subseteq
 	\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$.
+	This statement is incorrect.
+	To see why, consider the example of 
+	$I = \{ 1, 2 \}$, $A_i = \{ 1, 2, 3 \}$, and $B_i = \{ i, i + 1 \}$.
+	In this case, since $\bigcup_{i \in I} B_i = \{ 1, 2, 3 \}$,
+	$\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right) = \varnothing$,
+	while $A_1 \setminus B_1 = \{ 3 \}$ and $A_2 \setminus B_2 = \{ 1 \}$ means that
+	$\bigcup_{i \in I} (A_i \setminus B_i) = \{ 1, 3 \}$.
+	}
 	
 	\item Find an example for which $\bigcup_{i \in I} (A_i \setminus B_i) \neq
-	\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$.
+	\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)$.
+	
+	\emph{
+	Note: Since Part (1) had the typo of considering 
+	$\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcup_{i \in I} B_i \right)$ instead of
+	$\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)$,
+	I assume that Part (2) also had the same typo and have adjusted accordingly.
+	}
 \end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $x \in \bigcup_{i \in I} (A_i \setminus B_i)$.
+	This means that there exists $i \in I$ such that $x \in A_i \setminus B_i$, or in other words
+	there exists $i \in I$ such that $x \in A_i$ and $x \notin B_i$.
+	Since $x \in A_i$, $x \in \bigcup_{i \in I} A_i$.
+	Since $x \notin B_i$, $x \notin \bigcap_{i \in I} B_i$.
+	Hence, $x \in \left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)$,
+	so we conclude that 
+	$\bigcup_{i \in I} (A_i \setminus B_i) \subseteq
+	\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right)$.
+	
+	\item Consider $I = \{ 1, 2 \}$, $A_i = \{ i, i + 1 \}$, and $B_i = \{ i \}$.
+	In this case, since $A_i \setminus B_i = \{ i + 1 \}$, we have
+	$\bigcup_{i \in I} (A_i \setminus B_i) = \{ 2, 3 \}$.
+	On the other hand, since $\bigcup_{i \in I} A_i = \{ 1, 2, 3 \}$ and 
+	$\bigcap_{i \in I} B_i = \varnothing$, 
+	$\left( \bigcup_{i \in I} A_i \right) \setminus \left( \bigcap_{i \in I} B_i \right) = \{ 1, 2, 3 \}$.
+\end{enumerate}
 \end{proof}
 
 
