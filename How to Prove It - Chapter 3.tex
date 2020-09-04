@@ -2442,11 +2442,26 @@ Thus, since in either case $x \in A \cup (B \setminus C)$, we conclude that $(A 
 
 
 \begin{statement}{3.5.3}
-% Fill in
+Suppose $A$ and $B$ are sets.
+Prove that $A \setminus (A \setminus B) = A \cap B$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We first check that $A \cap B \subseteq A \setminus (A \setminus B)$.
+Suppose $x \in A \cap B$.
+This means $x \in A$ and $x \in B$.
+We also note that this means $x \notin A \setminus B$.
+Hence, as $x \in A$ and $x \notin A \setminus B$, we conclude that $x \in A \setminus (A \setminus B)$.
+Thus, $A \cap B \subseteq A \setminus (A \setminus B)$.
+
+Now we check that $A \setminus (A \setminus B) \subseteq A \cap B$.
+Suppose $x \in A \setminus (A \setminus B)$.
+This means $x \in A$ and $x \notin A \setminus B$.
+Since $x \in A \setminus B$ means that $x \in A$ and $x \notin B$, $x \notin A \setminus B$ means that $x \notin A$ or $x \in B$.
+We already know that $x \in A$, so we conclude that $x \in B$.
+In other words, since $x \in A$ and $x \in B$, $x \in A \cap B$.
+Thus, we conclude that $A \setminus (A \setminus B) \subseteq A \cap B$.
+This completes the proof that $A \setminus (A \setminus B) = A \cap B$.
 \end{proof}
 
 
