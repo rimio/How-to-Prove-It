@@ -2427,11 +2427,17 @@ Thus, since in either case $x \in (A \cap B) \cup C$, we conclude that $A \cap (
 
 
 \begin{statement}{3.5.2}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+Prove that $(A \cup B) \setminus C \subseteq A \cup (B \setminus C)$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $x \in (A \cup B) \setminus C$.
+Then $x \in A \cup B$ and $x \notin C$.
+Since $x \in A \cup B$, there are two cases to consider: $x \in A$ and $x \in B$.
+If $x \in A$, then we are done, since this automatically means $x \in A \cup (B \setminus C)$.
+If $x \in B$, then $x \in B \setminus C$, and once again this means $x \in A \cup (B \setminus C)$.
+Thus, since in either case $x \in A \cup (B \setminus C)$, we conclude that $(A \cup B) \setminus C \subseteq A \cup (B \setminus C)$.
 \end{proof}
 
 
