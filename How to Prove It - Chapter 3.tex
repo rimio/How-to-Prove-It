@@ -2466,11 +2466,28 @@ This completes the proof that $A \setminus (A \setminus B) = A \cap B$.
 
 
 \begin{statement}{3.5.4}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+Prove that $A \setminus (B \setminus C) = (A \setminus B) \cup (A \cap C)$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We first check that $A \setminus (B \setminus C) \subseteq (A \setminus B) \cup (A \cap C)$.
+Suppose $x \in A \setminus (B \setminus C)$.
+This means $x \in A$ and $x \notin B \setminus C$.
+Since $x \notin B \setminus C$, we have two cases to consider: $x \notin B$ and $x \in C$.
+If $x \notin B$, then that $x \in A \setminus B$.
+On the other hand, if $x \in C$, then $x \in A \cap C$.
+In either case $x \in (A \setminus B) \cup (A \cap C)$, so we conclude that $A \setminus (B \setminus C) \subseteq (A \setminus B) \cup (A \cap C)$.
+
+Now we check that $(A \setminus B) \cup (A \cap C) \subseteq A \setminus (B \setminus C)$.
+Suppose $x \in (A \setminus B) \cup (A \cap C)$.
+We have two cases to consider: $x \in A \setminus B$ and $x \in A \cap C$.
+If $x \in A \setminus B$, then $x \in A$ and $x \notin B$.
+Since $x \notin B$, then $x \notin B \setminus C$ as well, so $x \in A \setminus (B \setminus C)$.
+In the other case, if $x \in A \cap C$, then $x \in A$ and $x \in C$.
+Since $x \in C$, then $x \notin B \setminus C$ as well, so once again $x \in A \setminus (B \setminus C)$.
+Since in either case $x \in A \setminus (B \setminus C)$, we conclude that $(A \setminus B) \cup (A \cap C) \subseteq A \setminus (B \setminus C)$.
+This completes the proof that $A \setminus (B \setminus C) = (A \setminus B) \cup (A \cap C)$.
 \end{proof}
 
 
