@@ -2412,11 +2412,17 @@ Since $a$ and $b$ were arbitrary, this holds for all integers $a$ and $b$.
 
 
 \begin{statement}{3.5.1}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+Prove that $A \cap (B \cup C) \subseteq (A \cap B) \cup C$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $x \in A \cap (B \cup C)$.
+Then $x \in A$ and $x \in B \cup C$.
+Since $x \in B \cup C$, there are two cases two consider: $x \in B$ and $x \in C$.
+If $x \in C$, then we are done, since this automatically means $x \in (A \cap B) \cup C$.
+If $x \in B$, then $x \in A \cap B$, and once again this means $x \in (A \cap B) \cup C$.
+Thus, since in either case $x \in (A \cap B) \cup C$, we conclude that $A \cap (B \cup C) \subseteq (A \cap B) \cup C$.
 \end{proof}
 
 
