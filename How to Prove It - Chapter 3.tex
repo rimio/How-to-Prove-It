@@ -2183,7 +2183,19 @@ Suppose $B$ is a set, $\{ A_i \mid i \in I \}$ is an indexed family of sets, and
 	\end{proof}
 	
 	\item Prove that $B \setminus \left( \bigcup_{i \in I} A_i \right) = 
-	\bigcup_{i \in I} (B \setminus A_i)$.
+	\bigcap_{i \in I} (B \setminus A_i)$.
+	
+	\emph{
+	Note: This exercise in my copy of the book has a typo, where it asks for us to prove that
+	$B \setminus \left( \bigcup_{i \in I} A_i \right) = \bigcup_{i \in I} (B \setminus A_i)$.
+	This statement is incorrect.
+	To see why, consider the example of 
+	$I = \{ 1, 2 \}$, $A_i = \{ i, i + 1 \}$, and $B = \{ 1, 2, 3 \}$.
+	In this case, since $\bigcup_{i \in I} A_i = \{ 1, 2, 3 \}$,
+	$B \setminus \left( \bigcup_{i \in I} A_i \right) = \varnothing$,
+	while $B \setminus A_1 = \{ 3 \}$ and $B \setminus A_2 = \{ 1 \}$ means that
+	$\bigcup_{i \in I} (B \setminus A_i) = \{ 1, 3 \}$.
+	}
 	
 	\item Can you discover and prove a similar theorem about
 	$B \setminus \left( \bigcap_{i \in I} A_i \right)$?
@@ -2213,6 +2225,46 @@ Suppose $B$ is a set, $\{ A_i \mid i \in I \}$ is an indexed family of sets, and
 	In both parts of the proof, we then check that this $i_0$ satisfies the desired property
 	to conclude that $x \in \bigcup_{i \in I} (B \cap A_i)$ in the first part and that
 	$x \in B \cap \left( \bigcup_{i \in I} A_i \right)$ in the second part.
+	
+	\item Suppose $x \in B \setminus \left( \bigcup_{i \in I} A_i \right)$.
+	Then $x \in B$ and $x \notin \bigcup_{i \in I} A_i$.
+	Since $x \notin \bigcup_{i \in I} A_i$, $x \notin A_i$ for all $i \in I$.
+	In other words, $x \in B \setminus A_i$ for all $i \in I$.
+	This means that $x \in \bigcap_{i \in I} (B \setminus A_i)$, so 
+	$B \setminus \left( \bigcup_{i \in I} A_i \right) \subseteq \bigcap_{i \in I} (B \setminus A_i)$.
+	
+	Now suppose $x \in \bigcap_{i \in I} (B \setminus A_i)$.
+	This means that $x \in B \setminus A_i$ for all $i \in I$, or in other words, $x \in B$
+	and $x \notin A_i$ for all $i \in I$.
+	Since $x \notin A_i$ for all $i \in I$, $x \notin \bigcup_{i \in I} A_i$.
+	This means that $x \in B \setminus \left( \bigcup_{i \in I} A_i \right)$.
+	In other words, 
+	$\bigcap_{i \in I} (B \setminus A_i) \subseteq B \setminus \left( \bigcup_{i \in I} A_i \right)$.
+	This completes the proof that $B \setminus \left( \bigcup_{i \in I} A_i \right) = 
+	\bigcap_{i \in I} (B \setminus A_i)$.
+	
+	\item We will prove that the following theorem.
+	\begin{theorem}
+		$B \setminus \left( \bigcap_{i \in I} A_i \right) = 
+		\bigcup_{i \in I} (B \setminus A_i)$.
+	\end{theorem}
+	
+	Suppose $x \in B \setminus \left( \bigcap_{i \in I} A_i \right)$.
+	Then $x \in B$ and $x \notin \bigcap_{i \in I} A_i$.
+	Since $x \notin \bigcap_{i \in I} A_i$, there exists $i \in I$ such that $x \notin A_i$.
+	In other words, $x \in B \setminus A_i$ for that value of $i$.
+	This means that $x \in \bigcup_{i \in I} (B \setminus A_i)$, so 
+	$B \setminus \left( \bigcap_{i \in I} A_i \right) \subseteq \bigcup_{i \in I} (B \setminus A_i)$.
+	
+	Now suppose $x \in \bigcup_{i \in I} (B \setminus A_i)$.
+	This means that there exists $i \in I$ such that $x \in B \setminus A_i$, or in other words
+	$x \in B$ and $x \notin A_i$ for that value of $i$.
+	Since there exists $i \in I$ such that $x \notin A_i$, $x \notin \bigcap_{i \in I} A_i$.
+	This means that $x \in B \setminus \left( \bigcap_{i \in I} A_i \right)$.
+	In other words, 
+	$\bigcup_{i \in I} (B \setminus A_i) \subseteq B \setminus \left( \bigcap_{i \in I} A_i \right)$.
+	This completes the proof that $B \setminus \left( \bigcap_{i \in I} A_i \right) = 
+	\bigcup_{i \in I} (B \setminus A_i)$.
 \end{enumerate}
 \end{proof}
 
