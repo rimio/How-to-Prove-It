@@ -2570,11 +2570,24 @@ This completes the proof.
 
 
 \begin{statement}{3.5.9}
-% Fill in
+Prove that for any sets $A$ and $B$, if $\powerset{A} \cup \powerset{B} = \powerset{A \cup B}$ then either $A \subseteq B$ or $B \subseteq A$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $A$ and $B$ be arbitrary sets.
+We will prove the equivalent contrapositive statement: if $A \nsubseteq B$ and $B \nsubseteq A$ then $\powerset{A} \cup \powerset{B} \neq \powerset{A \cup B}$.
+Since we showed that  for any sets $A$ and $B$, $\powerset{A} \cup \powerset{B} \subseteq \powerset{A \cup B}$ in Exercise 3.5.8 above, we only need to show that $\powerset{A \cup B} \nsubseteq \powerset{A} \cup \powerset{B}$.
+In other words, we need to find $X \in \powerset{A \cup B}$ such that $X \notin \powerset{A} \cup \powerset{B}$.
+
+Suppose $A \nsubseteq B$ and $B \nsubseteq A$.
+Since $A \nsubseteq B$, there is $a \in A \setminus B$.
+Similarly, since $B \nsubseteq A$, there is $b \in B \setminus A$.
+Consider $X = \{ a, b \}$, which is an element of $\powerset{A \cup B}$.
+Since $b \notin A$, $X \nsubseteq A$, and since $a \notin B$, $X \nsubseteq B$ as well.
+This means $X \notin \powerset{A}$ and $X \notin \powerset{B}$.
+In other words, $X \notin \powerset{A} \cup \powerset{B}$.
+Thus, we have found $X \in \powerset{A \cup B}$ such that $X \notin \powerset{A} \cup \powerset{B}$.
+Since $A$ and $B$ were arbitrary sets, this completes the proof that  for any sets $A$ and $B$, if $\powerset{A} \cup \powerset{B} = \powerset{A \cup B}$ then either $A \subseteq B$ or $B \subseteq A$.
 \end{proof}
 
 
