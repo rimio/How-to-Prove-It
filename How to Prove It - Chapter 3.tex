@@ -2509,11 +2509,22 @@ Since in either case $x \in B$, we conclude that $A \subseteq B$.
 
 
 \begin{statement}{3.5.6}
-% Fill in
+Recall from Section 1.4 that the symmetric difference of two sets $A$ and $B$ is the set $A \bigtriangleup B = (A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B)$.
+Prove that if $A \bigtriangleup B \subseteq A$ then $B \subseteq A$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $A \bigtriangleup B \subseteq A$.
+Now suppose $x \in B$ is arbitrary.
+There are two cases to consider: $x \in A$ and $x \notin A$.
+If $x \in A$, then there is nothing left to check and we are done, so we focus on the case $x \notin A$.
+If $x \notin A$, then since $x \in B$, $x \in B \setminus A$.
+This means that $x \in A \bigtriangleup B = (A \setminus B) \cup (B \setminus A)$.
+Since $A \bigtriangleup B \subseteq A$ by assumption, this means $x \in A$.
+But this contradicts the prior assumption that $x \notin A$.
+Thus, we conclude that we can only have $x \in A$.
+Since $x$ was arbitrary, we conclude that $B \subseteq A$.
+This completes the proof that if $A \bigtriangleup B \subseteq A$ then $B \subseteq A$.
 \end{proof}
 
 
