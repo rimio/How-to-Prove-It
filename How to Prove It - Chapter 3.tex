@@ -2529,11 +2529,27 @@ This completes the proof that if $A \bigtriangleup B \subseteq A$ then $B \subse
 
 
 \begin{statement}{3.5.7}
-% Fill in
+Suppose $A$, $B$, and $C$ are arbitrary sets.
+Prove that $A \cup C \subseteq B \cup C$ if and only if $A \setminus C \subseteq B \setminus C$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+First, suppose $A \cup C \subseteq B \cup C$.
+Suppose $x \in A \setminus C$ is arbitrary.
+Since $x \in A \setminus C$, we know $x \in A$ and $x \notin C$.
+To show that $x \in B \setminus C$, all we need to check is that $x \in B$.
+Since $x \in A$, $x \in A \cup C \subseteq B \cup C$.
+Then, since $x \in B \cup C$ and $x \notin C$, it follows that $x \in B$.
+Thus, we conclude that $x \in B \setminus C$.
+Since $x$ was arbitrary, this completes the proof that $A \setminus C \subseteq B \setminus C$.
+
+Now suppose $A \setminus C \subseteq B \setminus C$.
+Suppose $x \in A \cup C$ is arbitrary.
+If $x \in C$, then automatically $x \in B \cup C$ and we are done.
+If $x \notin C$, then since $x \in A \cup C$ it follows that $x \in A$.
+Since $x \in A$ and $x \notin C$, $x \in A \setminus C \subseteq B \setminus C$, so $x \in B \setminus C$.
+In particular, $x \in B$, so $x \in B \cup C$.
+Thus, since $x$ was arbitrary, this completes the proof that $A \cup C \subseteq B \cup C$.
 \end{proof}
 
 
