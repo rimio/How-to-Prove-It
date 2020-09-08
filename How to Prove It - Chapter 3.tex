@@ -2554,11 +2554,18 @@ Thus, since $x$ was arbitrary, this completes the proof that $A \cup C \subseteq
 
 
 \begin{statement}{3.5.8}
-% Fill in
+Prove that for any sets $A$ and $B$, $\powerset{A} \cup \powerset{B} \subseteq \powerset{A \cup B}$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $A$ and $B$ be arbitrary sets.
+Suppose $X \in \powerset{A} \cup \powerset{B}$ is arbitrary.
+If $X \in \powerset{A}$, this means $X \subseteq A$, and since $A \subseteq A \cup B$, it follows that $X \subseteq A \cup B$.
+In other words, $X \in \powerset{A \cup B}$.
+Similarly, if $X \in \powerset{B}$, $X \subseteq B$ and it follows that $X \in \powerset{A \cup B}$.
+Since $X \in \powerset{A} \cup \powerset{B}$ was arbitrary and in either case $X \in \powerset{A \cup B}$, we conclude that $\powerset{A} \cup \powerset{B} \subseteq \powerset{A \cup B}$.
+Finally, since $A$ and $B$ were arbitrary sets, this holds for any sets $A$ and $B$.
+This completes the proof.
 \end{proof}
 
 
