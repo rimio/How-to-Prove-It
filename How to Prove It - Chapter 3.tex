@@ -2722,11 +2722,24 @@ Since $x$ was an arbitrary integer and we saw that $x^2 + x$ was even in both ca
 
 
 \begin{statement}{3.5.15}
-% Fill in
+Prove that for every $x \in \BZ$, the remainder when $x^4$ is divided by 8 is either 0 or 1.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x$ be an arbitrary integer.
+There are two cases to consider: $x$ is even and $x$ is odd.
+First we consider the case when $x$ is even, so $x = 2n$ for some integer $n$.
+In this case, $x^4 = (2n)^4 = 8(2n^4)$, and since $2n^4$ is an integer, the remainder when $x^4 = 8(2n^4)$ is divided by 8 is 0.
+Next we consider the case when $x$ is odd, so $x = 2n + 1$ for some integer $n$.
+Computing $x^4 = (2n + 1)^4$, we have
+\begin{align*}
+	x^4 &= (2n + 1)^4 \\
+	&= (2n)^4 + 4(2n^3) + 6(2n)^2 + 4(2n) + 1 \\
+	&= 8(2n^4) + 8(4n^3) + 8(3n^2) + 8n + 1 \\
+	&= 8(2n^4 + 4n^3 + 3n^2 + n) + 1.
+\end{align*}
+Since $2n^4 + 4n^3 + 3n^2 + n$ is an integer, the remainder then $x^4 = 8(2n^4 + 4n^3 + 3n^2 + n) + 1$ is divided by 8 is 1.
+Since $x$ was an arbitrary integer, we conclude that for every integer $x$, the remainder when $x^4$ is divided by 8 is either 0 (when $x$ is even) or 1 (when $x$ is odd).
 \end{proof}
 
 
