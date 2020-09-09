@@ -2652,11 +2652,46 @@ Since $x \in \BR$ was arbitrary, this holds for all real numbers.
 
 
 \begin{statement}{3.5.12}
-% Fill in
+Prove that for every real number $x$, $\abs{2x - 6} > x$ if and only if $\abs{x - 4} > 2$.
+
+\emph{Hint: Read the hint for Exercise 3.5.11.}
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x \in \BR$ be arbitrary.
+
+Suppose $\abs{2x - 6} > x$.
+There are two cases to consider: $2x - 6 \geq 0$ and $2x - 6 < 0$.
+First we consider the case when $2x - 6 \geq 0$, so $\abs{2x - 6} = 2x - 6$.
+This means the inequality $\abs{2x - 6} > x$ can be rewritten as $2x - 6 > x$.
+Isolating $x$ on one side of the inequality, we have $x > 6$.
+Since $x > 6$, $x - 4 > 2$, and in particular, $x - 4$ is positive.
+Thus, $\abs{x - 4} = x - 4 > 2$, as desired.
+
+Next we consider the case when $2x - 6 < 0$, so $\abs{2x - 6} = 6 - 2x$.
+This means the inequality $\abs{2x - 6} > x$ can be rewritten as $6 - 2x > x$.
+Isolating $x$ on one side of the inequality, we have $x < 2$.
+Since $x < 2$, $x - 4 < -2$, or in other words $x - 4$ is negative and $4 - x > 2$.
+Thus, $\abs{x - 4} = 4 - x > 2$, as desired.
+As we can see, in both cases we obtained the desired inequality $\abs{x - 4} > 2$.
+
+Now suppose $\abs{x - 4} > 2$.
+Once again there are two cases to consider: $x - 4 \geq 0$ and $x - 4 < 0$.
+First we consider the case when $x - 4 \geq 0$, so $\abs{x - 4} = x - 4$.
+This means the inequality $\abs{x - 4} > 2$ can be rewritten as $x - 4 > 2$.
+Isolating $x$ on one side of the inequality, we have $x > 6$.
+We can then add $x$ to both sides of the inequality to get $2x > 6 + x$, which we can rewrite as $2x - 6 > x$.
+Since $x > 6$, it follows that $2x - 6 > 0$, so then $\abs{2x - 6} = 2x - 6 > x$, as desired.
+
+Next we consider the case when $x - 4 < 0$, so $\abs{x - 4} = 4 - x$.
+This means the inequality $\abs{x - 4} > 2$ can be rewritten as $4 - x > 2$.
+Isolating $x$ on one side of the inequality, we have $x < 2$.
+We can then multiply both sides by 3 to get $3x < 6$.
+Subtracting $2x$ from both sides then gives us $6 - 2x > x$.
+Since $x < 2$, it follows that $2x - 6 < -2$, and in particular $2x - 6 < 0$, so then $\abs{2x - 6} = 6 - 2x > x$, as desired.
+As we can see, in both cases we obtained the desired inequality $\abs{2x - 6} > x$.
+
+Since $x \in \BR$ was arbitrary, we conclude that for every real number $x$, $\abs{2x - 6} > x$ if and only if $\abs{x - 4} > 2$.
 \end{proof}
 
 
