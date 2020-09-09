@@ -2625,11 +2625,29 @@ Thus, this chain of equivalences completes the proof that $y + 1/x = 1 + y/x$ if
 
 
 \begin{statement}{3.5.11}
-% Fill in
+Prove that for every real number $x$, if $\abs{x - 3} > 3$ then $x^2 > 6x$.
+
+\emph{
+Hint: According to the definition of $\abs{x - 3}$, if $x - 3 \geq 0$ then $\abs{x - 3} = x - 3$, and if $x - 3 < 0$ then $\abs{x - 3} = 3 - x$.
+The easiest way to use this fact is to break your proof into cases.
+Assume that $x - 3 \geq 0$ in the first case, and $x - 3 < 0$ in the second case.
+}
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x \in \BR$ be arbitrary.
+Suppose $\abs{x - 3} > 3$.
+Following the hint, we break the proof into two cases: $x - 3 \geq 0$ and $x - 3 < 0$.
+First we consider the case when $x - 3 \geq 0$.
+In this case, $\abs{x - 3} = x - 3$, so the inequality $\abs{x - 3} > 3$ becomes $x - 3 > 3$.
+Rearranging this inequality gives us $x > 6$, so multiplying both sides by $x$ results in the inequality $x^2 > 6x$, as desired.
+Next we consider the case when $x - 3 < 0$.
+In this case, $\abs{x - 3} = 3 - x$, so the inequality $\abs{x - 3} > 3$ becomes $3 - x > 3$.
+Rearranging this inequality gives us $x < 0$.
+While $x^2 > 0$ for all real numbers, since $x < 0$ when know that $6x < 0$ as well.
+Hence, $x^2 > 6x$ once again in this case.
+Now that we have checked both cases, we conclude that $x^2 > 6x$.
+Since $x \in \BR$ was arbitrary, this holds for all real numbers.
 \end{proof}
 
 
