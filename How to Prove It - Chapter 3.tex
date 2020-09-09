@@ -2696,11 +2696,79 @@ Since $x \in \BR$ was arbitrary, we conclude that for every real number $x$, $\a
 
 
 \begin{statement}{3.5.13}
-% Fill in
+\begin{enumerate}
+	\item Prove that for all real numbers $a$ and $b$, $\abs{a} \leq b$ if and only if 
+	$-b \leq a \leq b$.
+	
+	\item Prove that for any real number $x$, $-\abs{x} \leq x \leq \abs{x}$.
+	\emph{Hint: Use Part (1).}
+	
+	\item Prove that for all real numbers $x$ and $y$, $\abs{x + y} \leq \abs{x} + \abs{y}$.
+	\emph{This is called the \emph{triangle inequality}.
+	One way to prove this is to combine Parts (1) and (2), but you can also do it by
+	considering a number of cases.}
+	
+	\item Prove that for all real numbers $x$ and $y$, $\abs{x + y} \geq \abs{x} - \abs{y}$.
+	\emph{Hint: Start with the equation $\abs{x} = \abs{(x + y) + (-y)}$ and then
+	apply the triangle inequality to the right-hand side.}
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Let $a$ and $b$ be arbitrary real numbers.
+	Suppose $\abs{a} \leq b$.
+	First note that this means $b \geq 0$, since $\abs{a} \geq 0$ by the definition of absolute value.
+	There are two cases to consider: $a \geq 0$ and $a < 0$.
+	In the case when $a \geq 0$, $\abs{a} = a$, so $a = \abs{a} \leq b$.
+	In addition, since $b \geq 0$, $-b \leq 0$, and it follows that $a \geq -b$ as well.
+	In other words, $-b \leq a \leq b$, as desired.
+	Now we consider the case when $a < 0$.
+	In this case, it automatically follows that $a \leq b$, since $b \geq 0$.
+	Moreover, $a < 0$ means $\abs{a} = -a$, so $-a = \abs{a} \leq b$,
+	which means $a \geq - b$.
+	Thus, we once again conclude that $-b \leq a \leq b$.
+	Hence, we conclude that if $\abs{a} \leq b$, then $-b \leq a \leq b$.
+	
+	Now suppose $-b \leq a \leq b$.
+	Once again this means $b \geq 0$, since $-b \leq b$.
+	Again, we consider the cases $a \geq 0$ and $a < 0$.
+	In the case when $a \geq 0$, $\abs{a} = a$, so $\abs{a} = a \leq b$ and we are done.
+	In the case when $a < 0$, $\abs{a} = -a$, so since $a \geq -b$ it follows that
+	$\abs{a} = -a \leq b$, and once again we are done.
+	Thus, we conclude that $\abs{a} \leq b$.
+	
+	Since $a$ and $b$ were arbitrary, this completes the proof that for all real numbers $a$ and $b$,
+	$\abs{a} \leq b$ if and only if $-b \leq a \leq b$.
+	
+	\item Let $x$ be an arbitrary real number.
+	Following the hint to use Part (1), to show that $-\abs{x} \leq x \leq \abs{x}$
+	it suffices to check that $\abs{a} \leq b$, where $a = x$ and $b = \abs{x}$.
+	In other words, it suffices to check that $\abs{x} \leq \abs{x}$, which is automatically
+	true as any real number is equal to itself.
+	Thus, by Part (1), since $\abs{x} \leq \abs{x}$, we conclude that $-\abs{x} \leq x \leq \abs{x}$.
+	Since $x$ was an arbitrary real number, this compound inequality holds for all real numbers $x$.
+	
+	\item Let $x$ and $y$ be arbitrary real numbers.
+	To show that $\abs{x + y} \leq \abs{x} + \abs{y}$, we will show that
+	$-(\abs{x} + \abs{y}) \leq x + y \leq \abs{x} + \abs{y}$ and apply Part (1).
+	By Part (2), we know that $-\abs{x} \leq x \leq \abs{x}$ and $-\abs{y} \leq y \leq \abs{y}$.
+	Adding these two inequalities together then gives us the desired inequality:
+	$-(\abs{x} + \abs{y}) \leq x + y \leq \abs{x} + \abs{y}$.
+	This allows us to apply Part (1) with $a = x + y$ and $b = \abs{x} + \abs{y}$ to conclude that
+	$\abs{x + y} \leq \abs{x} + \abs{y}$.
+	Since $x$ and $y$ were arbitrary real numbers, this inequality holds for all real numbers.
+	This completes the proof.
+	
+	\item Let $x$ and $y$ be arbitrary real numbers.
+	Following the hint, we start with the equation $\abs{x} = \abs{(x + y) + (-y)}$.
+	Applying the triangle inequality to the right-hand side gives us
+	$\abs{x} = \abs{(x + y) + (-y)} \leq \abs{x + y} + \abs{-y}$.
+	In other words, $\abs{x} \leq \abs{x + y} + \abs{y}$.
+	Rearranging gives us the desired inequality $\abs{x + y} \geq \abs{x} - \abs{y}$.
+	Since $x$ and $y$ were arbitrary, this inequality holds for all real numbers.
+\end{enumerate}
 \end{proof}
 
 
