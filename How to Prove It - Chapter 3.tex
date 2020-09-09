@@ -2705,11 +2705,19 @@ Since $x \in \BR$ was arbitrary, we conclude that for every real number $x$, $\a
 
 
 \begin{statement}{3.5.14}
-% Fill in
+Prove for every integer $x$, $x^2 + x$ is even.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x$ be an arbitrary integer.
+There are two cases to consider: $x$ is even and $x$ is odd.
+First we consider the case when $x$ is even, so $x = 2n$ for some integer $n$.
+In this case, $x^2 + x = 4n^2 + 2n = 2(2n^2 + n)$.
+Since $k = 2n^2 + n$ is an integer, we conclude that $x^2 + x = 2k$, or in other words $x^2 + x$ is even.
+Next we consider the case when $x$ is odd, so $x = 2n + 1$ for some integer $n$.
+In this case, $x^2 + x = (4n^2 + 4n + 1) + (2n + 1) = 4n^2 + 6n + 2 = 2(2n^2 + 3n + 1)$.
+Since $k = 2n^2 + 3n + 1$ is an integer, we conclude that $x^2 + x = 2k$, or in other words $x^2 + x$ is once again even.
+Since $x$ was an arbitrary integer and we saw that $x^2 + x$ was even in both cases, we conclude that $x^2 + x$ is even for all integers $x$.
 \end{proof}
 
 
