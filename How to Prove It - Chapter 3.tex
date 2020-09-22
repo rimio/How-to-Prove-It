@@ -2915,11 +2915,111 @@ Suppose $\mathcal{F}$ and $\mathcal{G}$ are nonempty families of sets.
 
 
 \begin{statement}{3.5.17}
-% Fill in
+Suppose $\mathcal{F}$ is a nonempty family of sets and $B$ is a set.
+\begin{enumerate}
+	\item Prove that $B \cup \left( \bigcup \mathcal{F} \right) = 
+	\bigcup (\mathcal{F} \cup \{ B \})$.
+	
+	\item Prove that $B \cup \left( \bigcap \mathcal{F} \right) = 
+	\bigcap_{A \in \mathcal{F}} (B \cup A)$.
+	
+	\item Can you discover and prove similar theorems about 
+	$B \cap \left( \bigcup \mathcal{F} \right)$ and
+	$B \cap \left( \bigcap \mathcal{F} \right)$?
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+Before tackling the exercise, we first prove the following lemma.
+\begin{lemma}
+	For any set $B$, $B = \bigcup \{ B \} = \bigcap \{ B \}$.
+\end{lemma}
+\begin{proof}
+	Let $B$ be an arbitrary set.
+	First, suppose $x \in B$ is arbitrary.
+	Then clearly $x \in \bigcup \{ B \}$ since $B \in \{ B \}$, so $B \subseteq \bigcup \{ B \}$.
+	In addition, as $B$ is the only element of $\{ B \}$, $x \in \bigcap \{ B \}$, which means
+	$B \subseteq \bigcap \{ B \}$ as well.
+	Next, suppose $x \in \bigcup \{ B \}$ be arbitrary.
+	Since $B$ is the only element of $\{ B \}$, it follows that $x \in B$, which means
+	$\bigcup \{ B \} \subseteq B$.
+	Hence, $B = \bigcup \{ B \}$.
+	Finally, suppose $x \in \bigcap \{ B \}$ be arbitrary.
+	Once again, since $B$ is the only element of $\{ B \}$, it follows that $x \in B$.
+	Thus, $\bigcap \{ B \} \subseteq B$, and we conclude that $B = \bigcap \{ B \}$.
+	This completes the proof that $B = \bigcup \{ B \} = \bigcap \{ B \}$.
+\end{proof}
+Now we turn our attention to the exercise.
+\begin{enumerate}
+	\item By the above lemma, we know that $B = \bigcup \{ B \}$.
+	This allows us to apply the result from Part (1) of Exercise 3.5.16, which stated that
+	$\bigcup (\mathcal{F} \cup \mathcal{G}) =
+	\left( \bigcup \mathcal{F} \right) \cup \left( \bigcup \mathcal{G} \right)$, with 
+	$\mathcal{G} = \{ B \}$, to conclude that $B \cup \left( \bigcup \mathcal{F} \right) = 
+	\bigcup (\mathcal{F} \cup \{ B \})$.
+	
+	\item First, suppose $x \in B \cup \left( \bigcap \mathcal{F} \right)$ is arbitrary.
+	Then there are two cases to consider: $x \in B$ and $x \in \bigcap \mathcal{F}$.
+	If $x \in B$, then it immediately follows $x \in B \cup A$ for all $A \in \mathcal{F}$,
+	so we know that $x \in \bigcap_{A \in \mathcal{F}} (B \cup A)$.
+	If $x \in \bigcap \mathcal{F}$, then $x \in A$ for all $A \in \mathcal{F}$.
+	It then follows that $x \in B \cup A$ for all $A \in \mathcal{F}$ as well,
+	so $x \in \bigcap_{A \in \mathcal{F}} (B \cup A)$ once again.
+	Since $x$ was arbitrary and $x \in \bigcap_{A \in \mathcal{F}} (B \cup A)$, we conclude that
+	$B \cup \left( \bigcap \mathcal{F} \right) \subseteq \bigcap_{A \in \mathcal{F}} (B \cup A)$.
+	
+	Next, suppose $x \in \bigcap_{A \in \mathcal{F}} (B \cup A)$ is arbitrary.
+	This means $x \in B \cup A$ for all $A \in \mathcal{F}$.
+	If $x \in B$, then clearly $x \in B \cup \left( \bigcap \mathcal{F} \right)$, so suppose $x \notin B$.
+	In this case, since $x \in B \cup A$ for all $A \in \mathcal{F}$,
+	it follows that $x \in A$ for all $A \in \mathcal{F}$.
+	In other words, $x \in \bigcap \mathcal{F}$, so once again 
+	$x \in B \cup \left( \bigcap \mathcal{F} \right)$.
+	Since $x$ was arbitrary and $x \in B \cup \left( \bigcap \mathcal{F} \right)$, we conclude that
+	$\bigcap_{A \in \mathcal{F}} (B \cup A) \subseteq B \cup \left( \bigcap \mathcal{F} \right)$.
+	
+	As we have checked both containments, we finally conclude that
+	$B \cup \left( \bigcap \mathcal{F} \right) = \bigcap_{A \in \mathcal{F}} (B \cup A)$.
+	
+	\item Our first theorem is about $B \cap \left( \bigcap \mathcal{F} \right)$.
+	\begin{theorem}
+		$B \cap \left( \bigcap \mathcal{F} \right) = \bigcap (\mathcal{F} \cup \{ B \})$.
+	\end{theorem}
+	\begin{proof}
+		By the lemma we proved at the start of the exercise, we know that
+		$B = \bigcap \{ B \}$.
+		This allows us to apply the result from Part (3) of Exercise 3.5.16, which stated that
+		$\bigcap (\mathcal{F} \cup \mathcal{G}) =
+		\left( \bigcap \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right)$,
+		with $\mathcal{G} = \{ B \}$, to conclude that $B \cap \left( \bigcap \mathcal{F} \right) = 
+		\bigcap (\mathcal{F} \cup \{ B \})$.
+	\end{proof}
+	Our second theorem is about $B \cap \left( \bigcup \mathcal{F} \right)$.
+	\begin{theorem}
+		$B \cap \left( \bigcup \mathcal{F} \right) = \bigcup_{A \in \mathcal{F}} (B \cap A)$.
+	\end{theorem}
+	\begin{proof}
+		First, suppose $x \in B \cap \left( \bigcup \mathcal{F} \right)$ is arbitrary.
+		This means $x \in B$ and $x \in \bigcup \mathcal{F}$,
+		so there is $A \in \mathcal{F}$ such that $x \in A$.
+		In other words, for this $A \in \mathcal{F}$, $x \in B \cap A$.
+		Since there is $A \in \mathcal{F}$ such that $x \in B \cap A$, it follows that
+		$x \in \bigcup_{A \in \mathcal{F}} (B \cap A)$.
+		Since $x$ was arbitrary, we conclude that
+		$B \cap \left( \bigcup \mathcal{F} \right) \subseteq \bigcup_{A \in \mathcal{F}} (B \cap A)$.
+		
+		Next, suppose $x \in \bigcup_{A \in \mathcal{F}} (B \cap A)$ is arbitrary.
+		This means there is $A \in \mathcal{F}$ such that $x \in B \cap A$.
+		In particular $x \in B$ and, since $x \in A$ and $A \in \mathcal{F}$, 
+		$x \in \bigcup \mathcal{F}$.
+		In other words, $x \in B \cap \left( \bigcup \mathcal{F} \right)$.
+		Since $x$ was arbitrary, we conclude that
+		$\bigcup_{A \in \mathcal{F}} (B \cap A) \subseteq B \cap \left( \bigcup \mathcal{F} \right)$.
+		
+		As we have checked both containments, we finally conclude that
+		$B \cap \left( \bigcup \mathcal{F} \right) = \bigcup_{A \in \mathcal{F}} (B \cap A)$.
+	\end{proof}
+\end{enumerate}
 \end{proof}
 
 
