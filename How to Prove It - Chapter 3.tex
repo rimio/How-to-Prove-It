@@ -2826,7 +2826,91 @@ Suppose $\mathcal{F}$ and $\mathcal{G}$ are nonempty families of sets.
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item First, suppose $x \in \bigcup (\mathcal{F} \cup \mathcal{G})$ is arbitrary.
+	This means there is a set $X \in \mathcal{F} \cup \mathcal{G}$ such that $x \in X$.
+	If $X \in \mathcal{F}$, then this means $x \in \bigcup \mathcal{F}$.
+	Similarly, if $X \in \mathcal{G}$, then this means $x \in \bigcup \mathcal{G}$.
+	Since this covers the two cases resulting from the fact that $X \in \mathcal{F} \cup \mathcal{G}$,
+	we conclude that $x \in \left( \bigcup \mathcal{F} \right) \cup \left( \bigcup \mathcal{G} \right)$.
+	In other words, since $x$ was arbitrary, we conclude that
+	$\bigcup (\mathcal{F} \cup \mathcal{G}) \subseteq
+	\left( \bigcup \mathcal{F} \right) \cup \left( \bigcup \mathcal{G} \right)$.
+	
+	Next, suppose $x \in \left( \bigcup \mathcal{F} \right) \cup \left( \bigcup \mathcal{G} \right)$
+	is arbitrary.
+	In this case, either $x \in \bigcup \mathcal{F}$ or $x \in \bigcup \mathcal{G}$.
+	If $x \in \bigcup \mathcal{F}$, then there is a set $X \in \mathcal{F}$ such that $x \in X$.
+	Since $X \in \mathcal{F}$ means $X \in \mathcal{F} \cup \mathcal{G}$ as well,
+	this means $x \in \bigcup (\mathcal{F} \cup \mathcal{G})$.
+	Similarly, if $x \in \bigcup \mathcal{G}$, 
+	then there is a set $X \in \mathcal{G}$ such that $x \in X$.
+	Once again, as $X \in \mathcal{F} \cup \mathcal{G}$ as well, this also means
+	$x \in \bigcup (\mathcal{F} \cup \mathcal{G})$.
+	Thus, since $x$ was arbitrary, we conclude that
+	$\left( \bigcup \mathcal{F} \right) \cup \left( \bigcup \mathcal{G} \right) \subseteq
+	\bigcup (\mathcal{F} \cup \mathcal{G})$.
+	
+	As we have now checked both containments, we finally conclude that
+	$\bigcup (\mathcal{F} \cup \mathcal{G}) =
+	\left( \bigcup \mathcal{F} \right) \cup \left( \bigcup \mathcal{G} \right)$.
+	
+	\item First, suppose $x \in B \cup \left( \bigcup \mathcal{F} \right)$ is arbitrary.
+	There are two cases to consider: $x \in B$ and $x \in \bigcup \mathcal{F}$.
+	If $x \in B$, then $x \in B \cup A$ for all $A \in \mathcal{F}$, so it immediately follows
+	that $x \in \bigcup_{A \in \mathcal{F}} (B \cup A)$.
+	If $x \in \bigcup \mathcal{F}$, then there is a set $A \in \mathcal{F}$ such that $x \in A$.
+	Then, $x \in B \cup A$ for this set $A$, so $x \in \bigcup_{A \in \mathcal{F}} (B \cup A)$.
+	Since $x$ was arbitrary and in both cases $x \in \bigcup_{A \in \mathcal{F}} (B \cup A)$,
+	we conclude that $B \cup \left( \bigcup \mathcal{F} \right) \subseteq 
+	\bigcup_{A \in \mathcal{F}} (B \cup A)$.
+	
+	Next, suppose $x \in \bigcup_{A \in \mathcal{F}} (B \cup A)$ is arbitrary.
+	This means there is some $A \in \mathcal{F}$ such that $x \in B \cup A$.
+	If $x \in B$, then it immediately follows that $x \in B \cup \left( \bigcup \mathcal{F} \right)$.
+	If $x \in A$, then $x \in \bigcup \mathcal{F}$, so $x \in B \cup \left( \bigcup \mathcal{F} \right)$
+	as well.
+	Since $x$ was arbitrary and in both cases $x \in B \cup \left( \bigcup \mathcal{F} \right)$,
+	we conclude that $\bigcup_{A \in \mathcal{F}} (B \cup A) \subseteq
+	B \cup \left( \bigcup \mathcal{F} \right)$.
+	
+	As we have now checked both containments, we finally conclude that
+	$B \cup \left( \bigcup \mathcal{F} \right) = 
+	\bigcup_{A \in \mathcal{F}} (B \cup A)$.
+	
+	\item We'll prove that $\bigcap (\mathcal{F} \cup \mathcal{G}) =
+	\left( \bigcap \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right)$.
+	
+	First, suppose $x \in \bigcap (\mathcal{F} \cup \mathcal{G})$ is arbitrary.
+	This means that for all $X \in \mathcal{F} \cup \mathcal{G}$, $x \in X$.
+	Let $A \in \mathcal{F}$ be arbitrary.
+	Since $A \in \mathcal{F} \cup \mathcal{G}$, we know that $x \in A$.
+	Thus, $x \in A$ for all $A \in \mathcal{F}$ and it follows that $x \in \bigcap \mathcal{F}$.
+	The same argument for an arbitrary $B \in \mathcal{G}$ shows that $x \in \bigcap \mathcal{G}$.
+	We therefore conclude that 
+	$x \in \left( \bigcap \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right)$.
+	Since $x$ was arbitrary, it follows that $\bigcap (\mathcal{F} \cup \mathcal{G}) \subseteq
+	\left( \bigcap \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right)$.
+	
+	Next, suppose $x \in \left( \bigcap \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right)$
+	is arbitrary.
+	This means that $x \in \bigcap \mathcal{F}$ and $x \in \bigcap \mathcal{G}$.
+	In other words, for all $A \in \mathcal{F}$, $x \in A$, and for all $B \in \mathcal{G}$, $x \in B$.
+	Let $X \in \mathcal{F} \cup \mathcal{G}$ be arbitrary.
+	If $X \in \mathcal{F}$, then it follows that $x \in X$ since $x \in \bigcap \mathcal{F}$.
+	Similarly, if $X \in \mathcal{G}$ it follows that $x \in X$ since $x \in \bigcap \mathcal{G}$.
+	Since in both cases $x \in X$, and $X$ was arbitrary, we know that $x \in X$ for all
+	$X \in \mathcal{F} \cup \mathcal{G}$.
+	In other words, $x \in \bigcap (\mathcal{F} \cup \mathcal{G})$.
+	Since $x$ was arbitrary, it follows that
+	$\left( \bigcap \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right) \subseteq
+	\bigcap (\mathcal{F} \cup \mathcal{G})$.
+	
+	As we have now checked both containments, we finally conclude that
+	$\bigcap (\mathcal{F} \cup \mathcal{G}) =
+	\left( \bigcap \mathcal{F} \right) \cap \left( \bigcap \mathcal{G} \right)$.
+\end{enumerate}
 \end{proof}
 
 
