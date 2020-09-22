@@ -3024,11 +3024,22 @@ Now we turn our attention to the exercise.
 
 
 \begin{statement}{3.5.18}
-% Fill in
+Suppose $\mathcal{F}$, $\mathcal{G}$, and $\mathcal{H}$ are nonempty families of sets and for every $A \in \mathcal{F}$ and every $B \in \mathcal{G}$, $A \cup B \in \mathcal{H}$.
+Prove that $\bigcap \mathcal{H} \subseteq \left( \bigcap \mathcal{F} \right) \cup \left( \bigcap \mathcal{G} \right)$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $x \in \bigcap \mathcal{H}$ is arbitrary.
+This means $x \in C$ for every $C \in \mathcal{H}$.
+In particular, since $A \cup B \in \mathcal{H}$ for every $A \in \mathcal{F}$ and every $B \in \mathcal{G}$, we know that $x \in A \cup B$ for every $A \in \mathcal{F}$ and every $B \in \mathcal{G}$.
+We now consider two cases: $x \in \bigcap \mathcal{G}$ and $x \notin \bigcap \mathcal{G}$.
+In the first case, it automatically follows that $x \in \left( \bigcap \mathcal{F} \right) \cup \left( \bigcap \mathcal{G} \right)$.
+In the second case, this means there is some $B_0 \in \mathcal{G}$ such that $x \notin B_0$.
+Now we check that $x \in \bigcap \mathcal{F}$.
+Since $x \in A \cup B$ for every $A \in \mathcal{F}$ and every $B \in \mathcal{G}$, we know that in particular $x \in A \cup B_0$ for every $A \in \mathcal{F}$.
+Then, since $x \notin B_0$, this means $x \in A$ for every $A \in \mathcal{F}$.
+In other words, $x \in \bigcap \mathcal{F}$.
+Thus, since $x$ was arbitrary and we showed that $x \in \bigcap \mathcal{F}$, we conclude that $\bigcap \mathcal{H} \subseteq \left( \bigcap \mathcal{F} \right) \cup \left( \bigcap \mathcal{G} \right)$.
 \end{proof}
 
 
