@@ -3044,11 +3044,38 @@ Thus, since $x$ was arbitrary and we showed that $x \in \bigcap \mathcal{F}$, we
 
 
 \begin{statement}{3.5.19}
-% Fill in
+Suppose $A$ and $B$ are sets.
+Prove that $\forall x (x \in A \bigtriangleup B \leftrightarrow (x \in A \leftrightarrow x \notin B))$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x$ be arbitrary.
+We start by proving the forward direction: $x \in A \bigtriangleup B \rightarrow (x \in A \leftrightarrow x \notin B)$.
+Translating this into mathematical English, we want to show that if $x \in A \bigtriangleup B$, then $x \in A$ if and only if $x \notin B$.
+Suppose $x \in A \bigtriangleup B$.
+Recall that $A \bigtriangleup B = (A \setminus B) \cup (B \setminus A)$, so $x \in A \setminus B$ or $x \in B \setminus A$.
+We first check that if $x \in A$ then $x \notin B$, so suppose $x \in A$.
+Since $x \in A$, it follows that $x \notin B \setminus A$.
+Then, since $x \in A \bigtriangleup B$ and $x \notin B \setminus A$, we must have $x \in A \setminus B$.
+In other words, $x \notin B$, as desired.
+Now we check that if $x \notin B$ then $x \in A$, so now suppose $x \notin B$.
+In this case, since $x \notin B$, we know that $x \notin B \setminus A$.
+This fact combined with the fact that $x \in A \bigtriangleup B$ means that $x \in A \setminus B$.
+Thus, $x \in A$, as desired.
+Since we have now checked that $x \in A$ if and only if $x \notin B$, this completes the proof of the forward direction.
+
+Now we check the backward direction: $(x \in A \leftrightarrow x \notin B) \rightarrow x \in A \bigtriangleup B$.
+Suppose we know that $x \in A$ if and only if $x \notin B$.
+Our goal now is to prove that $x \in A \bigtriangleup B$.
+We consider two possibilities: $x \in B \setminus A$ and $x \notin B \setminus A$.
+In the first case, it immediately follows that $x \in A \bigtriangleup B = (A \setminus B) \cup (B \setminus A)$.
+In the second case, either $x \notin B$ or $x \in A$.
+If $x \notin B$, then the assumption that $x \in A$ if and only if $x \notin B$ lets us immediately conclude that $x \in A$.
+Similarly, the assumption that $x \in A$ if and only if $x \notin B$ lets us immediately conclude that $x \notin B$ if $x \in A$.
+In both situations, the ultimate conclusion is that $x \in A \setminus B$, which allows us to conclude that $x \in A \bigtriangleup B$.
+This completes the proof of the backward direction.
+
+Since $x$ was arbitrary, we conclude that $\forall x (x \in A \bigtriangleup B \leftrightarrow (x \in A \leftrightarrow x \notin B))$.
 \end{proof}
 
 
