@@ -3147,11 +3147,28 @@ This completes the proof.
 
 
 \begin{statement}{3.5.22}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+Prove that $C \subseteq A \bigtriangleup B$ if and only if $C \subseteq A \cup B$ and $A \cap B \cap C = \varnothing$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We start by proving the forward direction.
+Suppose $C \subseteq A \bigtriangleup B$.
+First suppose $x \in C$ is arbitrary.
+Since $x \in C$ and $C \subseteq A \bigtriangleup B = (A \cup B) \setminus (A \cap B)$, it follows that $x \in A \cup B$.
+Hence, $C \subseteq A \cup B$.
+Next, check that $A \cap B \cap C = \varnothing$ by unraveling the definition of $A \cap B \cap C$.
+If $x \in A \cap B \cap C$, then in particular $x \in A \cap B$ and $x \in C$.
+However, since $C \subseteq A \bigtriangleup B$, any element of $C$ is not an element of $A \cap B$.
+Therefore, there does not exist $x \in A \cap B \cap C$, or in other words, $A \cap B \cap C = \varnothing$.
+
+Now we prove the backward direction.
+Suppose $C \subseteq A \cup B$ and $A \cap B \cap C = \varnothing$.
+Next, suppose $x \in C$ is arbitrary.
+Since $C \subseteq A \cup B$, we know that $x \in A \cup B$.
+In addition, since $A \cap B \cap C = \varnothing$, we know $x \notin A \cap B \cap C$, which means $x \notin A \cap B$.
+Thus, $x \in (A \cup B) \setminus (A \cap B) = A \bigtriangleup B$, so we conclude that $C \subseteq A \bigtriangleup B$.
+This completes the proof.
 \end{proof}
 
 
