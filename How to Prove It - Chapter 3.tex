@@ -3080,11 +3080,34 @@ Since $x$ was arbitrary, we conclude that $\forall x (x \in A \bigtriangleup B \
 
 
 \begin{statement}{3.5.20}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+Prove that $A \bigtriangleup B$ and $C$ are disjoint if and only if $A \cap C = B \cap C$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We start by proving the forward direction.
+Suppose $A \bigtriangleup B$ and $C$ are disjoint.
+In other words, for all $x$, $x \notin (A \bigtriangleup B) \cap C$.
+First, suppose $x \in A \cap C$ is arbitrary.
+Since $x \in C$ and $x \notin (A \bigtriangleup B) \cap C$, we know that $x \notin A \bigtriangleup B = (A \cup B) \setminus (A \cap B)$.
+Then, since $x \in A$, it follows that $x \in A \cup B$, so we must have $x \in A \cap B$ as well in order to have $x \notin A \bigtriangleup B$.
+Finally, since $x \in A \cup B$, and in particular $x \in B$, we know that $x \in B \cap C$.
+Hence, we conclude that $A \cap C \subseteq B \cap C$.
+Repeating the same argument for arbitrary $x \in B \cap C$ shows that $B \cap C \subseteq A \cap C$ as well.
+Therefore, $A \cap C = B \cap C$, which is what we wanted to prove.
+
+Now we prove the backward direction.
+Suppose $A \cap C = B \cap C$.
+Next, suppose $x \in (A \bigtriangleup B) \cap C$, so $x \in A \bigtriangleup B$ and $x \in C$.
+Since $x \in A \bigtriangleup B$, $x \in A \cup B$ and $x \notin A \cap B$.
+There are two cases to consider: $x \in A$ and $x \in B$.
+If $x \in A$, then it follows that $x \notin B$.
+However, since $x \in A \cap C = B \cap C$, it also follows that $x \in B$.
+This is a contradiction.
+We reach a similar condition in the case where $x \in B$.
+Therefore, we conclude that there does not exists $x \in (A \bigtriangleup B) \cap C$.
+In other words, $A \bigtriangleup B$ and $C$ are disjoint.
+This completes the proof.
 \end{proof}
 
 
