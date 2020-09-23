@@ -3112,11 +3112,37 @@ This completes the proof.
 
 
 \begin{statement}{3.5.21}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+Prove that $A \bigtriangleup B$ is a subset of $C$ if and only if $A \cup C = B \cup C$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We start by proving the forward direction.
+Suppose $A \bigtriangleup B \subseteq C$.
+Suppose $x \in A \cup C$ is arbitrary.
+There are two cases to consider: $x \in C$ and $x \notin C$.
+In the first case, it immediately follows that $x \in B \cup C$ and there is nothing else to check, so we focus our attention on the second case, where $x \notin C$.
+Since $x \in A \cup C$ and $x \notin C$, we know that $x \in A$.
+Now suppose, towards a contradiction, that $x \notin B$.
+Since $x \in A$ and $x \notin B$, $x \in A \setminus B$, which means $x \in A \bigtriangleup B$.
+Then, since $A \bigtriangleup B \subseteq C$, it follows that $x \in C$, which is a contradiction.
+Therefore, $x \in B$ and subsequently $x \in B \cup C$.
+Thus, since $x$ was arbitrary, $A \cup C \subseteq B \cup C$.
+An analogous argument starting from $x \in B \cup C$ shows us that $B \cup C \subseteq A \cup C$.
+We therefore conclude that $A \cup C = B \cup C$.
+
+Now we prove the backward direction.
+Suppose $A \cup C = B \cup C$.
+Suppose $x \in A \bigtriangleup B = (A \setminus B) \cup (B \setminus A)$ is arbitrary.
+Next suppose, towards a contradiction, that $x \notin C$.
+There are two cases to consider: $x \in A \setminus B$ and $x \in B \setminus A$.
+If $x \in A \setminus B$, then $x \in A$ and $x \notin B$.
+Since $x \in A$ it follows that $x \in A \cup C = B \cup C$.
+Then, since $x \notin C$, we conclude $x \in B$, but this contradicts the prior fact that $x \notin B$.
+We reach a similar contradiction when starting from $x \in B \setminus A$.
+Since we reach a contradiction in both cases, we conclude that $x \in C$.
+In other words, since $x$ was arbitrary, $A \bigtriangleup B \subseteq C$.
+This completes the proof.
 \end{proof}
 
 
