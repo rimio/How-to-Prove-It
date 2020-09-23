@@ -3211,11 +3211,36 @@ Suppose $A$, $B$, and $C$ are sets.
 
 
 \begin{statement}{3.5.24}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+\begin{enumerate}
+	\item Prove that $(A \cup B) \bigtriangleup C \subseteq
+	(A \bigtriangleup C) \cup (B \bigtriangleup C)$.
+	
+	\item Find an example of sets $A$, $B$, and $C$ such that $(A \cup B) \bigtriangleup C \neq
+	(A \bigtriangleup C) \cup (B \bigtriangleup C)$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $x \in (A \cup B) \bigtriangleup C$ is arbitrary.
+	This means $x \in A \cup B$ and $x \notin C$, or $x \notin A \cup B$ and $x \in C$.
+	In the first case, when $x \in A \cup B$ and $x \notin C$, there are two subcases to consider:
+	$x \in A$ and $x \in B$.
+	If $x \in A$ then $x \in A \bigtriangleup C$, and if $x \in B$ then $x \in B \bigtriangleup C$.
+	In either of these subcases, $x \in (A \bigtriangleup C) \cup (B \bigtriangleup C)$.
+	Then the second case, when $x \notin A \cup B$ and $x \in C$, we know that
+	$x \notin A$ and $x \notin B$.
+	This means $x \in C \setminus A$ and $x \in C \setminus B$.
+	Hence, we once again conclude that $x \in (A \bigtriangleup C) \cup (B \bigtriangleup C)$.
+	Since $x$ was arbitrary, we conclude that $(A \cup B) \bigtriangleup C \subseteq
+	(A \bigtriangleup C) \cup (B \bigtriangleup C)$.
+	
+	\item Consider $A = \{ 1, 2 \}$, $B = \{ 3, 4 \}$, and $C = \{ 1, 2, 3, 4, 5 \}$.
+	In this case, $(A \cup B) \bigtriangleup C = \{ 5 \}$, while
+	$(A \bigtriangleup C) \cup (B \bigtriangleup C) = \{ 1, 2, 3, 4, 5 \}$.
+\end{enumerate}
 \end{proof}
 
 
