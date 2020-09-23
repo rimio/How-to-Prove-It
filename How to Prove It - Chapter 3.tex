@@ -3173,11 +3173,40 @@ This completes the proof.
 
 
 \begin{statement}{3.5.23}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+\begin{enumerate}
+	\item Prove that $A \setminus C \subseteq (A \setminus B) \cup (B \setminus C)$.
+	
+	\item Prove that $A \bigtriangleup C \subseteq (A \bigtriangleup B) \cup (B \bigtriangleup C)$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $x \in A \setminus C$ is arbitrary.
+	Then $x \in A$ and $x \notin C$.
+	We consider two cases: $x \in B$ and $x \notin B$.
+	If $x \in B$, then $x \in B \setminus C$ and hence $x \in (A \setminus B) \cup (B \setminus C)$.
+	On the other hand, if $x \notin B$, then $x \in A \setminus B$ and once again
+	$x \in (A \setminus B) \cup (B \setminus C)$.
+	Since in both cases $x \in (A \setminus B) \cup (B \setminus C)$, we conclude that
+	$A \setminus C \subseteq (A \setminus B) \cup (B \setminus C)$.
+	
+	\item Suppose $x \in A \bigtriangleup C = (A \setminus C) \cup (C \setminus A)$ is arbitrary.
+	There are two cases to consider: $x \in A \setminus C$ and $x \in C \setminus A$.
+	We first note that $(A \bigtriangleup B) \cup (B \bigtriangleup C) = 
+	(A \setminus B) \cup (B \setminus A) \cup (B \setminus C) \cup (C \setminus B)$.
+	If $x \in A \setminus C$, then by Part (1) above we know that 
+	$x \in (A \setminus B) \cup (B \setminus C)$, so 
+	$x \in (A \bigtriangleup B) \cup (B \bigtriangleup C)$.
+	Similarly, by swapping the roles of $A$ and $C$ in Part (A) we know that
+	$C \setminus A \subseteq (C \setminus B) \cup (B \setminus A)$, so if $x \in C \setminus A$, then
+	$x \in (C \setminus B) \cup (B \setminus A)$.
+	Once again, this means $x \in (A \bigtriangleup B) \cup (B \bigtriangleup C)$.
+	Thus, we conclude that $A \bigtriangleup C \subseteq 
+	(A \bigtriangleup B) \cup (B \bigtriangleup C)$.
+\end{enumerate}
 \end{proof}
 
 
