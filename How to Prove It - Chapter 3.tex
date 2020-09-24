@@ -3245,11 +3245,40 @@ Suppose $A$, $B$, and $C$ are sets.
 
 
 \begin{statement}{3.5.25}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+\begin{enumerate}
+	\item Prove that $(A \bigtriangleup C) \cap (B \bigtriangleup C) \subseteq
+	(A \cap B) \bigtriangleup C$.
+	
+	\item Is it always true that $(A \cap B) \bigtriangleup C \subseteq
+	(A \bigtriangleup C) \cap (B \bigtriangleup C)$?
+	Give either a proof or a counterexample.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Suppose $x \in (A \bigtriangleup C) \cap (B \bigtriangleup C)$ is arbitrary.
+	This means that $x \in A \bigtriangleup C$ and $x \in B \bigtriangleup C$.
+	Since $x \in A \bigtriangleup C$, $x \in A \setminus C$ or $x \in C \setminus A$.
+	Similarly, since $x \in B \bigtriangleup C$, $x \in B \setminus C$ or $x \in C \setminus B$.
+	First, suppose $x \in C$.
+	In this case, we must have $x \in C \setminus A$ and $x \in C \setminus B$.
+	Then, since $(C \setminus A) \cap (C \setminus B) = C \setminus (A \cup B) \subseteq
+	C \setminus (A \cap B)$, it follows that $x \in (A \cap B) \bigtriangleup C$.
+	Next, suppose $x \notin C$.
+	In this case, we must have $x \in A \setminus C$ and $x \in B \setminus C$.
+	Then, since $(A \setminus C) \cap (B \setminus C) = (A \cap B) \setminus C$, it once again
+	follows that $x \in (A \cap B) \bigtriangleup C$.
+	Hence, since $x$ was arbitrary, we conclude that 
+	$(A \bigtriangleup C) \cap (B \bigtriangleup C) \subseteq (A \cap B) \bigtriangleup C$.
+	
+	\item This is not always true.
+	Consider $A = \{ 1, 2 \}$, $B = \{ 2, 3 \}$ and $C = \{ 3, 4 \}$.
+	In this case, $(A \bigtriangleup C) \cap (B \bigtriangleup C) = \{ 2, 4 \}$,
+	while $(A \cap B) \bigtriangleup C = \{ 2, 3, 4 \}$.
+\end{enumerate}
 \end{proof}
 
 
