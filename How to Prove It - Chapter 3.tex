@@ -3337,11 +3337,19 @@ Suppose $A$, $B$, and $C$ are sets.
 
 
 \begin{statement}{3.5.32}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets and $A \subseteq B \cup C$.
+Prove that either $A \subseteq B$ or $A \cap C \neq \varnothing$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We consider two cases: $A \subseteq B$ and $A \nsubseteq B$.
+In the first case, there is nothing to check, so it suffices to check that in the second case, when $A \nsubseteq B$, $A \cap C \neq \varnothing$.
+Since $A \nsubseteq B$, there exists $x \in A$ such that $x \notin B$.
+Since $x \in A$ and $A \subseteq B \cup C$, we know that $x \in B \cup C$.
+Then, since $x \notin B$, it follows that $x \in C$.
+In other words, $x \in A \cap C$, so we conclude that $A \cap C \neq \varnothing$.
+In both cases, the we have proven that either $A \subseteq B$ or $A \cap C \neq \varnothing$.
+This completes the proof.
 \end{proof}
 
 
