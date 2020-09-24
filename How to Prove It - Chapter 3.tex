@@ -3346,11 +3346,17 @@ Suppose $A$, $B$, and $C$ are sets.
 
 
 \begin{statement}{3.5.33}
-% Fill in
+Prove $\exists x (P(x) \rightarrow \forall y P(y))$.
+(\emph{Note: Assume the universe of discourse is not the empty set.})
 \end{statement}
 
 \begin{proof}
-% Fill in
+Note that the statement we wish to prove is equivalent to $\exists x (\neg P(x) \vee \forall y P(y))$.
+For any statement $P(x)$, there are two cases to consider: there exists $x$ in the universe of discourse such that $P(x)$ is false, or no such $x$ exists and $P(x)$ is true for all $x$ in the universe of discourse.
+Since in the first case there exists $x$ such that $P(x)$ is false, we can plug in this value of $x$ to conclude that $\neg P(x) \vee \forall y P(y)$ is true.
+In the second case, since $P(x)$ is true for all $x$, we can plug in any value of $x$ we wish to once again conclude that $\neg P(x) \vee \forall y P(y)$ is true.
+In both cases, we see that there exists $x$ such that $\neg P(x) \vee \forall y P(y)$ is true.
+This completes the proof.
 \end{proof}
 
 
