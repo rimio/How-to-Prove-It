@@ -3396,11 +3396,36 @@ Then, after proving the two goals $x \in A$ and $x \in B$ separately, the conclu
 
 
 \begin{statement}{3.5.29}
-% Fill in
+Consider the following putative theorem.
+\begin{theorem}
+	$\forall x \in \BR \exists y \in \BR (xy^2 \neq y - x)$.
+\end{theorem}
+Is the following proof correct?
+If so, what proof strategies does it use?
+If not, can it be fixed?
+Is the theorem correct?
+\begin{proof}
+	Let $x$ be an arbitrary real number.
+	
+	Case 1. $x = 0$.
+	Let $y = 1$.
+	Then $xy^2 = 0$ and $y - x = 1 - 0 = 1$, so $xy^2 \neq y - x$.
+	
+	Case 2. $x \neq 0$.
+	Let $y = 0$.
+	Then $xy^2 = 0$ and $y - x = - x \neq 0$, so $xy^2 \neq y - x$.
+	
+	Since these cases are exhaustive, we have shown that $\exists y \in \BR (xy^2 \neq y - x)$.
+	Since $x$ was arbitrary, this shows that $\forall x \in \BR \exists y \in \BR (xy^2 \neq y - x)$.
+\end{proof}
 \end{statement}
 
 \begin{proof}
-% Fill in
+The theorem and the given proof are both correct.
+Since the proof involves proving that a statement holds for all $x \in \BR$, it takes an arbitrary $x \in \BR$ and proves the statement for that $x$.
+After taking an arbitrary $x \in \BR$, the proof is broken into an exhaustive set of cases: $x = 0$ and $x \neq 0$.
+In each case, the existence of a suitable real number $y$ is demonstrated, which allows the conclusion that such a $y$ exists for this arbitrary $x$.
+Finally, since the statement was proved for an arbitrary $x \in \BR$, it holds for all $x \in \BR$.
 \end{proof}
 
 
