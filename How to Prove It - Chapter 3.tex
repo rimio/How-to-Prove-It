@@ -3364,11 +3364,34 @@ These additions make it so in each case we conclude that $0 < x < 6$, which then
 
 
 \begin{statement}{3.5.28}
-% Fill in
+Consider the following putative theorem.
+\begin{theorem}
+	For any sets $A$, $B$, and $C$, if $A \setminus B \subseteq C$ and $A \nsubseteq C$
+	then $A \cap B \neq \varnothing$.
+\end{theorem}
+Is the following proof correct?
+If so, what proof strategies does it use?
+If not, can it be fixed?
+Is the theorem correct?
+\begin{proof}
+	Suppose $A \setminus C \subseteq C$ and $A \nsubseteq C$.
+	Since $A \nsubseteq C$, we can choose some $x$ such that $x \in A$ and $x \notin C$.
+	Since $x \notin C$ and $A \setminus B \subseteq C$, $x \notin A \setminus B$.
+	Therefore either $x \notin A$ or $x \in B$.
+	But we already know that $x \in A$, so it follows that $x \in B$.
+	Since $x \in A$ and $x \in B$, $x \in A \cap B$.
+	Therefore $A \cap B \neq \varnothing$.
+\end{proof}
 \end{statement}
 
 \begin{proof}
-% Fill in
+The theorem and the given proof are both correct.
+Since the goal is of the form $P \rightarrow Q$, the proof assumes $P$ is true and then works to prove that $Q$ is true.
+Existential instantiation is used with the statement $A \nsubseteq C$ to obtain $x$ such that $x \in A$ and $x \notin C$.
+Then modus tollens is used with the statements $x \notin C$ and $A \setminus B \subseteq C$ to conclude that $x \notin A \setminus B$.
+After we know that $x \notin A \setminus B$, the proof is broken into the two possible cases: $x \notin A$ and $x \in B$.
+The first case is eliminated by the earlier fact that $x \in A$, to derive the conclusion $x \in B$.
+Then, after proving the two goals $x \in A$ and $x \in B$ separately, the conclusion $x \in A \cap B$, so $A \cap B \neq \varnothing$ is drawn to complete the proof.
 \end{proof}
 
 
