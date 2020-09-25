@@ -3430,11 +3430,25 @@ Finally, since the statement was proved for an arbitrary $x \in \BR$, it holds f
 
 
 \begin{statement}{3.5.30}
-% Fill in
+Prove that if $\forall x P(x) \rightarrow \exists x Q(x)$ then $\exists x (P(x) \rightarrow Q(x))$.
+(\emph{Hint: Remember that $P \rightarrow Q$ is equivalent to $\neg P \vee Q$.})
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose the statement $\forall x P(x) \rightarrow \exists x Q(x)$ is true.
+Following the hint, this statement is equivalent to $(\neg \forall x P(x)) \vee (\exists x Q(x))$, which is equivalent to $(\exists x \neg P(x)) \vee (\exists x Q(x))$.
+There are two cases to consider: $\exists x \neg P(x)$ and $\exists x Q(x)$.
+
+First suppose $\exists x \neg P(x)$.
+In this case, let $x_0$ be such that $\neg P(x_0)$ is true, or in other words such that $P(x_0)$ is false.
+Then, by the definition of the logical form of a conditional statement, $P(x_0) \rightarrow Q(x_0)$ is (vacuously) true.
+
+Next suppose $\exists x Q(x)$.
+In this case, let $x_0$ be such that $Q(x_0)$ is true.
+Then, either $P(x_0)$ is true or $P(x_0)$ is false.
+In either case, since $Q(x_0)$ is true, we know that $P(x_0) \rightarrow Q(x_0)$ is true as well.
+
+Since in both cases we found $x_0$ such that $P(x_0) \rightarrow Q(x_0)$ is true, this completes the proof.
 \end{proof}
 
 
