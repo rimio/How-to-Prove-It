@@ -3283,11 +3283,46 @@ Suppose $A$, $B$, and $C$ are sets.
 
 
 \begin{statement}{3.5.26}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+Consider the sets $(A \setminus B) \bigtriangleup C$ and $(A \bigtriangleup C) \setminus (B \bigtriangleup C)$.
+Can you prove that either is a subset of the other?
+Justify your conclusions with either proofs or counterexamples.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We will prove the following theorem.
+\begin{theorem}
+	\hfill
+	\begin{enumerate}
+		\item $(A \bigtriangleup C) \setminus (B \bigtriangleup C) \subseteq
+		(A \setminus B) \bigtriangleup C$.
+	
+		\item $(A \setminus B) \bigtriangleup C \nsubseteq
+		(A \bigtriangleup C) \setminus (B \bigtriangleup C)$.
+	\end{enumerate}
+\end{theorem}
+We start by proving the first statement.
+Suppose $x \in (A \bigtriangleup) \setminus (B \bigtriangleup C)$ is arbitrary.
+Unraveling the definitions, this means $x \in A \setminus C$ or $x \in C \setminus A$, and in addition $x \notin B \setminus C$ and $b \notin C \setminus B$.
+First suppose $x \in A \setminus C$, so then $x \in A$ and $x \notin C$.
+Since $x \notin C$ and $x \notin B \setminus C$, we know that $x \notin B$.
+Then, since $x \in A$, $x \notin B$, and $x \notin C$, we know that $x \in (A \setminus B) \setminus C$.
+It follows that $x \in (A \setminus B) \bigtriangleup C$.
+Next suppose $x \in C \setminus A$, so $x \in C$ and $x \notin A$.
+In this case, since $x \in C$ and $x \notin C \setminus B$, we know that $x \in B$.
+Since $x \in C$, $x \notin A$, and $x \in B$, we know that $x \in C \setminus (A \setminus B)$.
+It follows that once again $x \in (A \setminus B) \bigtriangleup C$.
+Since in both cases $x \in (A \setminus B) \bigtriangleup C$, we conclude that $(A \bigtriangleup C) \setminus (B \bigtriangleup C) \subseteq (A \setminus B) \bigtriangleup C$.
+
+To prove the second statement, consider the following counterexample.
+Let $A = \{ 1, 2 \}$, $B = \{ 2, 3 \}$, and $C = \{ 3, 4 \}$.
+We then have
+\begin{equation*}
+	A \setminus B = \{ 1 \}, \quad
+	A \bigtriangleup C = \{ 1, 2, 3, 4 \}, \quad
+	B \bigtriangleup C = \{ 2, 4 \},
+\end{equation*}
+so $(A \setminus B) \bigtriangleup C = \{ 1, 3, 4 \}$ and $(A \bigtriangleup C) \setminus (B \bigtriangleup C) = \{ 1, 3 \}$.
 \end{proof}
 
 
