@@ -3453,11 +3453,35 @@ Since in both cases we found $x_0$ such that $P(x_0) \rightarrow Q(x_0)$ is true
 
 
 \begin{statement}{3.5.31}
-% Fill in
+Consider the following putative theorem.
+\begin{theorem}
+	Suppose $A$, $B$, and $C$ are sets and $A \subseteq B \cup C$.
+	Then either $A \subseteq B$ or $A \subseteq C$.
+\end{theorem}
+Is the following proof correct?
+If so, what proof strategies does it use?
+If not, can it be fixed?
+Is the theorem correct?
+\begin{proof}
+	Let $x$ be an arbitrary element of $A$.
+	Since $A \subseteq B \cup C$, it follows that either $x \in B$ or $x \in C$.
+	
+	Case 1. $x \in B$.
+	Since $x$ was an arbitrary element of $A$, it follows that $\forall x \in A (x \in B)$,
+	which means that $A \subseteq B$.
+	
+	Case 2. $x \in C$.
+	Similarly, since $x$ was an arbitrary element of $A$, we can conclude that $A \subseteq C$.
+	
+	Thus, either $A \subseteq B$ or $A \subseteq C$.
+\end{proof}
 \end{statement}
 
 \begin{proof}
-% Fill in
+The theorem and the given proof are both incorrect.
+The conclusions being drawn in each case from the fact that $x$ was an arbitrary element of $A$ are being drawn too early.
+For a counterexample to the putative theorem, consider $A = \{ 1, 2 \}$, $B = \{ 1 \}$, and $C = \{ 2 \}$.
+Here, $A \subseteq B \cup C = \{ 1, 2 \}$, but $A \nsubseteq B$ and $A \nsubseteq C$.
 \end{proof}
 
 
