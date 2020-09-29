@@ -3560,11 +3560,27 @@ This completes the proof.
 
 
 \begin{statement}{3.6.3}
-% Fill in
+Prove that for every real number $x$, if $x \neq 0$ and $x \neq 1$ then there is a unique real number $y$ such that $y/x = y - x$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x$ be an arbitrary real number and suppose $x \neq 0$ and $x \neq 1$.
+We first check uniqueness.
+Suppose $y$ is a real number such that $y/x = y - x$.
+We can rearrange this equation to get $x = y - y/x = y (1 - 1/x) = y((x - 1)/x)$.
+Since $x  \neq 0$ and $x \neq 1$, we can divide both sides by $(x - 1)/x$ to obtain $y = x^2/(x - 1)$.
+Thus, any real number $y$ which satisfies the equation $y/x = y - x$ must be equal to $x^2/(x - 1)$.
+Now we check that $y = x^2/(x - 1)$ actually satisfies the equation.
+Plugging into the left-hand side, we obtain
+\begin{equation*}
+	\frac{y}{x} = \frac{x^2}{x(x - 1)} = \frac{x}{x - 1}.
+\end{equation*}
+Plugging into the right-hand side, we obtain
+\begin{equation*}
+	y - x = \frac{x^2}{x - 1} - \frac{x^2 - x}{x - 1} = \frac{x}{x - 1}.
+\end{equation*}
+Thus, $y = x^2/(x - 1)$ is the unique real number satisfying the equation $y/x = y - x$ for our arbitrary value of $x$.
+Since $x$ was arbitrary, this completes the proof.
 \end{proof}
 
 
