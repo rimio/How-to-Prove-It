@@ -3585,11 +3585,20 @@ Since $x$ was arbitrary, this completes the proof.
 
 
 \begin{statement}{3.6.4}
-% Fill in
+Prove that for every real number $x$, if $x \neq 0$ then there is a unique real number $y$ such that for every real number $z$, $zy = z/x$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x$ be an arbitrary real number, and suppose $x \neq 0$.
+Let $y = 1/x$, which is a real number since $x \neq 0$.
+Then, let $z$ be an arbitrary real number.
+We have $zy = z(1/x) = z/x$, as desired.
+This proves the existence of a real number $y$ such that for every real number $z$, $zy = z/x$.
+Now we check uniqueness.
+Suppose $y_1$ and $y_2$ are real numbers such that for every real number $z$, $zy_1 = z/x = zy_2$.
+In particular, this equality holds for $z = 1$, so it follows that $y_1 = y_2$.
+This proves uniqueness.
+Lastly, since $x$ was arbitrary, we conclude that for every real number $x$, if $x \neq 0$ then there is a unique real number $y$ such that for every real number $z$, $zy = z/x$.
 \end{proof}
 
 
