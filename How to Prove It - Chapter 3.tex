@@ -3518,11 +3518,28 @@ This completes the proof.
 
 
 \begin{statement}{3.6.1}
-% Fill in
+Prove that for every real number $x$ there is a unique real number $y$ such that $x^2y = x - y$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $x$ be an arbitrary real number.
+We first check uniqueness.
+Suppose $y$ is a real number such that $x^2y = x - y$.
+Adding $y$ to both sides gives us $y(x^2 + 1) = x$.
+Since $x^2 + 1 \neq 0$, we can then divide both sides by $x^2 + 1$ to obtain $y = x / (x^2 + 1)$.
+Thus, any real number $y$ which satisfies the equation $x^2y = x - y$ must be equal to $x / (x^2 + 1)$.
+Now we check that $y = x / (x^2 + 1)$ actually satisfies the equation $x^2y = x - y$.
+Plugging into the left-hand side, we obtain
+\begin{equation*}
+	x^2y = x \left( \frac{x}{x^2 + 1} \right) = \frac{x^3}{x^2 + 1}.
+\end{equation*}
+Plugging into the right-hand side gives us
+\begin{equation*}
+	x - y = x - \frac{x}{x^2 + 1} = \frac{x^3 + x}{x^2 + 1} - \frac{x}{x^2 + 1} 
+	= \frac{x^3}{x^2 + 1}.
+\end{equation*}
+Thus, $y = x / (x^2 + 1)$ is the unique real number satisfying the equation $x^2y = x - y$ for our arbitrary value of $x$.
+Since $x$ was arbitrary, we conclude that for every real number $x$ there is a unique real number $y$ such that $x^2y = x - y$.
 \end{proof}
 
 
