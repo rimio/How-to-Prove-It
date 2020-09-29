@@ -3544,11 +3544,18 @@ Since $x$ was arbitrary, we conclude that for every real number $x$ there is a u
 
 
 \begin{statement}{3.6.2}
-% Fill in
+Prove that there is a unique real number $x$ such that for every real number $y$, $xy + x - 4 = 4y$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We first demonstrate existence.
+Let $x = 4$ and let $y$ be an arbitrary real number.
+Then $xy + x - 4 = 4y + 4 - 4 = 4y$, as desired.
+Since $y$ was arbitrary, we know that $xy + x - 4 = 4y$ for all real numbers $y$.
+To check uniqueness, suppose $z$ is a real number such that for every real number $y$, $zy + z  - 4 = 4y$.
+In particular, this equality holds for $y = 0$, which gives us $z - 4 = 0$.
+In other words, $z = 4$.
+This completes the proof.
 \end{proof}
 
 
