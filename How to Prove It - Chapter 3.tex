@@ -3603,11 +3603,57 @@ Lastly, since $x$ was arbitrary, we conclude that for every real number $x$, if 
 
 
 \begin{statement}{3.6.5}
-% Fill in
+Recall that if $\mathcal{F}$ is a family of sets, then $\bigcup \mathcal{F} = \{ x \mid \exists A (A \in \mathcal{F} \wedge x \in A) \}$.
+Suppose we define a new set $\bigcup ! \mathcal{F}$ by the formula $\bigcup ! \mathcal{F} = \{ x \mid \exists ! A (A \in \mathcal{F} \wedge x \in A) \}$.
+\begin{enumerate}
+	\item Prove that for any family of sets $\mathcal{F}$, $\bigcup ! \mathcal{F} \subseteq
+	\bigcup \mathcal{F}$.
+	
+	\item A family of sets $\mathcal{F}$ is said to be \emph{pairwise disjoint} if every pair of distinct
+	elements of $\mathcal{F}$ are disjoint; that is $\forall A \in \mathcal{F} \, \forall B \in \mathcal{F}
+	(A \neq B \rightarrow A \cap B = \varnothing)$.
+	Prove that for any family of sets $\mathcal{F}$, $\bigcup ! \mathcal{F} = \bigcup \mathcal{F}$
+	if and only if $\mathcal{F}$ is pairwise disjoint.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Let $\mathcal{F}$ be an arbitrary family of sets.
+	Suppose $x \in \bigcup ! \mathcal{F}$ is arbitrary.
+	Then there is a unique set $A \in \mathcal{F}$ such that $x \in A$.
+	In particular, the set $A$ is a set in $\mathcal{F}$ such that $x \in A$, so it follows that
+	$x \in \bigcup \mathcal{F}$.
+	Thus, since $x$ was arbitrary, we conclude that 
+	$\bigcup ! \mathcal{F} \subseteq \bigcup \mathcal{F}$.
+	
+	\item Let $\mathcal{F}$ be an arbitrary family of sets.
+	We first prove the forward direction.
+	Suppose $\bigcup ! \mathcal{F} = \bigcup \mathcal{F}$.
+	Now let $A, B \in \mathcal{F}$ be arbitrary and suppose $A \cap B \neq \varnothing$.
+	Since $A$ and $B$ are not disjoint, there exists $x \in A \cap B$.
+	Then, since $x \in A$, we know that $x \in \bigcup \mathcal{F} = \bigcup ! \mathcal{F}$.
+	Hence, $A$ is the unique set in $\mathcal{F}$ such that $x \in A$.
+	On the other hand, the same argument with the fact that $x \in B$ shows us that $B$ is the
+	unique set in $\mathcal{F}$ such that $x \in B$.
+	Therefore, we conclude that $A = B$.
+	Hence, since we have showed that for any sets $A, B \in \mathcal{F}$, if $A \cap B \neq \varnothing$
+	then $A = B$, we conclude that $\mathcal{F}$ is pairwise disjoint.
+	
+	Now we prove the reverse direction.
+	Suppose $\mathcal{F}$ is pairwise disjoint.
+	Since in Part (1) above we showed that $\bigcup ! \mathcal{F} \subseteq \bigcup \mathcal{F}$,
+	it suffices to check that $\bigcup \mathcal{F} \subseteq \bigcup ! \mathcal{F}$.
+	Suppose $x \in \bigcup \mathcal{F}$ is arbitrary, so there is $A \in \mathcal{F}$ such that $x \in A$.
+	We now check that this set $A$ is unique.
+	Suppose $B \in \mathcal{F}$ is another set such that $x \in B$.
+	Thus, $x \in A \cap B$, so $A \cap B \neq \varnothing$.
+	Since $\mathcal{F}$ is pairwise disjoint, we must have $A = B$.
+	In other words, $A$ is the unique set in $\mathcal{F}$ such that $x \in A$.
+	Thus, $\bigcup \mathcal{F} \subseteq \bigcup ! \mathcal{F}$, and we conclude that the
+	two sets are equal.
+\end{enumerate}
 \end{proof}
 
 
