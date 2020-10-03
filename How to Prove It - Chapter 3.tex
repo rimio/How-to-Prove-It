@@ -3742,11 +3742,48 @@ Let $U$ be any set.
 
 
 \begin{statement}{3.6.8}
-% Fill in
+Let $U$ be any set.
+\begin{enumerate}
+	\item Prove that for every $A \in \powerset{U}$ there is a unique $B \in \powerset{U}$ such that
+	for every $C \in \powerset{U}$, $C \setminus A = C \cap B$.
+	
+	\item Prove that for every $A \in \powerset{U}$ there is a unique $B \in \powerset{U}$ such that
+	for every $C \in \powerset{U}$, $C \cap A = C \setminus B$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item Let $A \in \powerset{U}$ be arbitrary.
+	To check existence, we will show that $B = U \setminus A$ satisfies the desired property.
+	Let $C \in \powerset{U}$ be arbitrary.
+	Then $C \cap B = C \cap (U \setminus A) = (C \cap U) \setminus A = C \setminus A$, as desired.
+	Thus, since $C$ was arbitrary, $C \cap B = C \setminus A$ for all $C \in \powerset{U}$.
+	
+	To check uniqueness, suppose we have $B' \in \powerset{U}$ such that for every 
+	$C \in \powerset{U}$, $C \setminus A = C \cap B'$.
+	Then in particular this is the case when $C = U$, giving us $B' = U \cap B' = U \setminus A = B$.
+	Since $A$ was arbitrary, this completes the proof.
+	
+	\item Let $A \in \powerset{U}$ be arbitrary.
+	To check existence, we will show that $B = U \setminus A$ satisfies the desired property.
+	Let $C \in \powerset{U}$ be arbitrary.
+	Then $C \setminus (U \setminus A) = (C \setminus U) \cup (C \cap A) = C \cap A$, where the
+	first equality holds by Exercise 1.4.9 and we note that $C \setminus U = \varnothing$ since
+	$C \subseteq U$.
+	Thus, since $C$ was arbitrary, $C \setminus B = C \cap A$ for all $C \in \powerset{U}$.
+	
+	To check uniqueness, suppose we have $B' \in \powerset{U}$ such that for every
+	$C \in \powerset{U}$, $C \cap A = C \setminus B'$.
+	Then in particular this is the case when $C = U \setminus A$.
+	In this case, since $\varnothing = (U \setminus A) \cap A = (U \setminus A) \cap B'$,
+	we know that $U \setminus A \subseteq B'$.
+	In addition, with $C = B'$, we know that $B' \cap A = B' \setminus B' = \varnothing$,
+	so $B' \subseteq U \setminus A$ because $B'$ and $A$ are disjoint.
+	Hence, $B' = U \setminus A = B$.
+	Since $A$ was arbitrary, this completes the proof.
+\end{enumerate}
 \end{proof}
 
 
