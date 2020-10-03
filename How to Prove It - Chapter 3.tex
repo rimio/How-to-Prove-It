@@ -3658,11 +3658,43 @@ Suppose we define a new set $\bigcup ! \mathcal{F}$ by the formula $\bigcup ! \m
 
 
 \begin{statement}{3.6.6}
-% Fill in
+Let $U$ be any set.
+\begin{enumerate}
+	\item Prove that there is a unique $A \in \powerset{U}$ such that for every $B \in \powerset{U}$,
+	$A \cup B = B$.
+	
+	\item Prove that there is a unique $A \in \powerset{U}$ such that for every $B \in \powerset{U}$,
+	$A \cup B = A$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item We start by proving existence.
+	Let $A = \varnothing$, which is an element of $\powerset{U}$.
+	Then, since $B \cup \varnothing = B$ for all sets $B$, so in particular all sets $B \in \powerset{U}$,
+	we know that $A = \varnothing$ satisfies the desired property.
+	
+	Next we check uniqueness.
+	Suppose $A_1, A_2 \in \powerset{U}$ are two sets such that for all sets $B \in \powerset{U}$,
+	$A_1 \cup B = B = A_2 \cup B$.
+	In particular, letting $A = A_1$ and $B = A_2$ gives us $A_1 \cup A_2 = A_2$,
+	and letting $A = A_2$ and $B = A_2$ gives us $A_2 \cup A_1 = A_1$.
+	In other words, we have $A_1 = A_1 \cup A_2 = A_2$, so $A_1 = A_2$.
+	This proves uniqueness.
+	
+	\item We start by proving existence.
+	Let $A = U$, which is an element of $\powerset{U}$.
+	Then, since $B \subseteq U$ for all $B \in \powerset{U}$, we know that $B \cup U = U$ for all
+	sets $B \in \powerset{U}$.
+	Thus, $A = U$ satisfies the desired property.
+	
+	Next we check uniqueness.
+	Suppose $A \in \powerset{U}$ is a set such that for every $B \in \powerset{U}$, $A \cup B = A$.
+	Then in particular $A \cup B = A$ for $B = U$, which gives $A = A \cup U = U$.
+	This proves uniqueness.
+\end{enumerate}
 \end{proof}
 
 
