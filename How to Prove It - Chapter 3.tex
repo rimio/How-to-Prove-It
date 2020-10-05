@@ -3788,11 +3788,82 @@ Let $U$ be any set.
 
 
 \begin{statement}{3.6.9}
-% Fill in
+Recall that you showed in Exercise 1.4.14 that symmetric difference is associative; in other words, for all sets $A$, $B$, and $C$, $A \bigtriangleup (B \bigtriangleup C) = (A \bigtriangleup B) \bigtriangleup C$.
+You may also find it useful in this problem to note that symmetric difference is clearly commutative; in other words, for all sets $A$ and $B$, $A \bigtriangleup B = B \bigtriangleup A$.
+\begin{enumerate}
+	\item Prove that there is a unique identity element for symmetric difference.
+	In other words, there is a unique set $X$ such that for every set $A$, $A \bigtriangleup X = A$.
+	
+	\item Prove that every set has a unique inverse for the operation of symmetric difference.
+	In other words, for every set $A$ there is a unique set $B$ such that $A \bigtriangleup B = X$,
+	where $X$ is the identity element from Part (1).
+	
+	\item Prove that for any sets $A$ and $B$ there is a unique set $C$ such that 
+	$A \bigtriangleup C = B$.
+	
+	\item Prove that for every set $A$ there is a unique set $B \subseteq A$ such that for every set
+	$C \subseteq A$, $B \bigtriangleup C = A \setminus C$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item We first check uniqueness.
+	Suppose we have two identity elements $X$ and $Y$ for symmetric difference.
+	Then, we have $Y = X \bigtriangleup Y = X$, where the first equality comes from the fact
+	that $X$ is an identity element and the second equality comes from the fact that $Y$
+	is an identity element.
+	Thus, since $X = Y$, we conclude that if an identity element exists for symmetric difference,
+	then it is unique.
+	
+	Now we check existence by showing $X = \varnothing$ is an identity element.
+	Let $A$ be an arbitrary set.
+	Then $A \bigtriangleup \varnothing = (A \setminus \varnothing) \cup (\varnothing \setminus A) =
+	A \cup \varnothing = \varnothing$, as desired.
+	
+	\item Let $A$ be an arbitrary set.
+	We first check uniqueness.
+	Suppose we have two inverses for $A$ with respect to symmetric difference, $X$ and $Y$.
+	We then note that $A \bigtriangleup X = A \bigtriangleup Y = \varnothing$, so then
+	$X = X \bigtriangleup \varnothing = X \bigtriangleup (A \bigtriangleup Y)
+	= (X \bigtriangleup A) \bigtriangleup Y = \varnothing \bigtriangleup Y = Y$.
+	Note that in this chain of equalities we are implicitly using the facts that symmetric difference is 
+	associative and commutative.
+	Thus, since $X = Y$, we conclude that if an inverse for $A$ with respect to symmetric difference
+	exists, then it is unique.
+	
+	Now we check existence by showing that $A$ is its own inverse.
+	Indeed, $A \bigtriangleup A = (A \setminus A) \cup (A \setminus A) =
+	\varnothing \cup \varnothing = \varnothing$, as desired.
+	
+	\item Let $A$ and $B$ be arbitrary sets.
+	We first check uniqueness.
+	Suppose we have two sets $C$ and $D$ such that $A \bigtriangleup C = A \bigtriangleup D = B$.
+	Then, since $A \bigtriangleup C = A \bigtriangleup D$, we can take the symmetric difference with
+	$A$ on both sides to conclude that $C = D$.
+	Thus, since $C = D$, we conclude that if a set $C$ exists such that $A \bigtriangleup C = B$,
+	then it is unique.
+	
+	Now we check existence by showing that $C = A \bigtriangleup B$ works.
+	Indeed, $A \bigtriangleup (A \bigtriangleup B) = (A \bigtriangleup A) \bigtriangleup B
+	= \varnothing \bigtriangleup B = B$, as desired.
+	
+	\item Let $A$ be an arbitrary set.
+	We check existence by showing $B = A$ satisfies the desired property.
+	Let $C \subseteq A$ be arbitrary.
+	Then $B \bigtriangleup C = A \bigtriangleup C = (A \setminus C) \cup (C \setminus A) = 
+	A \setminus C$, where the last equality follows from the fact that $C \subseteq A$ means
+	$C \setminus A = \varnothing$.
+	Since $C$ was arbitrary, we conclude that $B = A$ satisfies the desired property.
+	
+	Next we check uniqueness.
+	Suppose we have a set $B \subseteq A$ which satisfies the desired property.
+	Then in particular it satisfies the property for $C = \varnothing$, which gives
+	$B \bigtriangleup \varnothing = A \setminus \varnothing = A$.
+	On the other hand, we also know that $B \bigtriangleup \varnothing = B$, 
+	so we conclude that $B = A$.
+\end{enumerate}
 \end{proof}
 
 
