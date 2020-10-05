@@ -3970,11 +3970,60 @@ This completes the proof.
 
 
 \begin{statement}{3.6.13}
-% Fill in
+\begin{enumerate}
+	\item Prove that there is a unique real number $c$ such that there is a unique real number $x$
+	such that $x^2 + 3x + c = 0$.
+	In other words, prove that there is a unique real number $c$ such that the equation
+	$x^2 + 3x + c = 0$ has exactly one solution.
+	
+	\item Show that it is \emph{not} the case that there is a unique real number $x$ such that there is
+	a unique real number $c$ such that $x^2 + 3x + c = 0$.
+	(\emph{Hint: You should be able to prove that for \emph{every} real number $x$ there is a unique
+	real number $c$ such that $x^2 + 3x + c = 0$.})
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item We first show that $c = 9/4$ works.
+	In other words, we show that $x^2 + 3x + 9/4 = 0$ has a unique solution.
+	We'll show that this unique solution is $x = -3/2$.
+	Plugging in $x = 3/2$ on the left-hand-side, we have
+	\begin{equation*}
+		\left( -\frac{3}{2} \right)^2 + 3 \cdot -\frac{3}{2} + \frac{9}{4}
+		= \frac{9}{4} - \frac{9}{2} + \frac{9}{4}
+		= 0,
+	\end{equation*}
+	which demonstrates existence.
+	To check uniqueness, we apply the quadratic formula to see that any solution $y$
+	to the equation $x^2 + 3x + 9/4 = 0$ must be
+	\begin{equation*}
+		y = \frac{-3 \pm \sqrt{3^2 - 4(1)(9/4)}}{2}
+		= \frac{-3 \pm 0}{2} = -\frac{3}{2}.
+	\end{equation*}
+	Thus, we have found that $c = 9/4$ is a real number such that the equation $x^2 + 3x + c = 0$
+	has a unique solution.
+	
+	Now we show that this value of $c$ is unique.
+	Suppose $d$ is a real number such that that the equation $x^2 + 3x + d = 0$ has exactly
+	one solution.
+	Since $x^2 + 3x + d = 0$ has exactly one solution if and only if the discriminant
+	$3^2 - 4(1)(d) = 0$, we conclude that we must have $d = 9/4 = c$.
+	This proves uniqueness.
+	
+	\item We will follow the hint and show that for every real number $x$ there is a unique
+	real number $c$ such that $x^2 + 3x + c = 0$.
+	This is sufficient because it will show that such an $x$ satisfying the desired property is \emph{not}
+	unique.
+	Let $x$ be an arbitrary real number and take $c = -x^2 - 3x$.
+	It immediately follows that $x^2 + 3x + c = x^2 + 3x + (-x^2 - 3x) = 0$, so $c = x^2 - 3x$
+	satisfies the desired property.
+	To check uniqueness, suppose $d$ is a real number such that $x^2 + 3x + d = 0$.
+	Isolating $d$ on one side gives us $d = -x^2 - 3x = c$, which is what we wanted to show.
+	Thus, since $x$ was arbitrary, we conclude that for every real number $x$ there is a unique
+	real number $c$ such that $x^2 + 3x + c = 0$.
+\end{enumerate}
 \end{proof}
 
 
