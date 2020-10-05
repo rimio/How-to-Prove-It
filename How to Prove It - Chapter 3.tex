@@ -3895,11 +3895,22 @@ Since we have shown that $A$ contains at least one element, and also $A$ contain
 
 
 \begin{statement}{3.6.11}
-% Fill in
+Suppose $\mathcal{F}$ is a family of sets that has the property that for every $\mathcal{G} \subseteq \mathcal{F}$, $\bigcup \mathcal{G} \in \mathcal{F}$.
+Prove that there is a unique set $A$ such that $A \in \mathcal{F}$ and $\forall B \in \mathcal{F} \, (B \subseteq A)$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We first check uniqueness.
+Suppose we have two sets $A_1, A_2 \in \mathcal{F}$ such that $\forall B \in \mathcal{F}$ $B \subseteq A_1$ and $B \subseteq A_2$.
+Then in particular we know that $A_1 \subseteq A_2$ by using $B = A_1$ and $A_2 \subseteq A_1$ by using $B = A_2$.
+In other words, $A_1 = A_2$, which proves uniqueness.
+
+To check existence, we'll show that $A = \bigcup \mathcal{F}$ satisfies the desired property.
+First we note that by the property of $\mathcal{F}$ that for every $\mathcal{G} \subseteq \mathcal{F}$, $\bigcup \mathcal{G} \in \mathcal{F}$, we know that $A \in \mathcal{F}$ by setting $\mathcal{G} = \mathcal{F}$.
+Now, let $B \in \mathcal{F}$ be arbitrary.
+We know that $B \subseteq \bigcup \mathcal{F} = A$ (see Exercise 3.3.8 for a proof), so since $B$ was arbitrary we conclude that $B \subseteq A$ for all $B \in \mathcal{F}$.
+Thus, $A = \bigcup \mathcal{F}$ satisfies the desired property.
+This completes the proof.
 \end{proof}
 
 
