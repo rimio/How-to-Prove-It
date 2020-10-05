@@ -3868,11 +3868,29 @@ You may also find it useful in this problem to note that symmetric difference is
 
 
 \begin{statement}{3.6.10}
-% Fill in
+Suppose $A$ is a set, and for every family of sets $\mathcal{F}$, if $\bigcup \mathcal{F} = A$ then $A \in \mathcal{F}$.
+Prove that $A$ has exactly one element.
 \end{statement}
 
 \begin{proof}
-% Fill in
+We first prove that $A$ contains at least one element.
+Suppose, towards a contradiction, that $A$ is empty.
+Consider $\mathcal{F} = \varnothing$, an empty family of sets.
+We then have $\bigcup \mathcal{F} = \bigcup \varnothing = \varnothing = A$.
+Since if $\bigcup \mathcal{F} = A$ then $A \in \mathcal{F}$ for every family of sets $\mathcal{F}$, we conclude that $A \in \mathcal{F}$.
+But this contradicts the assumption that $\mathcal{F}$ was empty.
+Hence, we conclude that $A$ is nonempty, or in other words, it contains at least one element.
+
+Next we prove that $A$ contains at most one element.
+Suppose, towards a contradiction, that $A$ contains more than one element.
+In other words, there are $x, y \in A$ such that $x \neq y$.
+Now consider $\mathcal{F} = \{ A \setminus \{ x \}, A \setminus \{ y \} \}$.
+Since $x \neq y$, we know that $x \in A \setminus \{ y \}$ and $y \in A \setminus \{ x \}$.
+It then follows that $\bigcup \mathcal{F} = A$, so the property of $A$ implies that $A \in \mathcal{F}$.
+However, since $A \neq A \setminus \{ x \}$ and $A \neq A \setminus \{ y \}$, this is a contradiction.
+Thus, we conclude that $A$ contains at most one element.
+
+Since we have shown that $A$ contains at least one element, and also $A$ contains at most one element, we conclude that $A$ contains exactly one element.
 \end{proof}
 
 
