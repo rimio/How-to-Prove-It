@@ -4028,11 +4028,32 @@ This completes the proof.
 
 
 \begin{statement}{3.7.1}
-% Fill in
+Suppose $\mathcal{F}$ is a family of sets.
+Prove that there is a unique set $A$ that has the following two properties:
+\begin{enumerate}
+	\item $\mathcal{F} \subseteq \powerset{A}$.
+	
+	\item $\forall B \, (\mathcal{F} \subseteq \powerset{B} \rightarrow A \subseteq B)$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+We first check uniqueness.
+Suppose $A_1$ and $A_2$ are two sets that have the two desired properties.
+Since $A_1$ satisfies the first property, $\mathcal{F} \subseteq \powerset{A_1}$, and $A_2$ satisfies the second property, $\forall B \, (\mathcal{F} \subseteq \powerset{B} \rightarrow A_2 \subseteq B)$, we know that $A_2 \subseteq A_1$.
+Reversing the roles of $A_1$ and $A_2$ in the previous statement also shows that $A_1 \subseteq A_2$, so we conclude that $A_1 = A_2$.
+In other words, if a set exists that satisfies the two desired properties, then it is unique.
+
+Next we demonstrate existence by showing that $A = \bigcup \mathcal{F}$ satisfies the two desired properties.
+First, suppose $X \in \mathcal{F}$ is arbitrary.
+Then, $X \subseteq \bigcup \mathcal{F} = A$, so $X \in \powerset{A}$.
+Hence, $\mathcal{F} \subseteq A$, which shows that $A$ satisfies the first property.
+Next, suppose $B$ is an arbitrary set such that $\mathcal{F} \subseteq \powerset{B}$.
+Then, for arbitrary $x \in A = \bigcup \mathcal{F}$ there is a set $X \in \mathcal{F}$ such that $x \in X$.
+Since $X \in \mathcal{F}$ and $\mathcal{F} \subseteq \powerset{B}$, we know that $X \subseteq B$.
+Thus, it follows that $x \in B$, so we conclude that $A \subseteq B$ since $x$ was arbitrary.
+This shows that $A$ satisfies the second property as well.
+This completes the proof of existence.
 \end{proof}
 
 
