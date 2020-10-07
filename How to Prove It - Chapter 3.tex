@@ -4098,11 +4098,23 @@ This completes the proof.
 
 
 \begin{statement}{3.7.3}
-% Fill in
+Suppose $A$ and $B$ are sets.
+What can you prove about $\powerset{A \setminus B} \setminus (\powerset{A} \setminus \powerset{B})$?
 \end{statement}
 
 \begin{proof}
-% Fill in
+We will show that $\powerset{A \setminus B} \setminus (\powerset{A} \setminus \powerset{B}) = \{ \varnothing \}$.
+First, since the $\varnothing \in \powerset{X}$ for any set $X$, it is clear that $\varnothing \in \powerset{A \setminus B}$ and $\varnothing \notin \powerset{A} \setminus \powerset{B}$,
+so thus $\varnothing \in \powerset{A \setminus B} \setminus (\powerset{A} \setminus \powerset{B})$.
+Next, let $X \in \powerset{A \setminus B} \setminus (\powerset{A} \setminus \powerset{B})$ be arbitrary.
+Then $X \in \powerset{A \setminus B}$, and $X \notin \powerset{A} \setminus \powerset{B}$.
+Since $X \notin \powerset{A} \setminus \powerset{B}$, either $X \notin \powerset{A}$ or $X \in \powerset{B}$.
+In the case when $X \notin \powerset{A}$, there is $x \in X$ such that $x \notin A$.
+But then since $X \in \powerset{A \setminus B}$, for every $x \in X$, $x \in A$ and $x \notin B$, which is a contradiction for the $x \in X$ such that $x \notin A$.
+Next we consider the case when $X \in \powerset{B}$, so for every $x \in X$, $x \in B$.
+But once again, since $X \in \powerset{A \setminus B}$, for every $x \in X$, $x \in A$ and $x \notin B$, we have a contradiction.
+Thus, in both cases we conclude that $X$ must be empty.
+In other words, since $X$ was arbitrary, this shows that $\powerset{A \setminus B} \setminus (\powerset{A} \setminus \powerset{B}) = \{ \varnothing \}$.
 \end{proof}
 
 
