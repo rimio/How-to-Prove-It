@@ -4058,11 +4058,42 @@ This completes the proof of existence.
 
 
 \begin{statement}{3.7.2}
-% Fill in
+Prove that there is a positive real number $m$ that has the following two properties:
+\begin{enumerate}
+	\item For every positive real number $x$, $\frac{x}{x + 1} < m$.
+	
+	\item If $y$ is any positive real number with the property that for every positive real number $x$,
+	$\frac{x}{x + 1} < y$, then $m \leq y$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+We first check uniqueness.
+Suppose $m$ and $n$ are two positive real numbers that have the desired two properties.
+Since $m$ satisfies the first property, that for every real number $x$, $\frac{x}{x + 1} < m$, and since $n$ satisfies the second property, that if $y$ is a positive real number with the property that for every positive real number $x$, $\frac{x}{x + 1} < y$ then $n \leq y$, we know that $n \leq m$.
+Reversing the roles of $m$ and $n$ in the previous statement also shows that $m \leq n$, so we conclude that $m = n$.
+In other words, if a positive real number exists that satisfies the two desired properties, then it is unique.
+
+Next we demonstrate existence by showing that $m = 1$ satisfies the two desired properties.
+First, let $x$ be an arbitrary positive real number.
+Then, since $x < x + 1$, dividing both sides by $x + 1$ gives us $\frac{x}{x + 1} < 1 = m$.
+Since $x$ was arbitrary, this inequality holds for all positive real numbers $x$.
+Hence, $m = 1$ satisfies the first property.
+
+Next, we show that $m = 1$ satisfies the second property by proving that if $y$ is a positive real number such that $m > y$, then there is a positive real number $x$ such that $\frac{x}{x + 1} \geq y$.
+Suppose $y < m = 1$.
+Since $0 < y < 1$, there exists a rational number $r$ such that $y \leq r < 1$.
+(Note that I'm implicitly using the fact that the rational numbers are dense in the real numbers here. 
+See Theorem 1.20 in Walter Rudin's \emph{Principles of Mathematical Analysis} or a similar real analysis book for a proof of this fact.)
+Since $r$ is a rational number such that $0 < r < 1$, we can write $r = p/q$ for positive integers $p$ and $q$ with $p < q$.
+Then, since $p < q$ and $p$ and $q$ are integers, we know that $p \leq q - 1$.
+Taking $x = q - 1$ gives us
+\begin{equation*}
+	\frac{x}{x + 1} = \frac{q - 1}{q} \geq \frac{p}{q} = r \geq y.
+\end{equation*}
+In other words, we have found a positive real number $x$ such that $\frac{x}{x + 1} \geq y$.
+Hence, we conclude that $m = 1$ satisfies the second property.
+This completes the proof.
 \end{proof}
 
 
