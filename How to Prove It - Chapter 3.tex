@@ -4223,11 +4223,15 @@ This completes the proof.
 
 
 \begin{statement}{3.7.9}
-% Fill in
+Prove that if $\lim_{x \to c} f(x) = L$, then $\lim_{x \to c} 7f(x) = 7L$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $\lim_{x \to c} f(x) = L$.
+Let $\varepsilon >0$ be arbitrary.
+Since $\lim_{x \to c} f(x) = L$, there exists $\delta > 0$ such that for all real numbers $x$, if $0 < \abs{x - c} < \delta$, then $\abs{f(x) - L} < \varepsilon/7$.
+Then, for this value of $\delta$, it follows that for all real numbers $x$ such that $0 < \abs{x - c} < \delta$, $\abs{7f(x) - 7L} = 7\abs{f(x) - L} < 7(\varepsilon/7) = \varepsilon$.
+In other words, $\lim_{x \to c} 7f(x) = 7L$, which is what we wanted to prove.
 \end{proof}
 
 
