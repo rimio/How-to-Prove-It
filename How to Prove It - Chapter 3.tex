@@ -4119,11 +4119,62 @@ In other words, since $X$ was arbitrary, this shows that $\powerset{A \setminus 
 
 
 \begin{statement}{3.7.4}
-% Fill in
+Suppose $A$, $B$, and $C$ are sets.
+Prove that the following statements are equivalent:
+\begin{enumerate}
+	\item $(A \bigtriangleup C) \cap (B \bigtriangleup C) = \varnothing$.
+	
+	\item $A \cap B \subseteq C \subseteq A \cup B$.
+	
+	\item $A \bigtriangleup C \subseteq A \bigtriangleup B$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+We'll prove that the three statements by showing that (1) implies (2), (2) implies (3), and (3) implies (1).
+
+First, suppose $(A \bigtriangleup C) \cap (B \bigtriangleup C) = \varnothing$.
+We start by showing that $A \cap B \subseteq C$.
+Let $x \in A \cap B$ be arbitrary, so $x \in A$ and $x \in B$.
+Since $(A \bigtriangleup C) \cap (B \bigtriangleup C)$ is empty, we know that $x \notin A \bigtriangleup C$ or $x \notin B \bigtriangleup C$.
+In the first case, if $x \notin A \bigtriangleup C = (A \setminus C) \cup (C \setminus A)$, then $x \notin A \setminus C$ and $x \notin C \setminus A$.
+Then, since $x \in A$, it follows from the fact that $x \notin A \setminus C$ that $x \in C$.
+Similarly, in the second case, if $x \notin B \bigtriangleup C = (B \setminus C) \cup (C \setminus B)$, the fact that $x \in B$ means that since $x \notin B \setminus C$, $x \in C$.
+Thus, in both cases $x \in C$, so we conclude that $A \cap B \subseteq C$.
+
+Next we show that $C \subseteq A \cup B$.
+Let $x \in C$ be arbitrary.
+Once again we use the fact that $x \notin A \bigtriangleup C$ or $x \notin B \bigtriangleup C$.
+In the first case, if $x \notin A \bigtriangleup C$, the fact that $x \in C$ and $x \notin C \setminus A$ tells us that $x \in A$.
+In the second case, if $x \notin B \bigtriangleup C$, the fact that $x \in C$ and $x \notin C \setminus B$ tells us that $x \in B$.
+Thus, $x \in A$ or $x \in B$, or in other words, $x \in A \cup B$, so we conclude that $C \subseteq A \cup B$.
+This completes the proof that (1) implies (2).
+
+Now suppose $A \cap B \subseteq C \subseteq A \cup B$.
+Let $x \in A \bigtriangleup C = (A \cup C) \setminus (A \cap C)$ be arbitrary, so $x \in A \cup C$ and $x \notin A \cap C$.
+Since $x \in A \cup C$, $x \in A$ or $x \in C$.
+In the first case, since $x \in A$, clearly $x \in A \cup B$.
+In the second case, $x \in C$, since $C \subseteq A \cup B$, we once again have $x \in A \cup B$.
+Thus, $x \in A \cup B$.
+Then, since $x \notin A \cap C$, $x \notin A$ or $x \notin C$.
+In the first case, since $x \notin A$, then $x \notin A \cap B$.
+In the second case, $x \notin C$, it follows that $x \notin A \cap B$ since $A \cap B \subseteq C$.
+Thus, $x \notin A \cap B$.
+Since $x \in A \cup B$ and $x \notin A \cap B$, we conclude that $x \in A \bigtriangleup B$.
+Hence, $A \bigtriangleup C \subseteq A \bigtriangleup B$.
+This completes the proof that (2) implies (3).
+
+Lastly, suppose $A \bigtriangleup C \subseteq A \bigtriangleup B$.
+Suppose $x \in (A \bigtriangleup C) \cap (B \bigtriangleup C)$.
+In particular, since $x \in A \bigtriangleup C \subseteq A \bigtriangleup B$, we know that $x \in A \bigtriangleup B$, so $x \in A \setminus B$ or $x \in B \setminus A$.
+In the first case, since $x \in A$ and $x \in A \bigtriangleup C$, we know that $x \in A \setminus C$.
+But then $x \notin B$ and $x \notin C$ means $x \notin B \bigtriangleup C$, which contradicts the assumption that $x \in (A \bigtriangleup C) \cap (B \bigtriangleup C)$.
+In the second case, $x \in B \setminus A$, we get a similar contradiction.
+Since $x \notin A$ and $x \in A \bigtriangleup C$, we know that $x \in C \setminus A$.
+But then $x \in B$ and $x \in C$ once again means $x \notin B \bigtriangleup C$.
+Since in both cases we reach a contradiction, there is no $x \in (A \bigtriangleup C) \cap (B \bigtriangleup C)$.
+In other words, $(A \bigtriangleup C) \cap (B \bigtriangleup C) = \varnothing$.
+This completes the proof that (3) implies (1).
 \end{proof}
 
 
