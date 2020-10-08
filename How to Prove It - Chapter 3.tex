@@ -4179,11 +4179,19 @@ This completes the proof that (3) implies (1).
 
 
 \begin{statement}{3.7.5}
-% Fill in
+Suppose $\{ A_i \mid i \in I \}$ is a family of sets.
+Prove that if $\powerset{\bigcup_{i \in I} A_i} \subseteq \bigcup_{i \in I} \powerset{A_i}$, then there is some $i \in I$ such that $\forall j \in I \, (A_j \subseteq A_i)$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $\powerset{\bigcup_{i \in I} A_i} \subseteq \bigcup_{i \in I} \powerset{A_i}$.
+This means that if $X \in \powerset{\bigcup_{i \in I} A_i}$ then there exists $i \in I$ such that $X \in \powerset{A_i}$, or in other words if $X \subseteq \bigcup_{i \in I} A_i$ then there exists $i \in I$ such that $X \subseteq A_i$.
+In particular, this is true for $X = \bigcup_{i \in I} A_i$.
+This means there is $i \in I$ such that $\bigcup_{i \in I} A_i \subseteq A_i$.
+Now let $j \in I$ be arbitrary.
+Since $A_j \subseteq \bigcup_{i \in I} A_i$ and $\bigcup_{i \in I} A_i \subseteq A_i$, we conclude that $A_j \subseteq A_i$.
+Since $j$ was arbitrary, $A_j \subseteq A_i$ for all $j \in I$.
+This completes the proof.
 \end{proof}
 
 
