@@ -4196,11 +4196,114 @@ This completes the proof.
 
 
 \begin{statement}{3.7.6}
-% Fill in
+Suppose $\mathcal{F}$ is a nonempty family of sets.
+Let $I = \bigcup \mathcal{F}$, and $J = \bigcap \mathcal{F}$.
+Suppose also that $J \neq \varnothing$, and notice that it follows that for every $X \in \mathcal{F}$, $X \neq \varnothing$, and also that $I \neq \varnothing$.
+Finally, suppose that $\{ A_i \mid i \in I \}$ is an indexed family of sets.
+\begin{enumerate}
+	\item Prove that $\bigcup_{i \in I} A_i = \bigcup_{X \in \mathcal{F}}
+	\left( \bigcup_{i \in X} A_i \right)$.
+	
+	\item Prove that $\bigcap_{i \in I} A_i = \bigcap_{X \in \mathcal{F}}
+	\left( \bigcap_{i \in X} A_i \right)$.
+	
+	\item Prove that $\bigcup_{i \in J} A_i \subseteq \bigcap_{X \in \mathcal{F}}
+	\left( \bigcup_{i \in X} A_i \right)$.
+	Is it always the case that the two sets are equal?
+	Give either a proof or a counterexample to justify your answer.
+	
+	\item Discover and prove a theorem relating $\bigcap_{i \in J} A_i$ and $\bigcup_{X \in \mathcal{F}}
+	\left( \bigcap_{i \in X} A_i \right)$.
+\end{enumerate}
 \end{statement}
 
 \begin{proof}
-% Fill in
+\hfill
+\begin{enumerate}
+	\item First suppose $x \in \bigcup_{i \in I} A_i$ is arbitrary, 
+	so there exists $i \in I$ such that $x \in A_i$.
+	Then, since $i \in I = \bigcup \mathcal{F}$, there is a set $X \in \mathcal{F}$
+	such that $i \in X$.
+	With this pair of $i$ and $X$, we see that $x \in \bigcup_{X \in \mathcal{F}}
+	\left( \bigcup_{i \in X} A_i \right)$.
+	Thus, $\bigcup_{i \in I} A_i \subseteq \bigcup_{X \in \mathcal{F}}
+	\left( \bigcup_{i \in X} A_i \right)$.
+	
+	Next suppose $x \in \bigcup_{X \in \mathcal{F}} \left( \bigcup_{i \in X} A_i \right)$ is arbitrary.
+	Unraveling the definitions, we first see that there is $X \in \mathcal{F}$ such that
+	$x \in \bigcup_{i \in X} A_i$, and then there is $i \in X$ such that $x \in A_i$.
+	Since $i \in I = \bigcup \mathcal{F}$, it follows that $x \in \bigcup_{i \in I} A_i$.
+	In other words, $\bigcup_{X \in \mathcal{F}} \left( \bigcup_{i \in X} A_i \right) \subseteq
+	\bigcup_{i \in I} A_i$.
+	This completes the proof that the two sets are equal.
+	
+	\item First suppose $x \in \bigcap_{i \in I} A_i$ is arbitrary, so $x \in A_i$ for all $i \in I$.
+	Let $X \in \mathcal{F}$ be arbitrary, and then let $i \in X$ be arbitrary.
+	Since $X \subseteq \bigcup \mathcal{F} = I$ and $i \in X$, we know that $i \in I$.
+	It then follows that $x \in A_i$.
+	Since $i \in X$ was arbitrary, we conclude that $x \in \bigcap_{i \in X} A_i$.
+	Then, since $X \in \mathcal{F}$ was arbitrary, we conclude that $x \in \bigcap_{X \in \mathcal{F}}
+	\left( \bigcap_{i \in X} A_i \right)$.
+	Thus, $\bigcap_{i \in I} A_i \subseteq \bigcap_{X \in \mathcal{F}}
+	\left( \bigcap_{i \in X} A_i \right)$.
+	
+	Next suppose $x \in \bigcap_{X \in \mathcal{F}} \left( \bigcap_{i \in X} A_i \right)$ is arbitrary.
+	Unraveling the definitions, this means that $x \in \bigcap_{i \in X} A_i$ for all $X \in \mathcal{F}$
+	Unraveling further, this means that any $X \in \mathcal{F}$, $x \in A_i$ for all $i \in X$.
+	Let $i \in I = \bigcup \mathcal{F}$ be arbitrary.
+	Then there is $X \in \mathcal{F}$ such that $i \in X$.
+	It follows that for this particular value of $X$, $x \in \bigcap_{i \in X} A_i$, and subsequently
+	$x \in A_i$ for this particular value of $i$.
+	Since $i \in I$ was arbitrary, we conclude that $x \in \bigcap_{i \in I} A_i$.
+	Thus, $\bigcap_{X \in \mathcal{F}} \left( \bigcap_{i \in X} A_i \right) \subseteq
+	\bigcap_{i \in I} A_i$.
+	This completes the proof that the two sets are equal.
+	
+	\item Suppose $x \in \bigcup_{i \in J} A_i$ is arbitrary,
+	so there exists $i \in J$ such that $x \in A_i$.
+	Let $X \in \mathcal{F}$ be arbitrary.
+	Since $i \in J = \bigcap \mathcal{F}$, we know that $i \in X$.
+	Then, since $x \in A_i$, we also know that $x \in \bigcup_{i \in X} A_i$.
+	Thus, since $X \in \mathcal{F}$ was arbitrary, we conclude that $x \in \bigcap_{X \in \mathcal{F}}
+	\left( \bigcup_{i \in X} A_i \right)$.
+	In other words, since $x$ was arbitrary, $\bigcap_{i \in J} A_i \subseteq
+	\bigcap_{X \in \mathcal{F}} \left( \bigcup_{i \in X} A_i \right)$.
+	
+	The other containment does not always hold. 
+	For a counterexample, consider
+	$\mathcal{F} = \{ \{1, 2\}, \{2, 3\} \}$, which gives $I = \{ 1, 2, 3 \}$ and $J = \{ 2 \}$.
+	Then suppose $A_1 = \{ 1, 2, 3 \}$, $A_2 = \{ 2, 3, 4 \}$, and $A_3 = \{ 1, 2, 3, 4, 5 \}$.
+	In this case
+	\begin{align*}
+		\bigcap_{X \in \mathcal{F}} \left( \bigcup_{i \in X} A_i \right)
+		&= (A_1 \cup A_2) \cap (A_2 \cup A_3) \\
+		&= \{ 1, 2, 3, 4 \} \cap \{ 1, 2, 3, 4, 5 \} = \{ 1, 2, 3, 4 \}.
+	\end{align*}
+	On the other hand, $\bigcup_{i \in J} A_i = A_2 = \{ 2, 3, 4 \}$.
+	
+	\item We start by showing that $\bigcup_{X \in \mathcal{F}} \left( \bigcap_{i \in X} A_i \right)
+	\subseteq \bigcap_{i \in J} A_i$.
+	Suppose $x \in \bigcup_{X \in \mathcal{F}} \left( \bigcap_{i \in X} A_i \right)$ is arbitrary.
+	This means there is $Y \in \mathcal{F}$ such that $x \in \bigcap_{i \in Y} A_i$, or in other words,
+	$x \in A_i$ for all $i \in Y$.
+	Now let $i \in J = \bigcap \mathcal{F}$ be arbitrary, so $i \in X$ for all $X \in \mathcal{F}$.
+	In particular, $i \in Y$, so we conclude that $x \in A_i$.
+	Since $i \in J$ was arbitrary, we conclude that $x \in \bigcap_{i \in J} A_i$.
+	Thus, $\bigcup_{X \in \mathcal{F}} \left( \bigcap_{i \in X} A_i \right)
+	\subseteq \bigcap_{i \in J} A_i$.
+	
+	Next we show that the other containment does not always hold.
+	For a counterexample, consider 
+	$\mathcal{F} = \{ \{1, 2\}, \{2, 3\} \}$, which gives $I = \{ 1, 2, 3 \}$ and $J = \{ 2 \}$.
+	Then suppose $A_1 = \{ 1, 2, 3 \}$, $A_2 = \{ 2, 3, 4 \}$, and $A_3 = \{ 2, 3, 5 \}$.
+	In this case
+	\begin{align*}
+		\bigcup_{X \in \mathcal{F}} \left( \bigcap_{i \in X} A_i \right)
+		&= (A_1 \cap A_2) \cup (A_2 \cap A_3) \\
+		&= \{ 2, 3 \} \cup \{ 2, 3 \} = \{ 2, 3 \}.
+	\end{align*}
+	On the other hand, $\bigcap_{i \in J} A_i = A_2 = \{ 2, 3, 4 \}$.
+\end{enumerate}
 \end{proof}
 
 
