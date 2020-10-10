@@ -4335,11 +4335,16 @@ This completes the proof.
 
 
 \begin{statement}{3.7.8}
-% Fill in
+Prove that if $\lim_{x \to c} f(x) = L$ and $L > 0$, then there is some number $\delta > 0$ such that for all $x$, if $0 < \abs{x - c} < \delta$ then $f(x) > 0$.
 \end{statement}
 
 \begin{proof}
-% Fill in
+Suppose $\lim_{x \to c} f(x) = L$ and $L > 0$.
+Let $\varepsilon = L$.
+Then, since $\lim_{x \to c} f(x) = L$, there is $\delta > 0$ such that for all $x$, if $0 < \abs{x - c} < \delta$ then $\abs{f(x) - L} < \varepsilon = L$.
+Noting that the inequality $\abs{f(x) - L} < L$ is equivalent to $-L < f(x) - L < L$, or $0 < f(x) < 2L$, we see that for this value of $\delta$, for all $x$ with $0 < \abs{x - c} < \delta$ we have $0 < f(x) < 2L$.
+In particular, $f(x) > 0$.
+This completes the proof.
 \end{proof}
 
 
