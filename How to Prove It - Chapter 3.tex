@@ -4308,11 +4308,29 @@ Finally, suppose that $\{ A_i \mid i \in I \}$ is an indexed family of sets.
 
 
 \begin{statement}{3.7.7}
-% Fill in
+Prove that
+\begin{equation*}
+	\lim_{x \to 2} \frac{3x^2 - 12}{x - 2} = 12.
+\end{equation*}
 \end{statement}
 
 \begin{proof}
-% Fill in
+Let $\varepsilon > 0$ be arbitrary.
+Our goal is to find $\delta > 0$ such that for all real numbers $x$ with $0 < \abs{x - 2} < \delta$,
+\begin{equation*}
+\abs{\frac{3x^2 - 12}{x - 2} - 12} < \varepsilon.
+\end{equation*}
+Suppose we had some $\delta > 0$.
+Then, for all real numbers $x$ such that $0 < \abs{x - 2} < \delta$,
+\begin{equation*}
+	\abs{\frac{3x^2 - 12}{x - 2} - 12}
+	= \abs{\frac{3(x + 2)(x - 2)}{x - 2} - 12}
+	= \abs{3x + 6 - 12}
+	= 3\abs{x - 2}
+	< 3\delta.
+\end{equation*}
+Therefore, it suffices to choose $\delta = \varepsilon/3$.
+This completes the proof.
 \end{proof}
 
 
